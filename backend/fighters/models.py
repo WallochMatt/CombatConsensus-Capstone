@@ -4,5 +4,5 @@ from django.db import models
 
 class Fighter(models.Model):
     name = models.CharField(max_length=50)
-    fan_acm_points = models.ImageField()
+    fan_acm_points = models.IntegerField()
     ofc_acm_points = models.IntegerField()
