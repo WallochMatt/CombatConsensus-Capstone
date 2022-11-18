@@ -7,8 +7,9 @@ from authentication.models import User
 
 
 class Car(models.Model):
-    user_name = models.ForeignKey(User, on_delete=models.CASCADE)
-    password = models.CharField(max_length=30)
-    email = models.CharField(max_length=100)
-    accuracy = models.IntegerField()
-    is_admin = models.BooleanField(default=False)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    make = models.CharField(max_length=30)
+    model = models.CharField(max_length=100)
+    year = models.IntegerField()
+
+
