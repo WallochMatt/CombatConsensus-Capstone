@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'authentication.apps.AuthenticationConfig',
     'corsheaders',
     'cars.apps.CarsConfig',  # This app is for example use only
-    'fight_fans',
     'events',
     'fighters',
     'matches'
