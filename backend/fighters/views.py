@@ -29,7 +29,7 @@ def one_fighter(request, pk):
 
 
 @api_view(["POST"])
-@permission_classes(IsAdminUser)
+@permission_classes([IsAdminUser])
 def add_fighter(request):
     serializer = FighterSerializer(data=request.data)
     if serializer.is_valid(raise_exception=True):
@@ -37,8 +37,8 @@ def add_fighter(request):
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
-api_view(["PUT", "DELETE"])
-@permission_classes(IsAdminUser)
+@api_view(["PUT", "DELETE"])
+@permission_classes([IsAdminUser])
 def edit_fighter(request, pk):
     fighter = get_object_or_404(Fighter, pk=pk)
     if request.method == "PUT":

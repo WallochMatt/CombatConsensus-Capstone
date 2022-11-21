@@ -39,7 +39,7 @@ def add_match(request):
         return Response(serialzer.data, status=status.HTTP_201_CREATED)
 
 @api_view(['PUT', 'DELETE'])
-@permission_classes(IsAdminUser)
+@permission_classes([IsAdminUser])
 def edit_match(request, pk):
     match = get_object_or_404(Match, pk=pk)
     if request.method == 'PUT':

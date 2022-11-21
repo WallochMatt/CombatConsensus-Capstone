@@ -21,3 +21,4 @@ class Match(models.Model):
     judge_avg_two = models.DecimalField(max_digits=5, decimal_places=2, null=True) 
 
     #result either decision or finish, record finish
+    results = models.CharField(max_length=70)
