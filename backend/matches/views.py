@@ -14,7 +14,7 @@ from django.shortcuts import get_object_or_404
 def all_matches(request):
     if request.method == 'GET':
         matches = Match.objects.all()
-        serializer = MatchSerializer(matches)
+        serializer = MatchSerializer(matches, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
@@ -23,7 +23,7 @@ def all_matches(request):
 def one_match(request, pk):
     if request.method == 'GET':
         match = Match.objects.filter(pk=pk)
-        serializer = MatchSerializer(match)
+        serializer = MatchSerializer(match, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 

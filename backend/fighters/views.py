@@ -17,12 +17,12 @@ def all_fighters(request):
         serializer = FighterSerializer(fighters, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-api_view(['GET'])
+@api_view(['GET'])
 @permission_classes([AllowAny])
 def one_fighter(request, pk):
     if request.method == 'GET':
         fighters = Fighter.objects.filter(pk=pk)
-        serializer = FighterSerializer(fighters)
+        serializer = FighterSerializer(fighters, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 

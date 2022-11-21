@@ -23,7 +23,7 @@ def all_events(request):
 def one_event(request, pk): #Don't forget to include param in URL path
     if request.method == 'GET':
         event = Event.objects.filter(pk=pk)
-        serializer = EventSerializer(event)#many false?
+        serializer = EventSerializer(event, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
