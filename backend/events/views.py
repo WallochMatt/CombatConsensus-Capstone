@@ -1,6 +1,6 @@
 from rest_framework import status
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.permissions import IsAdminUser, AllowAny
 from rest_framework.decorators import api_view, permission_classes
 from .models import Event
 from .serializers import EventSerializer
@@ -22,8 +22,8 @@ def all_events(request):
 @permission_classes([AllowAny])
 def one_event(request, pk): #Don't forget to include param in URL path
     if request.method == 'GET':
-        events = Event.objects.filter(pk=pk)
-        serializer = EventSerializer(events)#many false?
+        event = Event.objects.filter(pk=pk)
+        serializer = EventSerializer(event)#many false?
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
@@ -31,7 +31,7 @@ def one_event(request, pk): #Don't forget to include param in URL path
 # ADMINS  Admin field for register, I could add a code or codes to grant admin acess. As if I sent them an email for sign up
 
 @api_view(["POST"])
-@permission_classes(IsAuthenticated)
+@permission_classes(IsAdminUser) #IsAdminUser is for admins (looks for is_staff)
 def add_event(request):
     serializer = EventSerializer(data=request.data)
     if serializer.is_valid(raise_exception=True):
@@ -39,14 +39,14 @@ def add_event(request):
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 @api_view(["PUT", "DELETE"])
-@permission_classes(IsAuthenticated)
+@permission_classes(IsAdminUser)
 def edit_event(request, pk):
     event = get_object_or_404(Event, pk=pk)
     if request.method == 'PUT':
         serializer = EventSerializer(event, data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        return Response(serializer.data)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
     elif request.method == 'DELETE':
         event.delete()
