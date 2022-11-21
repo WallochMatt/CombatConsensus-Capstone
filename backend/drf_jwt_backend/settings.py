@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'cars.apps.CarsConfig',  # This app is for example use only
     'events',
     'fighters',
-    'matches'
+    'matches',
+    'score_cards'
 ]
 
 MIDDLEWARE = [

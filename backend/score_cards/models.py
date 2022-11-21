@@ -1,6 +1,6 @@
 from django.db import models
-from ..matches.models import Match
-from ..authentication.models import User
+from matches.models import Match
+from authentication.models import User
 # Create your models here.
 
 class ScoreCard(models.Model):
