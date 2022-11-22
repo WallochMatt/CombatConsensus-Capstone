@@ -2,5 +2,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-path('', views.fan_card)
+path('post/', views.fan_card),
+path('fetch/', views.all_fan_cards)
 ]

@@ -6,7 +6,8 @@ import "./App.css";
 import UserPage from "./pages/UserPage/UserPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
-import HomePage from "./pages/HomePage/HomePage"
+import EventsPage from "./pages/EventsPage/EventsPage";
+import MatchesPage from "./pages/MatchesPage/MatchesPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -30,7 +31,9 @@ function App() {
         />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/home" element={<HomePage />}/>
+        {/* <Route path="/home" element={<HomePage />}/> */}
+        <Route path="/events" element={<EventsPage />}/>
+        <Route path="/matches" element={<MatchesPage />}/>
       </Routes>
       <Footer />
     </div>

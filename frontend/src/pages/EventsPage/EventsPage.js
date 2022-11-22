@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const HomePage = (props) => {
+const EventsPage = (props) => {
     const [events, setEvents] = useState([]);
 
     useEffect(() => {
@@ -20,16 +20,16 @@ const HomePage = (props) => {
     
     return ( 
         <div className="container">
-        <h1>HOME</h1>
-        {events &&
-        events.map((event) => (
-            <p>
-                {event.event_title}
-            </p>
-            
-        ))}
-    </div>
+            <h1>EVENTS PAGE</h1>
+            {events &&
+            events.map((event) => (
+                <p>
+                    {event.event_title}
+                </p>
+                
+            ))}
+        </div>
     );
 }
 
-export default HomePage;
+export default EventsPage;
