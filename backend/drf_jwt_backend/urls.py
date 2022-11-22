@@ -22,5 +22,6 @@ urlpatterns = [
     path('api/cars/', include('cars.urls')),
     path('events/', include('events.urls')),
     path('fighters/', include('fighters.urls')),
-    path('matches/', include('matches.urls'))
+    path('matches/', include('matches.urls')),
+    path('userpost/', include('score_cards.urls'))
 ]
