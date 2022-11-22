@@ -19,13 +19,6 @@ const MatchesPage = (props) => {
     }, [])
     
 
-    // const filterMatches = async () => {
-    //     try {
-    //         let response = await axios.get("http://127.0.0.1:8000/matches/");
-    //         response.filter(event.id)
-    //     }
-    // }
-
     return ( 
         <div className="container">
             <h1>Matches</h1>

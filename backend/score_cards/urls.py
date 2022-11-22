@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
 path('post/', views.fan_card),
-path('fetch/', views.all_fan_cards)
+path('<int:fan_id>/', views.all_fan_cards)
 ]

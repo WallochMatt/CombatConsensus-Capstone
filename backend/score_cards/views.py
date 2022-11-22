@@ -22,9 +22,9 @@ def fan_card(request):
 
 @api_view(['GET'])
 @permission_classes([AllowAny])
-def all_fan_cards(request):
+def all_fan_cards(request, fan_id):
     if request.method == "GET":
-        cards = ScoreCard.objects.all()
+        cards = ScoreCard.objects.filter(fan_id=fan_id)
         serializer = ScoreCardSerializer(cards, many=True)
         return Response(serializer.data)
 # @api_view(['GET'])

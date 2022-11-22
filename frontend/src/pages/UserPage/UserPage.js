@@ -9,19 +9,19 @@ const UserPage = () => {
   // The "token" value is the JWT token that you will send in the header of any request requiring authentication
   //TODO: Add an AddCars Page to add a car for a logged in user's garage
   const [user, token] = useAuth();
-  const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState([]); //if needed, I can put this in app, that way I can props it in ans still use all cards for a FAn's page
 
   useEffect(() => {
     const fetchCards = async () => {
       try {
-        let response = await axios.get("http://127.0.0.1:8000/userpost/", {
+        let response = await axios.get(`http://127.0.0.1:8000/user/${user.id}/`, {
           headers: {
             Authorization: "Bearer " + token,
           },
         });
         setCards(response.data);
       } catch (error) {
-        console.log(error.response.data);
+        console.log(error.response);
       }
     };
     fetchCards();
@@ -29,19 +29,19 @@ const UserPage = () => {
 
   return (
     <div className="container">
-      <h1>USER Page for {user.username}!</h1>
-      {cards &&
-        cards.map((card) => (
-          <p key={card.id}>
-          {card.match.bout_name}
-          <br/>
-          My scores  {card.fan_score_f1} - {card.fan_score_f2} 
-          <br/>
-          testo {card.match.judge_avg_one} - {card.match.judge_avg_two}
-          <br/>
-          .fighte_one = {card.match.fighter_one}
-          </p>
-        ))}
+      <h1>Welcome back, {user.username}!</h1>
+      <ul>
+        {cards &&
+          cards.map((card) => (
+            <li key={card.id}>
+              My scores  {card.fan_score_f1} {card.fan_score_f2} {card.match.bout_name}
+              <br/>
+              The judges average {card.match.judge_avg_one} {card.match.judge_avg_two}
+              <br/>
+              Results= {card.match.results}
+            </li>
+          ))}
+        </ul>
     </div>
   );
 };
