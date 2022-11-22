@@ -10,7 +10,7 @@ class Match(models.Model):
     fans_avrg_one = models.DecimalField(max_digits=5, decimal_places=2, null=True)
     fans_avrg_two = models.DecimalField(max_digits=5, decimal_places=2, null=True)
 
-    event_id = models.ForeignKey(Event, on_delete=models.CASCADE)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
 
     fighter_one = models.ForeignKey(Fighter, related_name="Red", on_delete=models.CASCADE)
     fighter_two = models.ForeignKey(Fighter, related_name="Blue", on_delete=models.CASCADE)
