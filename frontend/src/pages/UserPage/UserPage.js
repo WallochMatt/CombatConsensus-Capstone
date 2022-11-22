@@ -33,7 +33,13 @@ const UserPage = () => {
       {cards &&
         cards.map((card) => (
           <p key={card.id}>
-            {card.fan_score_f1} {card.fan_score_f2} {card.match.bout_name}
+          {card.match.bout_name}
+          <br/>
+          My scores  {card.fan_score_f1} - {card.fan_score_f2} 
+          <br/>
+          testo {card.match.judge_avg_one} - {card.match.judge_avg_two}
+          <br/>
+          .fighte_one = {card.match.fighter_one}
           </p>
         ))}
     </div>
