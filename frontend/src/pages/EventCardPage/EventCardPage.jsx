@@ -3,9 +3,6 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 
 
-
-
-
 const EventCardPage = (props) => {
     const {id} = useParams()
 
