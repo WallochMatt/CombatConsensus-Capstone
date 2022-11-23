@@ -23,8 +23,8 @@ const MatchesPage = (props) => {
         <div className="container">
             <h1>Matches</h1>
             {matches &&
-            matches.map((match) => (
-                <p>
+            matches.map((match, index) => (
+                <p key={index}>
                     {match.bout_name}
                 </p>
                 

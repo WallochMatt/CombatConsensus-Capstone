@@ -4,22 +4,22 @@ import axios from "axios";
 
 
 
-const FanFav = (props) => {
+const OfcFav = (props) => {
     
     
-    const [fanFav, setFanFav] = useState({});
+    const [ofcFav, setOfcFav] = useState({});
 
     useEffect(() => {
-        const fetchFanFav = async () => {
+        const fetchOfcFav = async () => {
             try{
-                let response = await axios.get("http://127.0.0.1:8000/fighters/fanfav/");
-                setFanFav(response.data)
+                let response = await axios.get("http://127.0.0.1:8000/fighters/ofcfav/");
+                setOfcFav(response.data)
             }
             catch(error){
                 console.log(error.response.data);
             }
         };
-        fetchFanFav();
+        fetchOfcFav();
         }, []);
 
 
@@ -27,10 +27,10 @@ const FanFav = (props) => {
     return ( 
         <div>
             <p>
-                The fans fav: {fanFav.name}
+                The official fav: {ofcFav.name}
             </p>
         </div>
     );
 };
 
-export default FanFav;
+export default OfcFav;

@@ -9,6 +9,7 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import EventsPage from "./pages/EventsPage/EventsPage";
 import MatchesPage from "./pages/MatchesPage/MatchesPage";
 import HomePage from "./pages/HomePage/HomePage";
+import EventCardPage from "./pages/EventCardPage/EventCardPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -35,7 +36,8 @@ function App() {
         <Route path="/home" element={<HomePage />}/>
         <Route path="/events" element={<EventsPage />}/>
         <Route path="/matches" element={<MatchesPage />}/>
-        <Route path="/user" element={<UserPage />}/>
+        {/* <Route path="/user" element={<UserPage />}/>  Put fan page here, a page for a FightFan that is not the user */}
+        <Route path="/event-card/:id/" element={<EventCardPage />}/>
       </Routes>
       <Footer />
     </div>

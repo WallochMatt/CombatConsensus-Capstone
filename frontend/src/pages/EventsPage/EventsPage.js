@@ -22,8 +22,8 @@ const EventsPage = (props) => {
         <div className="container">
             <h1>EVENTS PAGE</h1>
             {events &&
-            events.map((event) => (
-                <p>
+            events.map((event, index) => (
+                <p key={index}>
                     {event.event_title}
                 </p>
                 
