@@ -1,10 +1,12 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
+import PostScoreModal from "../../components/PostScoreModal/PostScoreModal";
 
 
 const EventCardPage = (props) => {
-    const {id} = useParams()
+    let navigate = useNavigate();
+    const {id} = useParams();
 
     const [eventCard, setEventCard] = useState({});
     const [matches, setMatches] = useState([]);
@@ -32,8 +34,29 @@ const EventCardPage = (props) => {
         };
         fetchMatches();
         }, []);
-    console.log("eventCard", eventCard)
-    console.log("matches", matches)
+
+
+
+
+
+
+
+
+
+        function handleClick(){
+            console.log("button clicked")
+            return(
+                <PostScoreModal id={id}/>
+            )
+        };
+
+
+
+
+
+
+
+
     return ( 
         <div>
             <div>
@@ -46,9 +69,14 @@ const EventCardPage = (props) => {
                 {match.bout_name} 
                 {match.fighter_one.name} with an average score of: {match.fans_avrg_one} and judges average of: {match.judge_avg_one}
                 {match.fighter_two.name} with an average score of: {match.fans_avrg_two} and judges average of:  {match.judge_avg_two}
+
+                <button onClick={handleClick}>Post your scorecard</button>
+
                 </p>
                 ))}
             </div>
+            <PostScoreModal id={id}/>
+
         </div>
     );
 }

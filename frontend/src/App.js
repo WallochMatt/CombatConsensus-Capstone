@@ -36,7 +36,7 @@ function App() {
         <Route path="/home" element={<HomePage />}/>
         <Route path="/events" element={<EventsPage />}/>
         <Route path="/matches" element={<MatchesPage />}/>
-        {/* <Route path="/user" element={<UserPage />}/>  Put fan page here, a page for a FightFan that is not the user */}
+        <Route path="/user/:username" element={<UserPage />}/>
         <Route path="/event-card/:id/" element={<EventCardPage />}/>
       </Routes>
       <Footer />

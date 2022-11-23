@@ -1,35 +1,35 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
-
+import { useParams } from "react-router-dom";
 import axios from "axios";
+
 
 const UserPage = () => {
   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
   // The "token" value is the JWT token that you will send in the header of any request requiring authentication
   //TODO: Add an AddCars Page to add a car for a logged in user's garage
-  const [user, token] = useAuth();
+  // const [user, token] = useAuth();
+
+  const {username} = useParams()
   const [cards, setCards] = useState([]); //if needed, I can put this in app, that way I can props it in ans still use all cards for a FAn's page
 
   useEffect(() => {
     const fetchCards = async () => {
       try {
-        let response = await axios.get(`http://127.0.0.1:8000/user/${user.id}/`, {
-          headers: {
-            Authorization: "Bearer " + token,
-          },
-        });
+        let response = await axios.get(`http://127.0.0.1:8000/user/${username}/`)
         setCards(response.data);
-      } catch (error) {
+        }
+        catch (error) {
         console.log(error.response);
       }
     };
     fetchCards();
-  }, [token]);
+  }, []);
 
   return (
     <div className="container">
-      <h1>Welcome back, {user.username}!</h1>
+      <h1> {username}'s Page!</h1>
       <ul>
         {cards &&
           cards.map((card) => (
@@ -47,6 +47,23 @@ const UserPage = () => {
 };
 
 export default UserPage;
+
+//just before change:
+// useEffect(() => {
+//   const fetchCards = async () => {
+//     try {
+//       let response = await axios.get(`http://127.0.0.1:8000/user/${user.id}/`, {
+//         headers: {
+//           Authorization: "Bearer " + token,
+//         },
+//       });
+//       setCards(response.data);
+//     } catch (error) {
+//       console.log(error.response);
+//     }
+//   };
+//   fetchCards();
+// }, [token]);
 
 
 //   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
