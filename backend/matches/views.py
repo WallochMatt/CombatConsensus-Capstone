@@ -27,6 +27,17 @@ def one_match(request, pk):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
+@api_view(["GET"])
+@permission_classes([AllowAny])
+def event_matches(request, pk):
+    if request.method == 'GET':
+        matches = Match.objects.all()
+        event_matches = matches.filter(event = pk)
+        serializer = MatchSerializer(event_matches, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+
 
 
 
