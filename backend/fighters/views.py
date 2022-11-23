@@ -5,6 +5,7 @@ from rest_framework.decorators import api_view, permission_classes
 from .models import Fighter
 from .serializers import FighterSerializer
 from django.shortcuts import get_object_or_404
+from django.db.models import Max
 
 
 
@@ -27,7 +28,7 @@ def one_fighter(request, pk):
 
 
 
-
+#ADMINS
 @api_view(["POST"])
 @permission_classes([IsAdminUser])
 def add_fighter(request):
@@ -50,3 +51,31 @@ def edit_fighter(request, pk):
     elif request.method == "DELETE":
         fighter.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+#PAGE DATA
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def find_fan_fav(request):
+    if request.method == 'GET':
+        # top_score = Fighter.objects.aggregate(Max('fan_acm_points'))
+        # print(top_score)
+        # fan_fav = Fighter.objects.filter(fan_acm_points=top_score)
+        # serializer = FighterSerializer(fan_fav, many=True)
+        # return Response(serializer.data)
+
+        fighters = Fighter.objects.all()
+        fan_fav = fighters.order_by('-fan_acm_points').first()
+        serializer = FighterSerializer(fan_fav)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def find_ofc_fav(request):
+    if request.method == 'GET':
+        fighters = Fighter.objects.all()
+        ofc_fav = fighters.order_by('-ofc_acm_points').first()
+        serializer = FighterSerializer(ofc_fav)
+        return Response(serializer.data, status=status.HTTP_200_OK)

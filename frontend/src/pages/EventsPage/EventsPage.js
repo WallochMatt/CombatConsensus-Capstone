@@ -30,6 +30,6 @@ const EventsPage = (props) => {
             ))}
         </div>
     );
-}
+};
 
 export default EventsPage;
