@@ -6,7 +6,7 @@ import PostScoreModal from "../../components/PostScoreModal/PostScoreModal";
 
 const EventCardPage = (props) => {
     let navigate = useNavigate();
-    const {id} = useParams();
+    const {id} = useParams(); //refering to the event's id
 
     const [eventCard, setEventCard] = useState({});
     const [matches, setMatches] = useState([]);
@@ -23,6 +23,8 @@ const EventCardPage = (props) => {
         };
         fetchEventCardData();
 
+
+        //id on here still refers to an events id, its the matches of event(id)
         const fetchMatches = async () => {
             try{
                 let response = await axios.get(`http://127.0.0.1:8000/matches/${id}/sort-matches/`);
@@ -43,12 +45,12 @@ const EventCardPage = (props) => {
 
 
 
-        function handleClick(){
-            console.log("button clicked")
-            return(
-                <PostScoreModal id={id}/>
-            )
-        };
+        // function handleClick(){
+        //     console.log("button clicked")
+        //     return(
+        //         <PostScoreModal id={id}/>
+        //     )
+        // };
 
 
 
@@ -65,18 +67,19 @@ const EventCardPage = (props) => {
             <div>
                 
                 {matches.map((match, index) => (
-                <p key={index}>
-                {match.bout_name} 
-                {match.fighter_one.name} with a fans average score of: {match.fans_avrg_one} and judges average of: {match.judge_avg_one}
-                {match.fighter_two.name} with a fans average score of: {match.fans_avrg_two} and judges average of:  {match.judge_avg_two}
+                <div>
+                    <p key={index}>
+                    {match.bout_name} 
+                    {match.fighter_one.name} with a fans average score of: {match.fans_avrg_one} and judges average of: {match.judge_avg_one}
+                    {match.fighter_two.name} with a fans average score of: {match.fans_avrg_two} and judges average of:  {match.judge_avg_two}
 
-                <button onClick={handleClick}>Post your scorecard</button>
+                    {/* <button onClick={handleClick}>Post your scorecard</button> */}
 
-                </p>
-                ))}
+                    </p>
+                    <PostScoreModal/>
+                </div>
+                    ))}
             </div>
-            <PostScoreModal id={id}/>
-
         </div>
     );
 }

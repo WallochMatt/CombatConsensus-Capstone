@@ -1,6 +1,5 @@
 import axios from "axios";
-import React from "react";
-import { useState } from "react";
+import React, { useEffect } from "react";
 import useCustomForm from "../../hooks/useCustomForm";
 import useAuth from "../../hooks/useAuth";
 
@@ -9,22 +8,24 @@ import useAuth from "../../hooks/useAuth";
 const PostScoreModal = (props) => {
 
     const [user, token] = useAuth();
+
     let initialValues = { 
-        "fan_score_f1" : "",
-        "fan_score_f2" : "",
-        "match_id" : props.id,
-        "fan_id": user.id
-    }
+        //target.name : target.value
+        fan_score_f1 : parseInt(undefined),
+        fan_score_f2 : parseInt(undefined),
+        match_id : 1, //temp hard coded value
+        fan_id : user.id
+    };
 
     const [formData, handleInputChange, handleSubmit] = useCustomForm(initialValues, postScore)
     
     async function postScore(){
         try{
-            let response = await axios.post("http://127.0.0.1:8000/user/post/", {
-                headers: {
-                Authorization: "Bearer " + token,
-                },
-            });
+            let response = await axios.post("http://127.0.0.1:8000/user/post/", formData, {
+                    headers: {
+                        Authorization: 'Bearer ' + token,
+                    }
+            })
             if(response.status === 201){
                 console.log("after axios call");
             }
@@ -34,17 +35,51 @@ const PostScoreModal = (props) => {
         }
     };
     
+    console.log("user is: ", user)
+    console.log("token is: ", token)
     
-    
+
+
+
+
+
+    // function testing(){
+    //     console.log("fan_score_1:", formData.fan_score_f1)
+    // }
+
+    // useEffect(() => {
+    //     testing(); 
+    //     []
+    // })
+
+
+
     return (
         <div>
             <form>
-                <label>Score 1</label>
-                <input type="integer" value={formData.integer} onChange={handleInputChange}></input>
-                <label>Score 2</label>
-                <input type="integer" value={formData.text} onChange={handleInputChange}></input>
-                <button onClick={handleSubmit}>Post</button>
+                <div>
+                    <label>
+                        Score 1
+                        <input 
+                            type="text"
+                            name="fan_score_f1"
+                            value={formData.fan_score_f1} 
+                            onChange={handleInputChange}
+                        />
+                        <label>Score 2</label>
+                        <input 
+                            type="integer"
+                            name="fan_score_f2" 
+                            value={formData.fan_score_f2} 
+                            onChange={handleInputChange}
+                        />
+                    </label>
+                </div>
+                <div>
+                    <button onClick={handleSubmit}>Post</button>
+                </div>
             </form>
+            {/* {console.log("fan_score_1:", formData.fan_score_f1)} */}
         </div>
     );
 

@@ -43,7 +43,8 @@ const LoginPage = () => {
           <p className="error">Login failed, incorrect credentials!</p>
         ) : null}
         <Link to="/register">Click to register!</Link>
-        <button>Login!</button>
+        <button>Login!</button> 
+        {/* ^ I may want to force navigate to the user's home page using form.data.username as a url param */}
       </form>
     </div>
   );
