@@ -1,6 +1,5 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import useAuth from "../../hooks/useAuth";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
@@ -14,18 +13,34 @@ const UserPage = () => {
   const {username} = useParams()
   const [cards, setCards] = useState([]); //if needed, I can put this in app, that way I can props it in ans still use all cards for a FAn's page
 
+  const [accuracy, setAccuracy] = useState();
+  
   useEffect(() => {
     const fetchCards = async () => {
       try {
         let response = await axios.get(`http://127.0.0.1:8000/user/${username}/`)
         setCards(response.data);
-        }
-        catch (error) {
+      }
+      catch (error) {
         console.log(error.response);
       }
     };
+
+      const fetchAccuracy = async () => {
+          try {
+            let response = await axios.get(`http://127.0.0.1:8000/user/${username}/accuracy/`)
+            setAccuracy(response.data)
+          }
+          catch (error) {
+            console.log(error.response);
+          }
+      }
     fetchCards();
+    fetchAccuracy();
   }, []);
+
+
+
 
   return (
     <div className="container">
@@ -42,6 +57,8 @@ const UserPage = () => {
             </li>
           ))}
         </ul>
+        <br/>
+        <p>Accuracy: {accuracy} </p>
     </div>
   );
 };

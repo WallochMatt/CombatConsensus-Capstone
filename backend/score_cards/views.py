@@ -41,3 +41,38 @@ def all_fan_cards(request, username):
 #         cards = ScoreCard.objects.filter(fan_id=fan_id)
 #         serializer = ScoreCardSerializer(cards, many=True)
 #         return Response(serializer.data)
+
+
+
+
+
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def accuracy(request, username):
+    if request.method == "GET":
+        fan = get_object_or_404(User, username=username)
+        cards_for_fan = ScoreCard.objects.filter(fan=fan)
+
+        total_fan_f1_score = 0
+        for card in cards_for_fan:
+            total_fan_f1_score += card.fan_score_f1 #I had this backwards, it was: card.fan_score += total_fan_f1_score
+
+        total_jdg_f1_score = 0
+        for card in cards_for_fan:
+            total_jdg_f1_score += card.match.judge_avg_one
+
+        accuracy_1 = 100 - ((abs((total_jdg_f1_score - total_fan_f1_score)) / total_jdg_f1_score) * 100)
+
+        total_fan_f2_score = 0
+        for card in cards_for_fan:
+            total_fan_f2_score += card.fan_score_f2 #I had this backwards, it was: card.fan_score += total_fan_f1_score
+
+        total_jdg_f2_score = 0
+        for card in cards_for_fan:
+            total_jdg_f2_score += card.match.judge_avg_two
+
+        accuracy_2 = 100 - ((abs((total_jdg_f2_score - total_fan_f2_score)) / total_jdg_f2_score) * 100)
+
+        total_accuracy = (accuracy_1 + accuracy_2) / 2
+        return Response(total_accuracy)
