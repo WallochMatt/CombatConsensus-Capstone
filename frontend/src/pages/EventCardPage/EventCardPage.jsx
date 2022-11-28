@@ -67,8 +67,8 @@ const EventCardPage = (props) => {
                 {matches.map((match, index) => (
                 <p key={index}>
                 {match.bout_name} 
-                {match.fighter_one.name} with an average score of: {match.fans_avrg_one} and judges average of: {match.judge_avg_one}
-                {match.fighter_two.name} with an average score of: {match.fans_avrg_two} and judges average of:  {match.judge_avg_two}
+                {match.fighter_one.name} with a fans average score of: {match.fans_avrg_one} and judges average of: {match.judge_avg_one}
+                {match.fighter_two.name} with a fans average score of: {match.fans_avrg_two} and judges average of:  {match.judge_avg_two}
 
                 <button onClick={handleClick}>Post your scorecard</button>
 

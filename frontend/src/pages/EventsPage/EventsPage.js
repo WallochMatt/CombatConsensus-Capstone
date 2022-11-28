@@ -1,9 +1,13 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link, useNavigate } from 'react-router-dom'
 
 const EventsPage = (props) => {
     const [events, setEvents] = useState([]);
+
+    let navigate = useNavigate();
+
 
     useEffect(() => {
     const fetchEvents = async () => {
@@ -23,10 +27,11 @@ const EventsPage = (props) => {
             <h1>EVENTS PAGE</h1>
             {events &&
             events.map((event, index) => (
-                <p key={index}>
-                    {event.event_title}
-                </p>
-                
+                <Link to={`/event-card/${event.id}/`} key={index}>
+                    <p >
+                        {event.event_title}
+                    </p>
+                </Link>
             ))}
         </div>
     );
