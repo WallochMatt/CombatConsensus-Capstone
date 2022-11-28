@@ -7,13 +7,15 @@ from .serializers import ScoreCardSerializer
 from django.shortcuts import get_object_or_404
 from authentication.models import User
 
+
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def fan_card(request):
     if request.method == "POST":
         serializer = ScoreCardSerializer(data=request.data)
-        if serializer.is_valid(raise_exception=True):
-            serializer.save(user=request.fan_id)
+        print("serializer is:", serializer)
+        if serializer.is_valid():
+            serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
