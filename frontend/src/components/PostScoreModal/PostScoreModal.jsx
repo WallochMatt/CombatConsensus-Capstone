@@ -11,9 +11,9 @@ const PostScoreModal = (props) => {
 
     let initialValues = { 
         //target.name : target.value
-        fan_score_f1 : parseInt(undefined),
-        fan_score_f2 : parseInt(undefined),
-        match_id : 1, //temp hard coded value
+        fan_score_f1 : undefined,
+        fan_score_f2 : undefined,
+        match_id : props.match_id, //temp hard coded value
         fan_id : user.id
     };
 
@@ -42,18 +42,6 @@ const PostScoreModal = (props) => {
 
 
 
-
-    // function testing(){
-    //     console.log("fan_score_1:", formData.fan_score_f1)
-    // }
-
-    // useEffect(() => {
-    //     testing(); 
-    //     []
-    // })
-
-
-
     return (
         <div>
             <form>
@@ -61,6 +49,7 @@ const PostScoreModal = (props) => {
                     <label>
                         Score 1
                         <input 
+                            placeholder="Score for first fighter"
                             type="text"
                             name="fan_score_f1"
                             value={formData.fan_score_f1} 
@@ -68,6 +57,7 @@ const PostScoreModal = (props) => {
                         />
                         <label>Score 2</label>
                         <input 
+                            placeholder="Score for second fighter"
                             type="integer"
                             name="fan_score_f2" 
                             value={formData.fan_score_f2} 
@@ -79,7 +69,6 @@ const PostScoreModal = (props) => {
                     <button onClick={handleSubmit}>Post</button>
                 </div>
             </form>
-            {/* {console.log("fan_score_1:", formData.fan_score_f1)} */}
         </div>
     );
 
@@ -87,3 +76,48 @@ const PostScoreModal = (props) => {
 }
 
 export default PostScoreModal;
+
+
+{/* <option value='27'>27</option>
+<option value='28'>28</option>
+<option value='29'>29</option>
+<option value='30'>30</option> */}
+
+
+
+// return (
+//     <div>
+//         <form onSubmit={handleSubmit}>
+
+//             <div>
+//                 <label htmlFor="score1">
+//                     Score 1
+//                         <select name="fan_score_f1" id="score1" onChange={handleInputChange}>
+//                             <option value='27'>27</option>
+//                             <option value='28'>28</option>
+//                             <option value='29'>29</option>
+//                             <option value='30'>30</option>
+//                         </select>
+//                 </label>
+//             </div>
+
+//             <div>
+//                 <label htmlFor="score2">
+//                     Score 2
+    //                     <select name="fan_score_f1" id="score2" onChange={handleInputChange}>
+    //                         <option value='27'>27</option>
+    //                         <option value='28'>28</option>
+    //                         <option value='29'>29</option>
+    //                         <option value='30'>30</option>
+    //                     </select>
+//                     {/* <input 
+//                         type="submit" value="Submit"
+//                     /> */}
+//                 </label>
+//             </div>
+
+//                 <button>Enter</button>
+//         </form>
+//         {/* {console.log("fan_score_1:", formData.fan_score_f1)} */}
+//     </div>
+// );

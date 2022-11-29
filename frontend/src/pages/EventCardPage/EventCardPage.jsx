@@ -76,7 +76,7 @@ const EventCardPage = (props) => {
                     {/* <button onClick={handleClick}>Post your scorecard</button> */}
 
                     </p>
-                    <PostScoreModal/>
+                    <PostScoreModal match_id={match.id}/>
                 </div>
                     ))}
             </div>
