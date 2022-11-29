@@ -45,6 +45,7 @@ const UserPage = () => {
   return (
     <div className="container">
       <h1> {username}'s Page!</h1>
+      <p>Accuracy: {accuracy} </p>
       <ul>
         {cards &&
           cards.map((card) => (
@@ -58,7 +59,6 @@ const UserPage = () => {
           ))}
         </ul>
         <br/>
-        <p>Accuracy: {accuracy} </p>
     </div>
   );
 };

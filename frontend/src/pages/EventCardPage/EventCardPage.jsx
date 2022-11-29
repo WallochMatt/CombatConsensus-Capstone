@@ -38,47 +38,24 @@ const EventCardPage = (props) => {
         }, []);
 
 
-
-
-
-
-
-
-
-        // function handleClick(){
-        //     console.log("button clicked")
-        //     return(
-        //         <PostScoreModal id={id}/>
-        //     )
-        // };
-
-
-
-
-
-
-
-
     return ( 
         <div>
             <div>
-                NAME OF EVENT IS: {eventCard.event_title} 
+                EVENT: "{eventCard.event_title}"
             </div>
             <div>
                 
                 {matches.map((match, index) => (
                 <div>
                     <p key={index}>
-                    {match.bout_name} 
-                    {match.fighter_one.name} with a fans average score of: {match.fans_avrg_one} and judges average of: {match.judge_avg_one}
-                    {match.fighter_two.name} with a fans average score of: {match.fans_avrg_two} and judges average of:  {match.judge_avg_two}
-
-                    {/* <button onClick={handleClick}>Post your scorecard</button> */}
-
+                    {match.bout_name}<br/>
+                    {match.fighter_one.name} with a fans average score of: {match.fans_avrg_one} and judges average of: {match.judge_avg_one}<br/>
+                    {match.fighter_two.name} with a fans average score of: {match.fans_avrg_two} and judges average of:  {match.judge_avg_two}<br/>
+                    Official Ruling: {match.results}
                     </p>
                     <PostScoreModal match_id={match.id}/>
                 </div>
-                    ))}
+                ))}
             </div>
         </div>
     );

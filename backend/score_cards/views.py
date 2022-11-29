@@ -6,6 +6,7 @@ from .models import ScoreCard
 from .serializers import ScoreCardSerializer
 from django.shortcuts import get_object_or_404
 from authentication.models import User
+from decimal import *
 
 
 @api_view(['POST'])
@@ -77,4 +78,29 @@ def accuracy(request, username):
         accuracy_2 = 100 - ((abs((total_jdg_f2_score - total_fan_f2_score)) / total_jdg_f2_score) * 100)
 
         total_accuracy = (accuracy_1 + accuracy_2) / 2
-        return Response(total_accuracy)
+        return Response(round(total_accuracy, 2))
+
+
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def find_average(request, match):
+    if request.method == 'GET':
+        cards = ScoreCard.objects.filter(match=match)
+
+        running_total_f1 = 0
+        running_total_f2 = 0
+        count_rt = 0
+
+        for card in cards:
+            count_rt += 1
+            running_total_f1 += card.fan_score_f1
+            running_total_f2 += card.fan_score_f2
+
+        f1_average = running_total_f1/count_rt
+        f2_average = running_total_f2/count_rt
+        final_result = f"{f1_average} - {f2_average}"
+
+        return Response(final_result)
+
+#^PUT IN A ELSE OR TRY INCASE THERE ARE NO FAN SCORES IT WONT DIVIDE 0

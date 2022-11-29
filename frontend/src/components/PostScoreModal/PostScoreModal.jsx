@@ -44,6 +44,7 @@ const PostScoreModal = (props) => {
         <div>
             <form>
                 <div>
+                    {/* With a rounds field in matches, I could instantiate as many scoreInputs as their are rounds */}
                     <label htmlFor="fan_score_f1">Sc 1: </label>
                     <select name="fan_score_f1" id="fan_score_f1" onChange={(event) => setFan_score_f1(event.target.value)} value={fan_score_1}>
                         <option value='27'>27</option>
