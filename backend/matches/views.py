@@ -62,3 +62,17 @@ def edit_match(request, pk):
     elif request.method == 'DELETE':
         match.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+
+@api_view(["GET"])
+@permission_classes([AllowAny])
+def find_fan_fav(request,fighter):
+    if request.method == "GET":
+        matches_with_fighter_1 = Match.objects.filter(fighter_one=fighter)
+        
+        ttl_fgt_one_points = 0
+        for match in matches_with_fighter_1:
+            ttl_fgt_one_points += match.fans_avrg_one
+
+        return Response(ttl_fgt_one_points)

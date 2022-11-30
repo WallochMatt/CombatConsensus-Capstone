@@ -112,3 +112,8 @@ def find_average(request, match):
 
 #^PUT IN A ELSE OR TRY INCASE THERE ARE NO FAN SCORES IT WONT DIVIDE 0
 #Return an object  with each average as a property/ iv
+
+# @api_view(["GET"])
+# @permission_classes([AllowAny])
+# def find_fan_fav(request, ):
+
