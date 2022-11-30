@@ -43,6 +43,7 @@ const PostScoreModal = (props) => {
     return (
         <div>
             <form>
+                {/* for each round, instatiate these two fields, change the values to 7-10, setting the total to state */}
                 <div>
                     {/* With a rounds field in matches, I could instantiate as many scoreInputs as their are rounds */}
                     <label htmlFor="fan_score_f1">Sc 1: </label>

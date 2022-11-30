@@ -26,7 +26,7 @@ const MatchBox = (props) => {
             {props.match.bout_name}<br/>
             {props.match.fighter_one.name} with a fans average score of: {average[0]} and judges average of: {props.match.judge_avg_one}<br/>
             {props.match.fighter_two.name} with a fans average score of: {average[1]}  and judges average of:  {props.match.judge_avg_two}<br/>
-            Official Ruling: {props.match.results}  with the fake averages
+            Official Ruling: {props.match.results}
         </div>
 
     );

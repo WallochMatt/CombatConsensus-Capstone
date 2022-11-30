@@ -46,9 +46,8 @@ const EventCardPage = (props) => {
                 EVENT: "{eventCard.event_title}"
             </div>
             <div>
-                
-                {matches.map((match) => (
-                <div>
+                {matches.map((match, index) => (
+                <div key={index}>
                     {console.log("in the matches.map")}
                     <MatchBox match={match}/>
                     <PostScoreModal match_id={match.id}/>
