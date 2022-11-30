@@ -7,8 +7,6 @@ from fighters.models import Fighter
 class Match(models.Model):
     bout_name = models.CharField(max_length=70)
     
-    fans_avrg_one = models.DecimalField(max_digits=5, decimal_places=2, null=True)
-    fans_avrg_two = models.DecimalField(max_digits=5, decimal_places=2, null=True)
 
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     number_of_rounds = models.IntegerField()

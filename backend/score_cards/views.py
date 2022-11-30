@@ -117,3 +117,37 @@ def find_average(request, match):
 # @permission_classes([AllowAny])
 # def find_fan_fav(request, ):
 
+# @api_view(['GET'])
+# @permission_classes([AllowAny])
+def find_fan_total_one(match):
+    cards = ScoreCard.objects.filter(match=match)
+
+    fan_score_1 = 0
+    for card in cards:
+        fan_score_1 += card.fan_score_f1
+    
+    return fan_score_1
+
+def find_fan_total_two(match):
+    cards = ScoreCard.objects.filter(match=match)
+
+    fan_score_2 = 0
+    for card in cards:
+        fan_score_2 += card.fan_score_f2
+
+    return fan_score_2
+
+
+# @api_view(['GET'])
+# @permission_classes([AllowAny])
+# def find_fan_total(request, match):
+#     if request.method == 'GET':
+#         cards = ScoreCard.objects.filter(match=match)
+
+#         fan_score_1 = 0
+#         fan_score_2 = 0 
+#         for card in cards:
+#             fan_score_1 += card.fan_score_f1
+#             fan_score_2 += card.fan_score_f2
+
+#     return Response([[fan_score_1], [fan_score_2]])

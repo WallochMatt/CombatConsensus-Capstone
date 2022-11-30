@@ -6,7 +6,7 @@ from .models import Match
 from .serializers import MatchSerializer
 from django.shortcuts import get_object_or_404
 
-
+from score_cards.views import find_fan_total_one, find_fan_total_two
 
 
 @api_view(["GET"])
@@ -67,12 +67,27 @@ def edit_match(request, pk):
 
 @api_view(["GET"])
 @permission_classes([AllowAny])
-def find_fan_fav(request,fighter):
+def find_ofc_total(request, fighter):
     if request.method == "GET":
         matches_with_fighter_1 = Match.objects.filter(fighter_one=fighter)
         
-        ttl_fgt_one_points = 0
+        ttl_judged_one = 0
         for match in matches_with_fighter_1:
-            ttl_fgt_one_points += match.fans_avrg_one
+            ttl_judged_one += match.judge_avg_one
+            ttl_fan_ponts_one = find_fan_total_one(match)
 
-        return Response(ttl_fgt_one_points)
+
+        matches_with_fighter_2 = Match.objects.filter(fighter_two=fighter)
+        
+        ttl_judged_two = 0
+        for match in matches_with_fighter_2:
+            ttl_judged_two += match.judge_avg_two
+            ttl_fan_ponts_two = find_fan_total_two(match)
+
+        total_judge_points = ttl_judged_one + ttl_judged_two
+
+        total_fan_points = ttl_fan_ponts_one + ttl_fan_ponts_two
+
+        return Response([[total_judge_points],[total_fan_points]])
+
+        #iterate through fighters in the front end to see favorites
