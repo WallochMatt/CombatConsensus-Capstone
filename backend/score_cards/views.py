@@ -99,10 +99,14 @@ def find_average(request, match):
         f2_average = running_total_f2/count_rt
         # final_result = f"{f1_average} - {f2_average}"
 
-        final_result = {
-            "f1_average" : f1_average,
-            "f2_average" : f2_average
-        }
+        final_result = [
+            [f1_average],
+            [f2_average]
+        ]
+        # final_result = {
+        #     "f1_average" : f1_average,
+        #     "f2_average" : f2_average
+        # }
 
         return Response(final_result)
 
