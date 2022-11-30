@@ -29,10 +29,10 @@ def one_match(request, pk):
 
 @api_view(["GET"])
 @permission_classes([AllowAny])
-def event_matches(request, pk):
+def event_matches(request, event):
     if request.method == 'GET':
         matches = Match.objects.all()
-        event_matches = matches.filter(event = pk)
+        event_matches = matches.filter(event = event)
         serializer = MatchSerializer(event_matches, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 

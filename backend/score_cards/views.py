@@ -6,7 +6,7 @@ from .models import ScoreCard
 from .serializers import ScoreCardSerializer
 from django.shortcuts import get_object_or_404
 from authentication.models import User
-from decimal import *
+
 
 
 @api_view(['POST'])
@@ -19,8 +19,6 @@ def fan_card(request):
             serializer.save(fan=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
 
 
 #may need to change this so I can use USERNAME and combine that with a username Param hook in React
@@ -99,8 +97,14 @@ def find_average(request, match):
 
         f1_average = running_total_f1/count_rt
         f2_average = running_total_f2/count_rt
-        final_result = f"{f1_average} - {f2_average}"
+        # final_result = f"{f1_average} - {f2_average}"
+
+        final_result = {
+            "f1_average" : f1_average,
+            "f2_average" : f2_average
+        }
 
         return Response(final_result)
 
 #^PUT IN A ELSE OR TRY INCASE THERE ARE NO FAN SCORES IT WONT DIVIDE 0
+#Return an object  with each average as a property/ iv
