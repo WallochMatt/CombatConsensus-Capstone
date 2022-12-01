@@ -31,9 +31,9 @@ function App() {
             </PrivateRoute>
           }
         /> */}
+        <Route path="/" element={<HomePage />}/>
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/home" element={<HomePage />}/>
         <Route path="/events" element={<EventsPage />}/>
         <Route path="/matches" element={<MatchesPage />}/>
         <Route path="/user/:username" element={<UserPage />}/>

@@ -69,24 +69,26 @@ def edit_match(request, pk):
 @permission_classes([AllowAny])
 def find_ofc_total(request, fighter):
     if request.method == "GET":
-        matches_with_fighter_1 = Match.objects.filter(fighter_one=fighter)
+        matches_with_fighter_as_1 = Match.objects.filter(fighter_one=fighter)
         
+
         ttl_judged_one = 0
-        for match in matches_with_fighter_1:
+        ttl_fan_one = 0
+        for match in matches_with_fighter_as_1:
             ttl_judged_one += match.judge_avg_one
-            ttl_fan_ponts_one = find_fan_total_one(match)
+            ttl_fan_one += find_fan_total_one(match)
 
-
-        matches_with_fighter_2 = Match.objects.filter(fighter_two=fighter)
+        matches_with_fighter_as_2 = Match.objects.filter(fighter_two=fighter)
+        
         
         ttl_judged_two = 0
-        for match in matches_with_fighter_2:
+        ttl_fan_two = 0
+        for match in matches_with_fighter_as_2:
             ttl_judged_two += match.judge_avg_two
-            ttl_fan_ponts_two = find_fan_total_two(match)
-
+            ttl_fan_two += find_fan_total_two(match)
         total_judge_points = ttl_judged_one + ttl_judged_two
 
-        total_fan_points = ttl_fan_ponts_one + ttl_fan_ponts_two
+        total_fan_points = ttl_fan_one + ttl_fan_two
 
         return Response([[total_judge_points],[total_fan_points]])
 

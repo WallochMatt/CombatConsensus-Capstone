@@ -12,7 +12,7 @@ const MatchBox = (props) => {
             console.log("in fetchAverages")
             try{
                 let response = await axios.get(`http://127.0.0.1:8000/user/${props.match.id}/findaverage/`);
-                setAverage(response.data)
+                setAverage(response.data)//response.data === null, make it TBD
             }
             catch(error){
                 console.log("fetchAverages error: ", error.response.data)

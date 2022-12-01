@@ -45,7 +45,7 @@ INSERT INTO fighters_fighter (name) VALUES ('Alex Pereira');
                                                                                                                                                  bout_name, event_id, number_of_rounds, fighter_one_id, fighter_two_id, judge_avg_one, judge_avg_two, results
 INSERT INTO matches_match (bout_name, event_id, number_of_rounds, fighter_one_id, fighter_two_id, judge_avg_one, judge_avg_two, results) VALUES ('ARCE VS. JACKSON', '1', '3', '1', '2', '27.33', '29.66', 'JACKSON by Unanimous Decision');
 
-INSERT INTO matches_match (bout_name, event_id, number_of_rounds, fighter_one_id, fighter_two_id, judge_avg_one, judge_avg_two, results) VALUES ('KOWALKIEWICZ VS.JUAREZ', '1', '3', '3', '4', '29', '28', 'KOWALKIEWICZ by Unanimous Decision');
+INSERT INTO matches_match (bout_name, event_id, number_of_rounds, fighter_one_id, fighter_two_id, judge_avg_one, judge_avg_two, results) VALUES ('KOWALKIEWICZ VS. JUAREZ', '1', '3', '3', '4', '29', '28', 'KOWALKIEWICZ by Unanimous Decision');
 
 INSERT INTO matches_match (bout_name, event_id, number_of_rounds, fighter_one_id, fighter_two_id, judge_avg_one, judge_avg_two, results) VALUES ('PETROSKI VS. TURMAN', '1', '3', '5', '6', '29.66', '27.33', 'PETROSKI by Unanimous Decision');
 

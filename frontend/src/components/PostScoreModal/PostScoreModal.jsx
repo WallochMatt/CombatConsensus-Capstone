@@ -45,7 +45,6 @@ const PostScoreModal = (props) => {
             <form>
                 {/* for each round, instatiate these two fields, change the values to 7-10, setting the total to state */}
                 <div>
-                    {/* With a rounds field in matches, I could instantiate as many scoreInputs as their are rounds */}
                     <label htmlFor="fan_score_f1">Sc 1: </label>
                     <select name="fan_score_f1" id="fan_score_f1" onChange={(event) => setFan_score_f1(event.target.value)} value={fan_score_1}>
                         <option value='27'>27</option>
@@ -64,7 +63,6 @@ const PostScoreModal = (props) => {
                     </select>
                 </div>
                 <input type="button" onClick={handlSubmit} value="Submit card"></input>
-                {/* <input type="submit" value="Submit"></input> */}
             </form>
         </div>
     );
