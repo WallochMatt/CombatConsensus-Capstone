@@ -9,49 +9,36 @@ const EventCardPage = (props) => {
     
     const {id} = useParams(); //refering to the event's id
 
-    const [eventCard, setEventCard] = useState({});
-    const [matches, setMatches] = useState([]);
-    
+
+    const [eventMatches, setEventMatches] = useState([]);
+
     useEffect(() => {
-        const fetchEventCardData = async () => {
-            console.log("in fetchEventCardData")
-            try{
-                let response = await axios.get(`http://127.0.0.1:8000/events/${id}/`);
-                setEventCard(response.data)
-            }
-            catch(error){
-                console.log("fetchEventCardData: ", error);
-            }
+        if(props.matches.length >= 1){
+            let matchesForEvent = props.matches;
+            matchesForEvent.filter(function(match){
+                if(match.event === id){
+                    return true;
+                }
+            })
+        setEventMatches(matchesForEvent, ...eventMatches)
         };
-        fetchEventCardData();
-        
-        //id on here still refers to an events id, its the matches of event(id)
-        const fetchMatches = async () => {
-            console.log("in fetchMatches")
-            try{
-                let response = await axios.get(`http://127.0.0.1:8000/matches/${id}/sort-matches/`);
-                setMatches(response.data)
-            }
-        catch(error){
-            console.log("fetchMatches error: ", error)
-        }
-    };
-    fetchMatches();
-}, []); //end of useEffect
+
+    }, [props.matches]); //end of useEffect
     
-    
+    console.log("eventMatches: " , eventMatches)
+
     return ( 
         <div>
             <div>
-                EVENT: "{eventCard.event_title}"
+                EVENT: ""
             </div>
             <div>
-                {matches.map((match, index) => (
-                <div key={index}>
-                    {console.log("in the matches.map")}
-                    <MatchBox match={match}/>
-                    <PostScoreModal match_id={match.id}/>
-                </div>
+                {eventMatches.map((match, index) => (
+                    <div key={index}>
+                        {console.log("in the matches")}
+                        <MatchBox match={match}/>
+                        <PostScoreModal match_id={match.id}/>
+                    </div>
                 ))}
             </div>
         </div>

@@ -84,34 +84,30 @@ def accuracy(request, username):
 @permission_classes([AllowAny])
 def find_average(request, match):
     if request.method == 'GET':
-        cards = ScoreCard.objects.filter(match=match)
+        try:
+            cards = ScoreCard.objects.filter(match=match)
+            running_total_f1 = 0
+            running_total_f2 = 0
+            count_rt = 0
 
-        running_total_f1 = 0
-        running_total_f2 = 0
-        count_rt = 0
+            for card in cards:
+                count_rt += 1
+                running_total_f1 += card.fan_score_f1
+                running_total_f2 += card.fan_score_f2
 
-        for card in cards:
-            count_rt += 1
-            running_total_f1 += card.fan_score_f1
-            running_total_f2 += card.fan_score_f2
+            f1_average = running_total_f1/count_rt
+            f2_average = running_total_f2/count_rt
+            # final_result = f"{f1_average} - {f2_average}"
 
-        f1_average = running_total_f1/count_rt
-        f2_average = running_total_f2/count_rt
-        # final_result = f"{f1_average} - {f2_average}"
-
-        final_result = [
-            [f1_average],
-            [f2_average]
-        ]
-        # final_result = {
-        #     "f1_average" : f1_average,
-        #     "f2_average" : f2_average
-        # }
+            final_result = [
+                [f1_average],
+                [f2_average]
+            ]
+        except:
+            return Response([["TBD"], ["TBD"]])
 
         return Response(final_result)
 
-#^PUT IN A ELSE OR TRY INCASE THERE ARE NO FAN SCORES IT WONT DIVIDE 0
-#Return an object  with each average as a property/ iv
 
 
 def find_fan_total_one(match):

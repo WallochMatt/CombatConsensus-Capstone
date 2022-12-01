@@ -1,6 +1,7 @@
 // General Imports
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
+import axios from "axios";
 
 // Pages Imports
 import UserPage from "./pages/UserPage/UserPage";
@@ -17,8 +18,56 @@ import Footer from "./components/Footer/Footer";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
+import { useState, useEffect } from "react";
 
 function App() {
+
+  const [events, setEvents] = useState([]);
+  const [matches, setMatches] = useState([]);
+  const [fighters, setFighters] = useState([]);
+
+    useEffect(() => {
+      const fetchEvents = async () => {
+        try {
+            let response = await axios.get("http://127.0.0.1:8000/events/");
+            setEvents(response.data)
+        }
+        catch(error){
+            console.log(error.response.data);
+        }
+      };
+      fetchEvents();
+
+
+      const fetchMatches = async () => {
+        try {
+            let response = await axios.get("http://127.0.0.1:8000/matches/");
+            setMatches(response.data)
+        }
+        catch(error){
+            console.log(error.response.data);
+        }
+      };
+      fetchMatches();
+  
+
+      const fetchFighters = async () => {
+        try{
+            let  response = await axios.get('http://127.0.0.1:8000/fighters/');
+            setFighters(response.data);
+        }
+        catch(error){
+            console.log(error.response.data);
+        }
+      };
+      fetchFighters();
+    }, [])
+
+
+
+
+
+
   return (
     <div>
       <Navbar />
@@ -31,13 +80,13 @@ function App() {
             </PrivateRoute>
           }
         /> */}
-        <Route path="/" element={<HomePage />}/>
+        <Route path="/" element={<HomePage fighters={fighters}/>}/>
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/events" element={<EventsPage />}/>
-        <Route path="/matches" element={<MatchesPage />}/>
+        <Route path="/events" element={<EventsPage events={events} />} />
+        <Route path="/matches" element={<MatchesPage matches={matches} />}/>
         <Route path="/user/:username" element={<UserPage />}/>
-        <Route path="/event-card/:id/" element={<EventCardPage />}/>
+        <Route path="/event-card/:id/" element={<EventCardPage events={events} matches={matches} />}/>
       </Routes>
       <Footer />
     </div>

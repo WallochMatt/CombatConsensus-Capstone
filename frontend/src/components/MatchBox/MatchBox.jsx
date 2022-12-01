@@ -15,7 +15,8 @@ const MatchBox = (props) => {
                 setAverage(response.data)//response.data === null, make it TBD
             }
             catch(error){
-                console.log("fetchAverages error: ", error.response.data)
+                // console.log("fetchAverages error: ", error.response.data)
+                console.log("error in fetchAverages")
             }
         };
         fetchAverages();
