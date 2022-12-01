@@ -11,6 +11,9 @@ const EventCardPage = (props) => {
 
 
     const [eventMatches, setEventMatches] = useState([]);
+    const [currentEvent, setCurrentEvent] = useState();
+
+
 
     useEffect(() => {
         if(props.matches.length >= 1){
@@ -20,17 +23,20 @@ const EventCardPage = (props) => {
                     return true;
                 }
             })
-        setEventMatches(matchesForEvent, ...eventMatches)
-        };
-
-    }, [props.matches]); //end of useEffect
+        setEventMatches(matchesForEvent, ...eventMatches);
+        setCurrentEvent(props.events[0].event_title)
+    };
     
-    console.log("eventMatches: " , eventMatches)
+}, [props.matches]); //end of useEffect
 
+    let event_name = eventMatches[0];
+    console.log("eventMatches event_name: " , currentEvent)
+
+    
     return ( 
         <div>
             <div>
-                EVENT: ""
+                EVENT: {currentEvent}
             </div>
             <div>
                 {eventMatches.map((match, index) => (

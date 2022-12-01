@@ -4,7 +4,7 @@ import React from "react";
 const MatchesPage = (props) => {
 
     
-
+// link matches to the event theyre from?
     return ( 
         <div className="container">
             <h1>Matches</h1>

@@ -4,7 +4,19 @@ import React, { useState, useEffect } from 'react';
 import FanFav from "../../components/FanFav/FanFav";
 import OfcFav from "../../components/OfcFav/OfcFav"
 
+
 const HomePage = (props) => {
+    const [fanFav, setFanFav] = useState();
+
+
+
+    useEffect(() => {
+        props.fighters.map((fighter) => {
+            
+        })
+
+        fetchFanFav();
+    }, []);
 
 
 //fighters are temp, just to show they can appear

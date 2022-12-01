@@ -50,9 +50,9 @@ const UserPage = () => {
         {cards &&
           cards.map((card) => (
             <li key={card.id}>
-              My scores  {card.fan_score_f1} {card.fan_score_f2} {card.match.bout_name}
+              My scores  {card.fan_score_f1} - {card.fan_score_f2} {card.match.bout_name}
               <br/>
-              The judges average {card.match.judge_avg_one} {card.match.judge_avg_two}
+              The judges average {card.match.judge_avg_one} - {card.match.judge_avg_two}
               <br/>
               Results= {card.match.results}
             </li>
