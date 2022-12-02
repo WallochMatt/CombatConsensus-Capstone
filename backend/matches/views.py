@@ -6,7 +6,10 @@ from .models import Match
 from .serializers import MatchSerializer
 from django.shortcuts import get_object_or_404
 
+
+
 from score_cards.views import find_fan_total_one, find_fan_total_two
+from fighters.models import Fighter
 
 
 @api_view(["GET"])
@@ -67,21 +70,33 @@ def edit_match(request, pk):
 
 @api_view(["GET"])
 @permission_classes([AllowAny])
-def find_ofc_total(request, fighter):
-    if request.method == "GET":
-        matches_with_fighter = Match.objects.filter(fighter_one=fighter) or Match.objects.filter(fighter_two=fighter)
-        
-        ttl_judged = 0
-        ttl_fan = 0
-        for match in matches_with_fighter:
-            if match.fighter_one.id == fighter:
-                ttl_judged += match.judge_avg_one
-                ttl_fan += find_fan_total_one(match)
-            if match.fighter_two.id == fighter:
-                ttl_judged += match.judge_avg_two
-                ttl_fan += find_fan_total_two(match)
+def find_ofc_total(request):
 
-        return Response([[ttl_judged],[ttl_fan]])
+    all_fighter_totals = []
+    for fighter in Fighter.objects.all():
+
+        if request.method == "GET":
+            matches_with_fighter = Match.objects.filter(fighter_one=fighter.id) or Match.objects.filter(fighter_two=fighter.id)
+            
+            ttl_judged = 0
+            ttl_fan = 0
+            for match in matches_with_fighter:
+                if match.fighter_one.id == fighter.id:
+                    ttl_judged += match.judge_avg_one
+                    ttl_fan += find_fan_total_one(match)
+                if match.fighter_two.id == fighter.id:
+                    ttl_judged += match.judge_avg_two
+                    ttl_fan += find_fan_total_two(match)
+
+                fighter_totals = {
+                "fighter_id" : fighter.id,
+                "name": fighter.name,
+                "judge_total" :ttl_judged, 
+                "fan_total" : ttl_fan}
+
+                all_fighter_totals.append(fighter_totals)
+
+    return Response(all_fighter_totals)
 
         #iterate through fighters in the front end to see favorites
 

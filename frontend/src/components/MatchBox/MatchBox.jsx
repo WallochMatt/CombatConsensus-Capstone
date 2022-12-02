@@ -2,21 +2,17 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 
-
-
 const MatchBox = (props) => {
     const [average, setAverage] = useState([]);
 
     useEffect(() => {
         const fetchAverages = async () => {
-            console.log("in fetchAverages")
             try{
                 let response = await axios.get(`http://127.0.0.1:8000/user/${props.match.id}/findaverage/`);
-                setAverage(response.data)//response.data === null, make it TBD
+                setAverage(response.data);
             }
             catch(error){
-                // console.log("fetchAverages error: ", error.response.data)
-                console.log("error in fetchAverages")
+                console.log("fetchAverages error: ", error.response.data)
             }
         };
         fetchAverages();
@@ -29,7 +25,6 @@ const MatchBox = (props) => {
             {props.match.fighter_two.name} with a fans average score of: {average[1]}  and judges average of:  {props.match.judge_avg_two}<br/>
             Official Ruling: {props.match.results}
         </div>
-
     );
 }
 

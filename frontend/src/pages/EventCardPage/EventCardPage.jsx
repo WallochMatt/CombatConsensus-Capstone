@@ -1,19 +1,14 @@
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
-import axios from "axios";
 import PostScoreModal from "../../components/PostScoreModal/PostScoreModal";
 import MatchBox from "../../components/MatchBox/MatchBox";
 
 
 const EventCardPage = (props) => {
-    
     const {id} = useParams(); //refering to the event's id
-
 
     const [eventMatches, setEventMatches] = useState([]);
     const [currentEvent, setCurrentEvent] = useState();
-
-
 
     useEffect(() => {
         if(props.matches.length >= 1){
@@ -24,15 +19,14 @@ const EventCardPage = (props) => {
                 }
             })
         setEventMatches(matchesForEvent, ...eventMatches);
-        setCurrentEvent(props.events[0].event_title)
+        setCurrentEvent(props.events[id - 1].event_title) //double check this with secind event
     };
     
 }, [props.matches]); //end of useEffect
 
-    let event_name = eventMatches[0];
-    console.log("eventMatches event_name: " , currentEvent)
+    // let event_name = eventMatches[0];
+    // console.log("eventMatches event_name: " , currentEvent)
 
-    
     return ( 
         <div>
             <div>
@@ -41,9 +35,9 @@ const EventCardPage = (props) => {
             <div>
                 {eventMatches.map((match, index) => (
                     <div key={index}>
-                        {console.log("in the matches")}
                         <MatchBox match={match}/>
-                        <PostScoreModal match_id={match.id}/>
+                        {/* for loop here instead? but hten I would get multiple submit buttons */}
+                        <PostScoreModal match={match}/>
                     </div>
                 ))}
             </div>

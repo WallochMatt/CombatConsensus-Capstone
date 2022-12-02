@@ -7,5 +7,5 @@ urlpatterns = [
     path('admin/add/', views.add_match),
     path('<int:pk>/admin/edit/', views.edit_match),
     path('<int:event>/sort-matches/', views.event_matches),
-    path('<int:fighter>/find-ofc-total/', views.find_ofc_total)
+    path('find-ofc-total/', views.find_ofc_total)
 ]

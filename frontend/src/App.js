@@ -11,6 +11,7 @@ import EventsPage from "./pages/EventsPage/EventsPage";
 import MatchesPage from "./pages/MatchesPage/MatchesPage";
 import HomePage from "./pages/HomePage/HomePage";
 import EventCardPage from "./pages/EventCardPage/EventCardPage";
+import AdminPage from "./pages/AdminPage/AdminPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -65,28 +66,34 @@ function App() {
 
 
 
-
-
-
   return (
     <div>
       <Navbar />
       <Routes>
         {/* <Route
-          path="/"
+          path="/admin"
           element={
             <PrivateRoute>
-              <UserPage />
+              <AdminPage />
             </PrivateRoute>
           }
         /> */}
+        <Route path="/admin" element={
+          <AdminPage fighters={fighters} matches={matches} events={events}
+            setFighters={setFighters} setMatches={setMatches} setEvents={setEvents}
+          />
+        }/>
+
+
+
+
         <Route path="/" element={<HomePage fighters={fighters}/>}/>
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/events" element={<EventsPage events={events} />} />
         <Route path="/matches" element={<MatchesPage matches={matches} />}/>
         <Route path="/user/:username" element={<UserPage />}/>
-        <Route path="/event-card/:id/" element={<EventCardPage events={events} matches={matches} />}/>
+        <Route path="/event-card/:id" element={<EventCardPage events={events} matches={matches} />}/>
       </Routes>
       <Footer />
     </div>

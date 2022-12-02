@@ -15,8 +15,7 @@ const PostScoreModal = (props) => {
         let userScores = {
             fan_score_f1: fan_score_1,
             fan_score_f2: fan_score_2,
-            match_id: props.match_id,
-
+            match_id: props.match.id,
         };
         postScore(userScores)
     }
@@ -40,79 +39,91 @@ const PostScoreModal = (props) => {
     };
     // console.log("user is: ", user)
     // console.log("token is: ", token)
-    return (
-        <div>
-            <form>
-                {/* for each round, instatiate these two fields, change the values to 7-10, setting the total to state */}
+
+
+    {/* for each round, instatiate these two fields, change the values to 7-10, setting the total to state */}
+    {/*  */}
+
+
+    function sendForm(){
+        return(
+            <div>
                 <div>
+                    {/* put the fighter in the label */}
                     <label htmlFor="fan_score_f1">Sc 1: </label>
                     <select name="fan_score_f1" id="fan_score_f1" onChange={(event) => setFan_score_f1(event.target.value)} value={fan_score_1}>
-                        <option value='27'>27</option>
-                        <option value='28'>28</option>
-                        <option value='29'>29</option>
-                        <option value='30'>30</option>
+                        <option value='7'>7</option>
+                        <option value='8'>8</option>
+                        <option value='9'>9</option>
+                        <option value='10'>10</option>
                     </select>
                 </div>
                 <div>
                     <label htmlFor="fan_score_f2">Sc 2: </label>
                     <select name="fan_score_f2" id="fan_score_f2" onChange={(event) => setFan_score_f2(event.target.value)} value={fan_score_2}>
-                        <option value='27'>27</option>
-                        <option value='28'>28</option>
-                        <option value='29'>29</option>
-                        <option value='30'>30</option>
+                        <option value='7'>7</option>
+                        <option value='8'>8</option>
+                        <option value='9'>9</option>
+                        <option value='10'>10</option>
                     </select>
                 </div>
+                <p>Tally</p>
+            </div>
+        );
+    };
+
+
+
+
+    function getRounds(){
+        {for(let i =0; i < props.match.number_of_rounds; i++){
+            console.log(props.match.number_of_rounds)
+            sendForm();
+        }};
+    
+    };
+
+
+    return (
+        <div>
+            <form>
+                {getRounds()}
                 <input type="button" onClick={handlSubmit} value="Submit card"></input>
+
             </form>
         </div>
     );
-
 
 }
 
 export default PostScoreModal;
 
 
-{/* <option value='27'>27</option>
-<option value='28'>28</option>
-<option value='29'>29</option>
-<option value='30'>30</option> */}
-
-
-
 // return (
 //     <div>
-//         <form onSubmit={handleSubmit}>
-
+//         <form>
+//             {/* for each round, instatiate these two fields, change the values to 7-10, setting the total to state */}
+//             {/*  */}
+//             {}
 //             <div>
-//                 <label htmlFor="score1">
-//                     Score 1
-//                         <select name="fan_score_f1" id="score1" onChange={handleInputChange}>
-//                             <option value='27'>27</option>
-//                             <option value='28'>28</option>
-//                             <option value='29'>29</option>
-//                             <option value='30'>30</option>
-//                         </select>
-//                 </label>
+//                 <label htmlFor="fan_score_f1">Sc 1: </label>
+//                 <select name="fan_score_f1" id="fan_score_f1" onChange={(event) => setFan_score_f1(event.target.value)} value={fan_score_1}>
+//                     <option value='27'>27</option>
+//                     <option value='28'>28</option>
+//                     <option value='29'>29</option>
+//                     <option value='30'>30</option>
+//                 </select>
 //             </div>
-
 //             <div>
-//                 <label htmlFor="score2">
-//                     Score 2
-    //                     <select name="fan_score_f1" id="score2" onChange={handleInputChange}>
-    //                         <option value='27'>27</option>
-    //                         <option value='28'>28</option>
-    //                         <option value='29'>29</option>
-    //                         <option value='30'>30</option>
-    //                     </select>
-//                     {/* <input 
-//                         type="submit" value="Submit"
-//                     /> */}
-//                 </label>
+//                 <label htmlFor="fan_score_f2">Sc 2: </label>
+//                 <select name="fan_score_f2" id="fan_score_f2" onChange={(event) => setFan_score_f2(event.target.value)} value={fan_score_2}>
+//                     <option value='27'>27</option>
+//                     <option value='28'>28</option>
+//                     <option value='29'>29</option>
+//                     <option value='30'>30</option>
+//                 </select>
 //             </div>
-
-//                 <button>Enter</button>
+//             <input type="button" onClick={handlSubmit} value="Submit card"></input>
 //         </form>
-//         {/* {console.log("fan_score_1:", formData.fan_score_f1)} */}
 //     </div>
 // );
