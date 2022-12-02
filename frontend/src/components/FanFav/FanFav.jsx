@@ -8,7 +8,7 @@ const FanFav = (props) => {
     useEffect(()  => {
         const fetchFighterTotals = async () => {
             try{
-                let response = await axios.get("http://127.0.0.1:8000/matches/find-ofc-total/");
+                let response = await axios.get("http://127.0.0.1:8000/matches/find-match-total/");
                 let fF = response.data.sort((a, b) => b.fan_total - a.fan_total)[0];    
                 setFanFav(fF)
             }

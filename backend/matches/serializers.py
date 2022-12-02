@@ -4,11 +4,11 @@ from .models import Match
 class MatchSerializer(serializers.ModelSerializer):
     class Meta:
         model = Match
-        fields = ['id', 'bout_name', 'event', 'number_of_rounds', 'fighter_one', 
-        'fighter_two', 'judge_avg_one', 'judge_avg_two', 'results', 'event_id', 'fighter_one_id', 'fighter_two_id']
+        fields = ['id', 'bout_name', 'event', 'number_of_rounds', 'red_corner', 
+        'blue_corner', 'red_judge_avg', 'blue_judge_avg', 'results', 'event_id', 'red_corner_id', 'blue_corner_id']
         
         depth = 1
 
     event_id = serializers.IntegerField()
-    fighter_one_id = serializers.IntegerField()
-    fighter_two_id = serializers.IntegerField()
+    red_corner_id = serializers.IntegerField()
+    blue_corner_id = serializers.IntegerField()

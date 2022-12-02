@@ -7,7 +7,6 @@ from .serializers import MatchSerializer
 from django.shortcuts import get_object_or_404
 
 
-
 from score_cards.views import find_fan_total_one, find_fan_total_two
 from fighters.models import Fighter
 
@@ -70,22 +69,22 @@ def edit_match(request, pk):
 
 @api_view(["GET"])
 @permission_classes([AllowAny])
-def find_ofc_total(request):
+def find_match_total(request):
 
     all_fighter_totals = []
     for fighter in Fighter.objects.all():
 
         if request.method == "GET":
-            matches_with_fighter = Match.objects.filter(fighter_one=fighter.id) or Match.objects.filter(fighter_two=fighter.id)
+            matches_with_fighter = Match.objects.filter(red_corner=fighter.id) or Match.objects.filter(blue_corner=fighter.id)
             
             ttl_judged = 0
             ttl_fan = 0
             for match in matches_with_fighter:
-                if match.fighter_one.id == fighter.id:
-                    ttl_judged += match.judge_avg_one
+                if match.red_corner.id == fighter.id:
+                    ttl_judged += match.red_judge_avg
                     ttl_fan += find_fan_total_one(match)
-                if match.fighter_two.id == fighter.id:
-                    ttl_judged += match.judge_avg_two
+                if match.blue_corner.id == fighter.id:
+                    ttl_judged += match.blue_judge_avg
                     ttl_fan += find_fan_total_two(match)
 
                 fighter_totals = {
@@ -99,29 +98,3 @@ def find_ofc_total(request):
     return Response(all_fighter_totals)
 
         #iterate through fighters in the front end to see favorites
-
-
-# def find_ofc_total(request, fighter):
-        #     if request.method == "GET":
-        # matches_with_fighter_as_1 = Match.objects.filter(fighter_one=fighter)
-        
-
-        # ttl_judged_one = 0
-        # ttl_fan_one = 0
-        # for match in matches_with_fighter_as_1:
-        #     ttl_judged_one += match.judge_avg_one
-        #     ttl_fan_one += find_fan_total_one(match)
-
-        # matches_with_fighter_as_2 = Match.objects.filter(fighter_two=fighter)
-        
-        
-        # ttl_judged_two = 0
-        # ttl_fan_two = 0
-        # for match in matches_with_fighter_as_2:
-        #     ttl_judged_two += match.judge_avg_two
-        #     ttl_fan_two += find_fan_total_two(match)
-        # total_judge_points = ttl_judged_one + ttl_judged_two
-
-        # total_fan_points = ttl_fan_one + ttl_fan_two
-
-        # return Response([[total_judge_points],[total_fan_points]])

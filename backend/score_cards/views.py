@@ -8,7 +8,6 @@ from django.shortcuts import get_object_or_404
 from authentication.models import User
 
 
-
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def fan_card(request):
@@ -21,7 +20,6 @@ def fan_card(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-#may need to change this so I can use USERNAME and combine that with a username Param hook in React
 @api_view(['GET'])
 @permission_classes([AllowAny])
 def all_fan_cards(request, username):
@@ -34,20 +32,6 @@ def all_fan_cards(request, username):
 
 
 
-#  ^previous version
-# @api_view(['GET'])
-# @permission_classes([AllowAny])
-# def all_fan_cards(request, fan_id):
-#     if request.method == "GET":
-#         cards = ScoreCard.objects.filter(fan_id=fan_id)
-#         serializer = ScoreCardSerializer(cards, many=True)
-#         return Response(serializer.data)
-
-
-
-
-
-
 @api_view(['GET'])
 @permission_classes([AllowAny])
 def accuracy(request, username):
@@ -55,25 +39,25 @@ def accuracy(request, username):
         fan = get_object_or_404(User, username=username)
         cards_for_fan = ScoreCard.objects.filter(fan=fan)
 
-        total_fan_f1_score = 0
+        total_fan_red_score = 0
         for card in cards_for_fan:
-            total_fan_f1_score += card.fan_score_f1 #I had this backwards, it was: card.fan_score += total_fan_f1_score
+            total_fan_red_score += card.fan_score_f1 #I had this backwards, it was: card.fan_score += total_fan_f1_score
 
-        total_jdg_f1_score = 0
+        total_jdg_red_score = 0
         for card in cards_for_fan:
-            total_jdg_f1_score += card.match.judge_avg_one
+            total_jdg_red_score += card.match.red_judge_avg
 
-        accuracy_1 = 100 - ((abs((total_jdg_f1_score - total_fan_f1_score)) / total_jdg_f1_score) * 100)
+        accuracy_1 = 100 - ((abs((total_jdg_red_score - total_fan_red_score)) / total_jdg_red_score) * 100)
 
-        total_fan_f2_score = 0
+        total_fan_blue_score = 0
         for card in cards_for_fan:
-            total_fan_f2_score += card.fan_score_f2 #I had this backwards, it was: card.fan_score += total_fan_f1_score
+            total_fan_blue_score += card.blue_fan_score #I had this backwards, it was: card.fan_score += total_fan_f1_score
 
-        total_jdg_f2_score = 0
+        total_jdg_blue_score = 0
         for card in cards_for_fan:
-            total_jdg_f2_score += card.match.judge_avg_two
+            total_jdg_blue_score += card.match.blue_judge_avg
 
-        accuracy_2 = 100 - ((abs((total_jdg_f2_score - total_fan_f2_score)) / total_jdg_f2_score) * 100)
+        accuracy_2 = 100 - ((abs((total_jdg_blue_score - total_fan_blue_score)) / total_jdg_blue_score) * 100)
 
         total_accuracy = (accuracy_1 + accuracy_2) / 2
         return Response(round(total_accuracy, 2))
@@ -86,18 +70,17 @@ def find_average(request, match):
     if request.method == 'GET':
         try:
             cards = ScoreCard.objects.filter(match=match)
-            running_total_f1 = 0
-            running_total_f2 = 0
+            running_total_red = 0
+            running_total_blue = 0
             count_rt = 0
 
             for card in cards:
                 count_rt += 1
-                running_total_f1 += card.fan_score_f1
-                running_total_f2 += card.fan_score_f2
+                running_total_red += card.red_fan_score
+                running_total_blue += card.blue_fan_score
 
-            f1_average = running_total_f1/count_rt
-            f2_average = running_total_f2/count_rt
-            # final_result = f"{f1_average} - {f2_average}"
+            f1_average = running_total_red/count_rt
+            f2_average = running_total_blue/count_rt
 
             final_result = [
                 [f1_average],
@@ -113,32 +96,17 @@ def find_average(request, match):
 def find_fan_total_one(match):
     cards = ScoreCard.objects.filter(match=match)
 
-    fan_score_1 = 0
+    red_score = 0
     for card in cards:
-        fan_score_1 += card.fan_score_f1
+        red_score += card.red_fan_score
     
-    return fan_score_1
+    return red_score
 
 def find_fan_total_two(match):
     cards = ScoreCard.objects.filter(match=match)
 
-    fan_score_2 = 0
+    blue_score = 0
     for card in cards:
-        fan_score_2 += card.fan_score_f2
+        blue_score += card.blue_fan_score
 
-    return fan_score_2
-
-
-# @api_view(['GET'])
-# @permission_classes([AllowAny])
-# def find_fan_total(request, match):
-#     if request.method == 'GET':
-#         cards = ScoreCard.objects.filter(match=match)
-
-#         fan_score_1 = 0
-#         fan_score_2 = 0 
-#         for card in cards:
-#             fan_score_1 += card.fan_score_f1
-#             fan_score_2 += card.fan_score_f2
-
-#     return Response([[fan_score_1], [fan_score_2]])
+    return blue_score
