@@ -21,8 +21,15 @@ const PostScoreModal = (props) => {
             fan_score_f2: fan_score_2,
             match_id: props.match.id,
         };
-        // postScore(userScores)
+        if(fan_score_1 && fan_score_2 > 21){
+            console.log(userScores) //do the post
+        }
+        else{
+            alert("You need to enter into all the fields")
+        }
+
     }
+        
 
     async function postScore(userScores){
         console.log("userscores at top of postScores", userScores)
@@ -72,7 +79,8 @@ const PostScoreModal = (props) => {
                 <p>Round {i + 1}</p>
                 <div>
                     <label htmlFor="fan_score_f1">Sc 1: </label>
-                    <select name="fan_score_f1" id="fan_score_f1" onChange={(event) => handleRoundRed(i, event.target.value)}>
+                    <select name="fan_score_f1" id="fan_score_f1" onChange={(event) => handleRoundRed(i, event.target.value)} required>
+                        <option value={0}>--</option>
                         <option value={7}>7</option>
                         <option value={8}>8</option>
                         <option value={9}>9</option>
@@ -81,7 +89,8 @@ const PostScoreModal = (props) => {
                 </div>
                 <div>
                     <label htmlFor="fan_score_f2">Sc 2: </label>
-                    <select name="fan_score_f2" id="fan_score_f2" onChange={(event) => handleRoundBlue(i, event.target.value)}>
+                    <select name="fan_score_f2" id="fan_score_f2" onChange={(event) => handleRoundBlue(i, event.target.value)} required>
+                        <option value={0}>--</option>
                         <option value={7}>7</option>
                         <option value={8}>8</option>
                         <option value={9}>9</option>
@@ -104,6 +113,6 @@ const PostScoreModal = (props) => {
             </div>
         </div>
     )
-}
+};
 
 export default PostScoreModal;
