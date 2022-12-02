@@ -10,14 +10,20 @@ const PostScoreModal = (props) => {
     const [fan_score_1, setFan_score_f1] = useState(27);
     const [fan_score_2, setFan_score_f2] = useState(27);
 
+    const [total, setTotal] = useState([0, 0, 0, 0, 0])
+
+
     function handlSubmit(event) {
         event.preventDefault();
+        let fan_score_1 = total.reduce((accumulator, currentValue) => accumulator + currentValue);
+
         let userScores = {
             fan_score_f1: fan_score_1,
-            fan_score_f2: fan_score_2,
+            fan_score_f2: 28,//fan_score_2,
             match_id: props.match.id,
         };
-        postScore(userScores)
+        console.log(userScores)
+        // postScore(userScores)
     }
 
     async function postScore(userScores){
@@ -41,31 +47,50 @@ const PostScoreModal = (props) => {
     // console.log("token is: ", token)
 
 
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     {/* for each round, instatiate these two fields, change the values to 7-10, setting the total to state */}
-    {/*  */}
+
+
+    function handleRound(index, value){
+        let roundScores = total // reduce the array to one num
+        roundScores[index] = parseInt(value)
+        console.log("roundScores: ", roundScores)
+        setTotal(roundScores)
+        console.log(total)
+    }
+
+
+
+
+
 
     function getRounds(){
         const rounds = [];
-        for(let i =0; i < props.match.number_of_rounds; i++){
-            console.log(props.match.number_of_rounds)
-            rounds.push(sendForm())
+        for(let i = 0; i < props.match.number_of_rounds; i++){
+            // console.log("propsmatchnumberofrounds" , props.match.number_of_rounds)
+            rounds.push(sendForm(i))
         };
         return rounds
     }
     
-    function sendForm(){
+
+
+
+    function sendForm(i){
+        // console.log("i: ", i)
+
         return(
             <div>
+                <p>Round {i + 1}</p>
                 <div>
                     {/* put the fighter in the label */}
                     <label htmlFor="fan_score_f1">Sc 1: </label>
-                    <select name="fan_score_f1" id="fan_score_f1" onChange={(event) => setFan_score_f1(event.target.value)} value={fan_score_1}>
-                        <option value='7'>7</option>
-                        <option value='8'>8</option>
-                        <option value='9'>9</option>
-                        <option value='10'>10</option>
+                    <select name="fan_score_f1" id="fan_score_f1" onChange={(event) => handleRound(i, event.target.value)}>
+                        <option value={7}>7</option>
+                        <option value={8}>8</option>
+                        <option value={9}>9</option>
+                        <option value={10}>10</option>
                     </select>
                 </div>
                 <div>
@@ -77,12 +102,14 @@ const PostScoreModal = (props) => {
                         <option value='10'>10</option>
                     </select>
                 </div>
-                <p>Tally</p>
+                
             </div>
         );
     };
 
 
+
+//return of component
     return (
         <div>
             <div>
