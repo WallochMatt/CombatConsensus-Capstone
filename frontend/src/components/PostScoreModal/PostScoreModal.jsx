@@ -41,10 +41,20 @@ const PostScoreModal = (props) => {
     // console.log("token is: ", token)
 
 
+
+
     {/* for each round, instatiate these two fields, change the values to 7-10, setting the total to state */}
     {/*  */}
 
-
+    function getRounds(){
+        const rounds = [];
+        for(let i =0; i < props.match.number_of_rounds; i++){
+            console.log(props.match.number_of_rounds)
+            rounds.push(sendForm())
+        };
+        return rounds
+    }
+    
     function sendForm(){
         return(
             <div>
@@ -73,27 +83,17 @@ const PostScoreModal = (props) => {
     };
 
 
-
-
-    function getRounds(){
-        {for(let i =0; i < props.match.number_of_rounds; i++){
-            console.log(props.match.number_of_rounds)
-            sendForm();
-        }};
-    
-    };
-
-
     return (
         <div>
-            <form>
+            <div>
                 {getRounds()}
+            </div>
+            <div>
+
                 <input type="button" onClick={handlSubmit} value="Submit card"></input>
-
-            </form>
+            </div>
         </div>
-    );
-
+    )
 }
 
 export default PostScoreModal;
