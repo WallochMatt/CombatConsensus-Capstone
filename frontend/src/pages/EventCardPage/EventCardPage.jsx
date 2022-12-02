@@ -36,7 +36,7 @@ const EventCardPage = (props) => {
                 {eventMatches.map((match, index) => (
                     <div key={index}>
                         <MatchBox match={match}/>
-                        {/* for loop here instead? but hten I would get multiple submit buttons */}
+                        {/* use a ternary truthy for the post score modal maybe*/}
                         <PostScoreModal match={match}/>
                     </div>
                 ))}
