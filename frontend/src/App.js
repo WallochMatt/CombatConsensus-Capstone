@@ -73,16 +73,6 @@ function App() {
     <div>
       <Navbar />
       <Routes>
-        {/* <Route
-          path="/admin"
-          element={
-            <PrivateRoute>
-              <AdminPage />
-            </PrivateRoute>
-          }
-        /> */}
-
-        
 
         <Route path="/admin/matches/" element={
           <AdminOnlyRoute>
@@ -101,9 +91,6 @@ function App() {
             <AdminEventsPage events={events} setEvents={setEvents}/>
           </AdminOnlyRoute>
         }/>
-
-
-
 
         <Route path="/" element={<HomePage fighters={fighters}/>}/>
         <Route path="/register" element={<RegisterPage />} />
