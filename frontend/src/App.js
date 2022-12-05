@@ -100,7 +100,7 @@ function App() {
         <Route path="/user/:username" element={<UserPage />}/>
         <Route path="/event-card/:id" element={<EventCardPage events={events} matches={matches} />}/>
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

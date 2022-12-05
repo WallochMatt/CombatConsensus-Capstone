@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import useAuth from '../../hooks/useAuth';
+import useAuth from '../../../hooks/useAuth';
+
 
 
 
@@ -24,10 +25,10 @@ const EventPost = (props) => {
             if(response.status === 201){
                 window.location.reload(false);
             }
-        }
-        catch(error){
-            console.log(error)
-        }
+            }
+            catch(error){
+                console.log(error)
+            }
     }
 
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import EventDelete from '../../components/EventDelete/EventDelete';
-import EventPost from '../../components/EventPost/EventPost';
-import EventPut from '../../components/EventPut/EventPut';
+import EventDelete from '../../components/AdminEventComponents/EventDelete/EventDelete';
+import EventPost from '../../components/AdminEventComponents/EventPost/EventPost';
+import EventPut from '../../components/AdminEventComponents/EventPut/EventPut';
 
 
 
@@ -14,7 +14,6 @@ const AdminEventsPage = (props) => {
     
     
     return ( 
-        // <p>Admin Events Page</p>
         <div>
             <p>POST</p>
             <EventPost />

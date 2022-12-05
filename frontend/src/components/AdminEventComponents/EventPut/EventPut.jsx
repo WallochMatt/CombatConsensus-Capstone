@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from 'react';
-import useAuth from "../../hooks/useAuth";
+import useAuth from '../../../hooks/useAuth';
 
 const EventPut = (props) => {
     const [user, token] = useAuth();
@@ -37,7 +37,6 @@ const EventPut = (props) => {
         <form>
             <label>Select event id</label>
             <input value={eventId} onChange={(event) => setEventId(event.target.value)}></input>
-            {console.log(eventId)}
             <label>Edit the Event Title</label>
             <input value={editedEventTitle} onChange={(event) => setEditedEventTitle(event.target.value)}></input>
             <label>Post a new Event Date</label>

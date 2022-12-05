@@ -1,13 +1,13 @@
 import axios from "axios";
 import React, { useState } from 'react';
-import useAuth from "../../hooks/useAuth";
+import useAuth from '../../../hooks/useAuth';
 
-const EventDelete = (props) => {
+const FighterDelete = (props) => {
     const [user, token] = useAuth();
 
-    async function deleteEvent(){
+    async function deleteFighter(){
         try{
-            let response = await axios.delete(`http://127.0.0.1:8000/events/${props.id}/admin/edit/`, {
+            let response = await axios.delete(`http://127.0.0.1:8000/fighters/${props.id}/admin/edit/`, {
                 headers: {
                     Authorization: "Bearer " + token,
                 }
@@ -20,10 +20,11 @@ const EventDelete = (props) => {
             console.log(error)
         }
     }
-
+    
     return ( 
-        <button onClick={deleteEvent}>Delete</button>
+        <button onClick={deleteFighter}>Delete</button>
+
     );
 }
 
-export default EventDelete;
+export default FighterDelete;
