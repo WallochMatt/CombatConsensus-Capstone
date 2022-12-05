@@ -1,5 +1,4 @@
 import axios from "axios";
-import React, { useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
 
 
@@ -21,10 +20,11 @@ const MatchesDelete = (props) => {
         catch(error){
             console.log(error)
         }
-    }
+    };
     
-        return (
-            <button onClick={deleteMatch}>Delete</button>
+
+    return (
+        <button onClick={deleteMatch}>Delete</button>
     );
 }
 

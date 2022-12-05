@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from 'react';
 import MatchesPut from '../../components/AdminMatchesComponents/MatchesPut/MatchesPut';
 import MatchesPost from '../../components/AdminMatchesComponents/MatchesPost/MatchesPost';
 import MatchesDelete from '../../components/AdminMatchesComponents/MatchesDelete/MatchesDelete';
 
 const AdminMatchesPage = (props) => {
-
-
 
 
     return ( 
@@ -15,7 +12,7 @@ const AdminMatchesPage = (props) => {
             <p>PUT</p>
             <MatchesPut />
             <div className="container">
-                <h1>Events(admin)</h1>
+                <h1>Matches(admin)</h1>
                 <p>Id boutname eventid redcornerid bluecornerid redjudgeavg bluejudgeavg results numofRounds</p>
                 {props.matches.map((match, index) => (
                     <div key={index}>

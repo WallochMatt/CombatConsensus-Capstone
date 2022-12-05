@@ -40,15 +40,15 @@ const EventPost = (props) => {
             date : `${newEventDate}`
         };
         addNewEvent(newEvent)
-    }
+    };
     
     
     
     return (
         <form>
-            <label>Post a new Event Title</label>
+            <label>New Event Title</label>
             <input value={newEventTitle} onChange={(event) => setNewEventTitle(event.target.value)}></input>
-            <label>Post a new Event Date</label>
+            <label>New Event Date</label>
             <input type="date" value={newEventDate} onChange={(event) => setNewEventDate(event.target.value)}></input>
             <button onClick={enterData}>Add the event to database</button>
         </form>

@@ -19,7 +19,7 @@ const EventDelete = (props) => {
         catch(error){
             console.log(error)
         }
-    }
+    };
 
     return ( 
         <button onClick={deleteEvent}>Delete</button>

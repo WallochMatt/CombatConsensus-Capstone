@@ -4,9 +4,6 @@ import FighterDelete from "../../components/AdminFighterComponents/FighterDelete
 
 const AdminFightersPage = (prosp) => {
     
-    
-    
-    
     return ( 
         <div>
             <p>Post fighters</p>

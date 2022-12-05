@@ -23,7 +23,7 @@ const EventPut = (props) => {
         catch(error){
             console.log(error)
         }
-    }
+    };
     
     function enterData(event) {
         event.preventDefault();
@@ -32,14 +32,15 @@ const EventPut = (props) => {
             date : `${editedEventDate}`
         };
         editEvent(changedEvent)
-    }
+    };
+
     return ( 
         <form>
             <label>Select event id</label>
             <input value={eventId} onChange={(event) => setEventId(event.target.value)}></input>
             <label>Edit the Event Title</label>
             <input value={editedEventTitle} onChange={(event) => setEditedEventTitle(event.target.value)}></input>
-            <label>Post a new Event Date</label>
+            <label>Change Event Date</label>
             <input type="date" value={editedEventDate} onChange={(event) => setEditedEventDate(event.target.value)}></input>
             <button onClick={enterData}>Change the event</button>
         </form>

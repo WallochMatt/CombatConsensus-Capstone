@@ -1,18 +1,11 @@
-import React, { useState, useEffect } from 'react';
 import EventDelete from '../../components/AdminEventComponents/EventDelete/EventDelete';
 import EventPost from '../../components/AdminEventComponents/EventPost/EventPost';
 import EventPut from '../../components/AdminEventComponents/EventPut/EventPut';
-
-
 
 const AdminEventsPage = (props) => {
 
 //input provides argument for an id param during the call of a submitfunction, id is a parameter for the axios call
 
-    
-    
-    
-    
     return ( 
         <div>
             <p>POST</p>

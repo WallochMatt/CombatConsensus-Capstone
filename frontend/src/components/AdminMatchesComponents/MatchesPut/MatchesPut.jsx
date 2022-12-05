@@ -7,7 +7,7 @@ const MatchesPut = (props) => {
 
     const [matchId, setMatchId] = useState(0);
     const [editBoutName, setEditBoutName] = useState('');
-    const [editMatchId, setEditMatchId] = useState(0);
+    const [editEventId, setEditEventId] = useState(0);
     const [editRedCorner, setEditRedCorner] = useState(0);
     const [editBlueCorner, setEditBlueCorner] = useState(0);
     const [editJudgeRed, setEditJudgeRed] =useState(0);
@@ -29,42 +29,44 @@ const MatchesPut = (props) => {
         catch(error){
             console.log(error)
         }
-    }
+    };
     
     function enterData(event) {
         event.preventDefault();
         let changedMatch = {
             bout_name: `${editBoutName}`,
-            event_id : `${editMatchId}`,
+            event_id : `${editEventId}`,
             red_corner_id: `${editRedCorner}`,
             blue_corner_id: `${editBlueCorner}`,
             red_judge_avg: `${editJudgeRed}`,
             blue_judge_avg: `${editJudgeBlue}`,
             results: `${editResults}`,
             number_of_rounds: `${editNumOfRounds}`
-
         };
         editMatch(changedMatch)
-    }
+    };
     
     return (
         <form>
             <label>Select matchID</label>
-            <input value={matchId} onChange={(event) => setEditMatchId(event.target.value)} />
+            <input value={matchId} onChange={(event) => setMatchId(event.target.value)} />
             
-            <label>Edit bout name</label>
+            <label>bout name</label>
             <input value={editBoutName} onChange={(event) => setEditBoutName(event.target.value)} />
+
+            <label>Event ID</label>
+            <input value={editEventId} onChange={(event) => setEditEventId(event.target.value)} />
             
-            <label>Choose Red Fighter</label>
+            <label>Select Red Fighter</label>
             <input value={editRedCorner} onChange={(event) => setEditRedCorner(event.target.value)} />
     
-            <label>Chhose blue fighter</label>
+            <label>Select blue fighter</label>
             <input value={editBlueCorner} onChange={(event) => setEditBlueCorner(event.target.value)}></input>
             
-            <label>Judge scored red</label>
+            <label>Judges scored red</label>
             <input value={editJudgeRed} onChange={(event) => setEditJudgeRed(event.target.value)}></input>
             
-            <label>Judge blue scored</label>
+            <label>Judges scored blue</label>
             <input value={editJudgeBlue} onChange={(event) => setEditJudgeBlue(event.target.value)} />
             
             <label>Results were</label>
@@ -73,7 +75,7 @@ const MatchesPut = (props) => {
             <label>Number of rounds</label>
             <input value={editNumOfRounds} onChange={(event) => setEditNumOfRounds(event.target.value)} />
         
-            <button onClick={enterData}>Change the fighter</button>
+            <button onClick={enterData}>Change the Match</button>
         </form>
     );
 }

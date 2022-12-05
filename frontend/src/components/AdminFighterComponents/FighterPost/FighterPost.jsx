@@ -20,10 +20,10 @@ const FighterPost = (props) => {
                 window.location.reload(false);
             }
             }
-            catch(error){
-                console.log(error)
-            }
-    }
+        catch(error){
+            console.log(error)
+        }
+    };
 
     function enterData(event) {
         event.preventDefault();
@@ -31,7 +31,7 @@ const FighterPost = (props) => {
             name : `${newName}`
         };
         addNewFighter(newFighter)
-    }
+    };
     
     
     return ( 
@@ -41,7 +41,6 @@ const FighterPost = (props) => {
             <button onClick={enterData}>Add the new fighter</button>
         </form>
     );
-    
 }
 
 export default FighterPost;
