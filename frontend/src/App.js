@@ -11,7 +11,9 @@ import EventsPage from "./pages/EventsPage/EventsPage";
 import MatchesPage from "./pages/MatchesPage/MatchesPage";
 import HomePage from "./pages/HomePage/HomePage";
 import EventCardPage from "./pages/EventCardPage/EventCardPage";
-import AdminPage from "./pages/AdminPage/AdminPage";
+import AdminMatchesPage from "./pages/AdminMatchesPage/AdminMatchesPage";
+import AdminFightersPage from "./pages/AdminFightersPage/AdminFightersPage";
+import AdminEventsPage from "./pages/AdminEventsPage/AdminEventsPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -28,7 +30,7 @@ function App() {
   const [fighters, setFighters] = useState([]);
 
     useEffect(() => {
-      const fetchEvents = async () => {
+      async function fetchEvents(){
         try {
             let response = await axios.get("http://127.0.0.1:8000/events/");
             setEvents(response.data)
@@ -78,10 +80,19 @@ function App() {
             </PrivateRoute>
           }
         /> */}
-        <Route path="/admin" element={
-          <AdminPage fighters={fighters} matches={matches} events={events}
-            setFighters={setFighters} setMatches={setMatches} setEvents={setEvents}
-          />
+
+        
+
+        <Route path="/admin/matches/" element={
+          <AdminMatchesPage matches={matches} setMatches={setMatches}/>
+        }/>
+
+        <Route path="/admin/fighters/" element={
+          <AdminFightersPage fighters={fighters} setFighters={setFighters}/>
+        }/>
+
+        <Route path="/admin/events/" element={
+          <AdminEventsPage events={events} setEvents={setEvents}/>
         }/>
 
 
