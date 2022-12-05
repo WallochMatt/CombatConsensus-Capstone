@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-
-
+import MatchesPut from '../../components/AdminMatchesComponents/MatchesPut/MatchesPut';
+import MatchesPost from '../../components/AdminMatchesComponents/MatchesPost/MatchesPost';
+import MatchesDelete from '../../components/AdminMatchesComponents/MatchesDelete/MatchesDelete';
 
 const AdminMatchesPage = (props) => {
 
@@ -8,12 +9,27 @@ const AdminMatchesPage = (props) => {
 
 
     return ( 
-    
-    <p>Admins Matches Page</p>
-    
-    
+        <div>
+            <p>POST</p>
+            <MatchesPost />
+            <p>PUT</p>
+            <MatchesPut />
+            <div className="container">
+                <h1>Events(admin)</h1>
+                <p>Id boutname eventid redcornerid bluecornerid redjudgeavg bluejudgeavg results numofRounds</p>
+                {props.matches.map((match, index) => (
+                    <div key={index}>
+                        <p>
+                            {match.id} {match.bout_name} {match.event_id} {match.red_corner_id}
+                            {match.blue_corner_id} {match.red_judge_avg} {match.blue_judge_avg}
+                            {match.results} {match.number_of_rounds}
+                        </p>
+                        <MatchesDelete id={match.id}/>
+                    </div>
+                ))}
+            </div>
+        </div>
     );
-
 
 }
 

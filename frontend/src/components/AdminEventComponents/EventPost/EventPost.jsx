@@ -25,10 +25,10 @@ const EventPost = (props) => {
             if(response.status === 201){
                 window.location.reload(false);
             }
-            }
-            catch(error){
-                console.log(error)
-            }
+        }
+        catch(error){
+            console.log(error)
+        }
     }
 
 
