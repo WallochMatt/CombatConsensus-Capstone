@@ -20,6 +20,7 @@ import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 
 // Util Imports
+import AdminOnlyRoute from "./utils/AdminOnlyRoute";
 import PrivateRoute from "./utils/PrivateRoute";
 import { useState, useEffect } from "react";
 
@@ -84,15 +85,21 @@ function App() {
         
 
         <Route path="/admin/matches/" element={
-          <AdminMatchesPage matches={matches} setMatches={setMatches}/>
+          <AdminOnlyRoute>
+            <AdminMatchesPage matches={matches} setMatches={setMatches}/>
+          </AdminOnlyRoute>
         }/>
 
         <Route path="/admin/fighters/" element={
-          <AdminFightersPage fighters={fighters} setFighters={setFighters}/>
+          <AdminOnlyRoute>
+            <AdminFightersPage fighters={fighters} setFighters={setFighters}/>
+          </AdminOnlyRoute>
         }/>
 
         <Route path="/admin/events/" element={
-          <AdminEventsPage events={events} setEvents={setEvents}/>
+          <AdminOnlyRoute>
+            <AdminEventsPage events={events} setEvents={setEvents}/>
+          </AdminOnlyRoute>
         }/>
 
 
