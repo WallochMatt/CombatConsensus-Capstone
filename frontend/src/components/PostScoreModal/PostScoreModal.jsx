@@ -1,6 +1,7 @@
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
 import React, { useState } from 'react';
+import "./PostScoreModal.css";
 
 // {!fan_id ? etc for the button that spawns the moodal? or on the modal itself maybe
 const PostScoreModal = (props) => {
@@ -75,10 +76,10 @@ const PostScoreModal = (props) => {
 
     function sendForm(i){
         return(
-            <div>
+            <div className="between-rounds">
                 <p>Round {i + 1}</p>
                 <div>
-                    <label htmlFor="fan_score_f1">Sc 1: </label>
+                    <label htmlFor="fan_score_f1">Red: </label>
                     <select name="fan_score_f1" id="fan_score_f1" onChange={(event) => handleRoundRed(i, event.target.value)} required>
                         <option value={0}>--</option>
                         <option value={7}>7</option>
@@ -88,7 +89,7 @@ const PostScoreModal = (props) => {
                     </select>
                 </div>
                 <div>
-                    <label htmlFor="fan_score_f2">Sc 2: </label>
+                    <label htmlFor="fan_score_f2">Blue: </label>
                     <select name="fan_score_f2" id="fan_score_f2" onChange={(event) => handleRoundBlue(i, event.target.value)} required>
                         <option value={0}>--</option>
                         <option value={7}>7</option>
@@ -105,7 +106,7 @@ const PostScoreModal = (props) => {
 //return of component
     return (
         <div>
-            <div>
+            <div className="in-line">
                 {getRounds()}
             </div>
             <div>

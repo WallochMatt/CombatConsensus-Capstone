@@ -1,0 +1,20 @@
+.segment {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card-container{
+    background-color: var(--dim-gold);
+    border-radius: 16px;
+    height: 6em;
+}
+
+.shadow {
+    background-color: #716150;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.text-align {
+    padding-top: 1em;
+}

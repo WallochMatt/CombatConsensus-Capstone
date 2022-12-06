@@ -35,3 +35,12 @@ header,
 section {
     margin: 0 5rem;
 }
+
+select,
+option {
+    color: black;
+}
+/* This is for score cards, used on both UserPage and EventCardPage
+.score-card {
+    display: flex;
+} */

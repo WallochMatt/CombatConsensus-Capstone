@@ -68,9 +68,9 @@ function App() {
     }, [])
 
 
-
+//use app main div to create backgrounds?
   return (
-    <div>
+    <div className="app-main-div"> 
       <Navbar />
       <Routes>
 

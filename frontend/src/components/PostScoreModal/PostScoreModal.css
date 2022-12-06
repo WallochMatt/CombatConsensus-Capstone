@@ -1,0 +1,8 @@
+.in-line {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.between-rounds {
+    margin-right: 9em;
+}
