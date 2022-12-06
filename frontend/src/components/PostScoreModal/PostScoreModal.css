@@ -4,5 +4,13 @@
 }
 
 .between-rounds {
-    margin-right: 9em;
+    margin-right: 9.5em;
+}
+
+.pad {
+    padding: .5em;
+}
+
+.button-color{
+    background-color: var(--bright-gold);
 }

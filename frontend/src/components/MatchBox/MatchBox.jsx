@@ -28,11 +28,8 @@ const MatchBox = (props) => {
 
             <div className='segment text-align'>
                 <p>{props.match.bout_name}</p>
-                <p>{props.match.red_judge_avg} - {props.match.blue_judge_avg}</p>
-                <p>{average[0]} - {average[1]}</p>
-                {/* {props.match.red_corner.name} with a fans average score of: {average[0]} and judges average of: {props.match.red_judge_avg}<br/>
-                {props.match.blue_corner.name} with a fans average score of: {average[1]}  and judges average of:  {props.match.blue_judge_avg}<br/>
-                Official Ruling: {props.match.results} */}
+                <p><span style={{ color: "#A70E0E"}}>{props.match.red_judge_avg}</span> - <span style={{ color: "#1B1EAB"}}>{props.match.blue_judge_avg}</span></p>
+                <p><span style={{ color: "#A70E0E"}}>{average[0]}</span> - <span style={{ color: "#1B1EAB"}}>{average[1]}</span></p>
             </div>
         </div>
     );

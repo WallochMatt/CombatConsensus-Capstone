@@ -109,8 +109,8 @@ const PostScoreModal = (props) => {
             <div className="in-line">
                 {getRounds()}
             </div>
-            <div>
-                <input type="button" onClick={handlSubmit} value="Submit card"></input>
+            <div className="pad">
+                <input className="button-color" type="button" onClick={handlSubmit} value="Submit card"></input>
             </div>
         </div>
     )

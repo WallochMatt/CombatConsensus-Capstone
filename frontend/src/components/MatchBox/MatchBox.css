@@ -2,9 +2,13 @@
     display: flex;
     justify-content: space-evenly;
 }
+.segment2 {
+    display: flex;
+    justify-content: space-evenly;
+}
 
 .card-container{
-    background-color: var(--dim-gold);
+    background-color: var(--bright-gold);
     border-radius: 16px;
     height: 6em;
 }

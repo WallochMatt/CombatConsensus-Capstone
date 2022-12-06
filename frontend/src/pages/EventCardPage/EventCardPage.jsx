@@ -30,19 +30,30 @@ const EventCardPage = (props) => {
     // console.log("eventMatches event_name: " , currentEvent)
 
     return ( 
-        <div className="centerize">
-            <h2 className="true-center">
-                EVENT: {currentEvent}
-            </h2>
-            <div className="format-ecp" >
-                {eventMatches.map((match, index) => (
-                    <div  key={index}>
-                        <MatchBox match={match}/>
-                        {/* use a ternary truthy for the post score modal maybe*/}
-                        <PostScoreModal match={match}/>
-                    </div>
-                ))}
+        <div className="flex pics">
+            <div className="side">
+                {/* <img src="https://cdn.vox-cdn.com/thumbor/rRlEmsLdcLoUgz4TBCxz8W70unQ=/454x568:2986x2555/1200x800/filters:focal(1233x556:1867x1190)/cdn.vox-cdn.com/uploads/chorus_image/image/70007491/1338319637.0.jpg" /> */}
             </div>
+            
+            <div className="centerize">
+
+                <h2 className="true-center">
+                    EVENT: {currentEvent}
+                </h2>
+
+                <div className="format-ecp" >
+                    {eventMatches.map((match, index) => (
+                        <div  key={index}>
+                            <MatchBox match={match}/>
+                            {/* use a ternary truthy for the post score modal maybe*/}
+                            <PostScoreModal match={match}/>
+                        </div>
+                    ))}
+                </div>
+
+            </div>
+
+            <div className="side"></div>
         </div>
     );
 }

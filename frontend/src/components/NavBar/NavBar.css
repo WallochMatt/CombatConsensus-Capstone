@@ -10,10 +10,12 @@ li {
 
 .navBar {
   background: #A70E0E;
-  box-shadow: 4px 2px 5px gray;
+  /* box-shadow: 4px 2px 5px gray; */
   color: white;
   /* margin-bottom: 2rem; */
   padding: 1.5rem 2rem;
+  width: 100%;
+  position: fixed;
 }
 
 .navBar button {
