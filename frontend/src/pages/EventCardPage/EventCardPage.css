@@ -1,13 +1,9 @@
 
-
 .centerize{
-    /* display: flex;
-    justify-content: center; */
     width: 50%;
     background-color: #575454;
-    /* margin-left: 20%; */
+    margin-top: 5em;
 }
-
 
 .format-ecp {
     display: flex;
@@ -23,13 +19,13 @@
 }
 
 .pics {
-    background-image: url("https://cdn.vox-cdn.com/thumbor/rRlEmsLdcLoUgz4TBCxz8W70unQ=/454x568:2986x2555/1200x800/filters:focal(1233x556:1867x1190)/cdn.vox-cdn.com/uploads/chorus_image/image/70007491/1338319637.0.jpg"), 
-    url("");
-    background-repeat: no-repeat, no repeat;
-    height: 100%;
-    background-attachment: fixed;
-    background-size: contain;
-    background-position: top 6em left -25em
+    background-image: url("https://cdn.vox-cdn.com/thumbor/rRlEmsLdcLoUgz4TBCxz8W70unQ=/454x568:2986x2555/1200x800/filters:focal(1233x556:1867x1190)/cdn.vox-cdn.com/uploads/chorus_image/image/70007491/1338319637.0.jpg"),
+    url("https://www.thesun.co.uk/wp-content/uploads/2018/11/NINTCHDBPICT000439867467-e1541169986528.jpg");
+    background-repeat: no-repeat;
+    height: 100%, 100%;
+    background-attachment: fixed, fixed;
+    background-size: contain, contain;
+    background-position: top 6em left -17em, top 6em right -8em;
 }
 
 .flex {
@@ -40,9 +36,4 @@
 .side {
     width: 25%;
     height: 100vh;
-
-}
-
-.fixed{
-    position: absolute;
 }

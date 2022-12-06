@@ -26,7 +26,7 @@ const MatchBox = (props) => {
                 <p>Fans Say</p>
             </div>
 
-            <div className='segment text-align'>
+            <div className='bottom-blurb'>
                 <p>{props.match.bout_name}</p>
                 <p><span style={{ color: "#A70E0E"}}>{props.match.red_judge_avg}</span> - <span style={{ color: "#1B1EAB"}}>{props.match.blue_judge_avg}</span></p>
                 <p><span style={{ color: "#A70E0E"}}>{average[0]}</span> - <span style={{ color: "#1B1EAB"}}>{average[1]}</span></p>

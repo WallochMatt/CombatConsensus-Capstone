@@ -1,10 +1,11 @@
 .in-line {
+    padding-left: .5em;
     display: flex;
     justify-content: flex-start;
 }
 
 .between-rounds {
-    margin-right: 9.5em;
+    margin-right: 7em;
 }
 
 .pad {

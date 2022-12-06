@@ -28,9 +28,7 @@ const PostScoreModal = (props) => {
         else{
             alert("You need to enter into all the fields")
         }
-
     }
-        
 
     async function postScore(userScores){
         console.log("userscores at top of postScores", userScores)
@@ -71,7 +69,6 @@ const PostScoreModal = (props) => {
         };
         return rounds
     }
-    
 
 
     function sendForm(i){

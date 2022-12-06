@@ -26,13 +26,10 @@ const EventCardPage = (props) => {
     
     }, [props.matches]); //end of useEffect
 
-    // let event_name = eventMatches[0];
-    // console.log("eventMatches event_name: " , currentEvent)
 
     return ( 
         <div className="flex pics">
             <div className="side">
-                {/* <img src="https://cdn.vox-cdn.com/thumbor/rRlEmsLdcLoUgz4TBCxz8W70unQ=/454x568:2986x2555/1200x800/filters:focal(1233x556:1867x1190)/cdn.vox-cdn.com/uploads/chorus_image/image/70007491/1338319637.0.jpg" /> */}
             </div>
             
             <div className="centerize">

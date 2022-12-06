@@ -8,17 +8,26 @@
 }
 
 .card-container{
-    background-color: var(--bright-gold);
     border-radius: 16px;
     height: 6em;
 }
 
 .shadow {
-    background-color: #716150;
+    background-color: var(--dim-gold);
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
 }
 
-.text-align {
+.bottom-blurb {
+    column-count: 2;
+    column-width: 3em;
+    column-rule-style: solid;
+    column-rule-width: 2px;
+
+
     padding-top: 1em;
+    background-color: var(--bright-gold);
+    height: 4em;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
 }
