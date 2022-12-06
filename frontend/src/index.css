@@ -1,0 +1,37 @@
+/* Color Palette */
+:root {
+    --bright-gold: #C49C74;
+    --dim-gold: #A17B55;
+    --gold-shadow: #716150;
+    --red: #A70E0E;
+    --blue: #1B1EAB;
+    --background-gray: #575454;
+    --off-whtie: #F6F6F6;
+    --white: #ffffff;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    color: var(--white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+header,
+section {
+    margin: 0 5rem;
+}
