@@ -1,3 +1,48 @@
 .error {
   color: red;
 }
+
+
+.middle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--off-whtie);
+  height: 28em;
+  width: 37em;
+  border-radius: 74px;
+}
+
+label{
+  color: black;
+}
+
+
+.btn{
+  border-radius: 16px;
+}
+
+.btn:hover {
+  background-color: var(--bright-gold);
+  border-radius: 16px;
+}
+
+.backdrop{
+  background-image: url("https://i.pinimg.com/originals/7b/ea/46/7bea465bb593e2792f9f67be9c84956f.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: fixed;
+
+  height: 100%;
+  width: 100%;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: -100;
+}
