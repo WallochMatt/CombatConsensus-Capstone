@@ -1,6 +1,61 @@
-.in-view {
+
+.centerize{
+    width: 50%;
+    background-color: #575454;
+    margin-top: 5em;
+}
+
+.format-ep {
     display: flex;
     flex-direction: column;
+    width: 60%;
+    margin-left: 20%;
     align-items: center;
-    padding-top: 10em;
+    justify-content: center;
+    background-color: var(--bright-gold);
+    border-radius: 16px;
+    height: 3em;
+}
+
+.true-center {
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+}
+
+.pics {
+    background-image: url(""),
+    url("");
+    background-repeat: no-repeat;
+    height: 100%, 100%;
+    background-attachment: fixed, fixed;
+    background-size: contain, contain;
+    background-position: top 6em left -17em, top 6em right -8em;
+}
+
+.flex {
+    display: flex;
+    overflow: hidden;
+}
+
+.side {
+    width: 25%;
+    height: 100vh;
+}
+
+link{
+    display: block;
+}
+
+.button {
+    display: block;
+    contain: strict;
+    min-width: 100%;
+    min-height: 100%;
+    border: none;
+}
+
+.button:hover {
+    background-color: blue;
+    border-radius: 16px;
 }

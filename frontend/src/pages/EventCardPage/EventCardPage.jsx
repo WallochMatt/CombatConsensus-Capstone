@@ -29,8 +29,7 @@ const EventCardPage = (props) => {
 
     return ( 
         <div className="flex pics">
-            <div className="side">
-            </div>
+            <div className="side"></div>
             
             <div className="centerize">
 
