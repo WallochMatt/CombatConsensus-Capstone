@@ -12,7 +12,7 @@ const EventsPage = (props) => {
     }
 
     return ( 
-        <div className="flex">
+        <div className="flex event-pics">
             <div className="side"></div>
 
             <div className="centerize">
