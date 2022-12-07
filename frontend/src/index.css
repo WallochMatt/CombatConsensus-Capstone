@@ -16,7 +16,8 @@
     margin: 0;
     padding: 0;
     box-sizing: inherit;
-    color: var(--white);
+    /* color: var(--white); */
+    color: black;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }

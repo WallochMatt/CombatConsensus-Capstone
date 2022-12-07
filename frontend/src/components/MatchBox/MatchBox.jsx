@@ -19,18 +19,23 @@ const MatchBox = (props) => {
     }, []); //end of useEffect
 
     return ( 
-        <div className='card-container'>
-            <div className='segment shadow'>
-                <p>Bout</p>
-                <p>Judges Say</p>
-                <p>Fans Say</p>
-            </div>
-
-            <div className='bottom-blurb'>
-                <p>{props.match.bout_name}</p>
-                <p><span style={{ color: "#A70E0E"}}>{props.match.red_judge_avg}</span> - <span style={{ color: "#1B1EAB"}}>{props.match.blue_judge_avg}</span></p>
-                <p><span style={{ color: "#A70E0E"}}>{average[0]}</span> - <span style={{ color: "#1B1EAB"}}>{average[1]}</span></p>
-            </div>
+        <div>
+            <table>
+                <thead>
+                    <tr className='shadow'>
+                        <th>Bout</th>
+                        <th>Judges Say</th>
+                        <th>Fans Say</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr className='bottom-blurb'>
+                        <td>{props.match.bout_name}</td>
+                        <td><span style={{ color: "#A70E0E"}}>{props.match.red_judge_avg}</span> - <span style={{ color: "#1B1EAB"}}>{props.match.blue_judge_avg}</span></td>
+                        <td><span style={{ color: "#A70E0E"}}>{average[0]}</span> - <span style={{ color: "#1B1EAB"}}>{average[1]}</span></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     );
 }

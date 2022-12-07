@@ -1,10 +1,11 @@
 import React from "react";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import "./EventsPage.css";
 
 const EventsPage = (props) => {
 
     return ( 
-        <div className="container">
+        <div className="in-view">
             <h1>EVENTS PAGE</h1>
             {props.events &&
             props.events.map((event, index) => (
