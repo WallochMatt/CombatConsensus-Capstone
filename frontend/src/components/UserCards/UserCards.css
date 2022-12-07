@@ -1,0 +1,11 @@
+.shadow {
+    background-color: var(--dim-gold);
+    height: 2em;
+}
+
+
+.bottom-blurb {
+    padding-top: 1em;
+    background-color: var(--bright-gold);
+    height: 4em;
+}

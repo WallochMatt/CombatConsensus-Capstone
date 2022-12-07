@@ -41,7 +41,7 @@ def accuracy(request, username):
 
         total_fan_red_score = 0
         for card in cards_for_fan:
-            total_fan_red_score += card.fan_score_f1 #I had this backwards, it was: card.fan_score += total_fan_f1_score
+            total_fan_red_score += card.red_fan_score #I had this backwards, it was: card.fan_score += total_fan_f1_score
 
         total_jdg_red_score = 0
         for card in cards_for_fan:
