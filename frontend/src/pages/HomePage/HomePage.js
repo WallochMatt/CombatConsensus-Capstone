@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import "./HomePage.css";
 
 
 import FanFav from "../../components/FanFav/FanFav";
@@ -30,19 +31,19 @@ const HomePage = (props) => {
     }, [])
 
     return ( 
-        <div className="container">
-            <FanFav fanFav={fanFav}/>
-            <OfcFav ofcFav={ofcFav}/>
+        <div className="flex home-pics">
+            <div className="side"></div>
+
+            <div className="centerize">
+                <div className="together">
+                    <FanFav fanFav={fanFav}/>
+                    <OfcFav ofcFav={ofcFav}/>
+                </div>
+            </div>
+
+            <div className="side"></div>
         </div>
     );
 };
 
 export default HomePage;
-
-
-
-
-// let data = response.data;
-// var fF = data.sort((a, b) => b.fan_total - a.fan_total)[0];
-// console.log("ff: ", fF)      
-// setFanFav(fF)

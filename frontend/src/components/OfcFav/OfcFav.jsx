@@ -1,15 +1,14 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import "./OfcFav.css";
 
 
 const OfcFav = (props) => {
 
 
     return ( 
-        <div>
-            <p>
-                The official fav: {props.ofcFav.name}
-            </p>
+        <div className="card-background format-profile">
+            <p>The official fav:</p>
+            <>picture</>
+            <p>{props.ofcFav.name}</p>
         </div>
     );
 };

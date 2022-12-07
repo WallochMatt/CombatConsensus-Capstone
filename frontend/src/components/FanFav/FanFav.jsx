@@ -1,16 +1,14 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import "./FanFav.css";
 
 
 const FanFav = (props) => {
 
     
-
     return ( 
-        <div>
-            <p>
-                The fans fav: {props.fanFav.name}
-            </p>
+        <div className="card-background format-profile">
+            <p> The fans fav:</p>
+            <>picture</>
+            <p>{props.fanFav.name}</p>
         </div>
     );
 };

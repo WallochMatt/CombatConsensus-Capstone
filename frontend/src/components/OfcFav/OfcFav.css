@@ -1,0 +1,12 @@
+.card-background{
+    background-color: var(--bright-gold);
+    width: 35vh;
+    border-radius: 10px;
+}
+
+.format-profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
