@@ -11,7 +11,7 @@ const EventsPage = (props) => {
 
     return ( 
         <div className="flex">
-            <div className="side">
+            <div className="side red">
                 <img id="masvidal" src="https://images.complex.com/complex/images/c_fill,dpr_auto,f_auto,q_auto,w_1400/fl_lossy,pg_1/fzq1iiyoxktijqzwe7g6/jorge-masvidal?fimg-ssr-default" />
             </div>
 
@@ -31,7 +31,7 @@ const EventsPage = (props) => {
                 </div>
             </div>
 
-            <div className="side">
+            <div className="side blue">
                 <img id="wonderboy" src="https://frontkick.online/wp-content/uploads/2020/12/Stephen-Wonderboy-Thompson-Frontkick.online.jpg" />
             </div>
         </div>

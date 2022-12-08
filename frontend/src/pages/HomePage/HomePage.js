@@ -31,8 +31,8 @@ const HomePage = (props) => {
     }, [])
 
     return ( 
-        <div className="flex home-pics">
-            <div className="side">
+        <div className="flex">
+            <div className="side red">
                 <img id="john" src="https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTg0OTE3NTcyMDAzNTcwODA4/1-1-jan-blachowicz-ufc-267.jpg" />
             </div>
 
@@ -43,7 +43,7 @@ const HomePage = (props) => {
                 </div>
             </div>
 
-            <div className="side">
+            <div className="side blue">
                 <img id="showtime" src="https://sporttechie-prod.s3.amazonaws.com/pettis-athletes-voice-main-image.png" />
             </div>
         </div>
