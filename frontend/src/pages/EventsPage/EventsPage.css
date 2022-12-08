@@ -1,13 +1,3 @@
-.event-pics {
-    background-image: url("https://images.complex.com/complex/images/c_fill,dpr_auto,f_auto,q_auto,w_1400/fl_lossy,pg_1/fzq1iiyoxktijqzwe7g6/jorge-masvidal?fimg-ssr-default"),
-    url("https://frontkick.online/wp-content/uploads/2020/12/Stephen-Wonderboy-Thompson-Frontkick.online.jpg");
-    background-repeat: no-repeat;
-    height: 80%, 80%;
-    background-attachment: fixed, fixed;
-    background-size: contain, contain;
-    background-position: top 6em left -32em, top 6em right -32em;
-}
-
 
 link{
     display: block;
@@ -26,9 +16,22 @@ link{
     border-radius: 16px;
 }
 
-/* .format-ecp {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    margin-left: 5%;
-} */
+#masvidal{
+    height: 880px;
+    width: 480px;
+    position: fixed;
+    z-index: -2;
+    margin-top: 6em;
+    object-fit: cover;
+    object-position: 51% 0%;
+}
+
+#wonderboy{
+    height: 880px;
+    width: 480px;
+    position: fixed;
+    z-index: -2;
+    margin-top: 6em;
+    object-fit: cover;
+    object-position: 45% 0%;
+}

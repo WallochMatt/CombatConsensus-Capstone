@@ -6,12 +6,23 @@
     height: 60vh;
 }
 
-.home-pics{
-    background-image: url("https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTg0OTE3NTcyMDAzNTcwODA4/1-1-jan-blachowicz-ufc-267.jpg"),
-    url("https://sporttechie-prod.s3.amazonaws.com/pettis-athletes-voice-main-image.png");
-    background-repeat: no-repeat;
-    height: 100%, 100%;
-    background-attachment: fixed, fixed;
-    background-size: contain, contain;
-    background-position: top 1em left -10em, top 6em right -14em;
+
+#showtime{
+    height: 880px;
+    width: 480px;
+    position: fixed;
+    z-index: -2;
+    margin-top: 6em;
+    object-fit: cover;
+    object-position: 75% 50%;
+}
+
+#john{
+    height: 880px;
+    width: 480px;
+    position: fixed;
+    z-index: -2;
+    margin-top: 6em;
+    object-fit: cover;
+    object-position: 30% 50%;
 }

@@ -11,7 +11,9 @@ const MatchesPage = (props) => {
 // link matches to the event theyre from?
     return ( 
         <div className="flex matches-pics">
-            <div className="side"></div>
+            <div className="side">
+                <img id="sugar" src="https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2021/12/13/1ad5303f-313f-4a49-b735-73fd88284ba6_7fb155ff.jpg" />
+            </div>
 
             <div className="centerize">
                 <h1 className="true-center">Matches</h1>
@@ -29,7 +31,9 @@ const MatchesPage = (props) => {
 
             </div>
 
-            <div className="side"></div>
+            <div className="side">
+                <img id="lioness" src="https://www.postwrestling.com/wp-content/uploads/2020/04/Amanda-Nunes.jpg" />
+            </div>
         </div>
     );
 }

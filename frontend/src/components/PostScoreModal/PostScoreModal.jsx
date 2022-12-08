@@ -76,7 +76,7 @@ const PostScoreModal = (props) => {
             <div className="between-rounds">
                 <p>Round {i + 1}</p>
                 <div>
-                    <label htmlFor="fan_score_f1">Red: </label>
+                    <label htmlFor="fan_score_f1">Red:</label>
                     <select name="fan_score_f1" id="fan_score_f1" onChange={(event) => handleRoundRed(i, event.target.value)} required>
                         <option value={0}>--</option>
                         <option value={7}>7</option>
@@ -86,7 +86,7 @@ const PostScoreModal = (props) => {
                     </select>
                 </div>
                 <div>
-                    <label htmlFor="fan_score_f2">Blue: </label>
+                    <label htmlFor="fan_score_f2">Blue:</label>
                     <select name="fan_score_f2" id="fan_score_f2" onChange={(event) => handleRoundBlue(i, event.target.value)} required>
                         <option value={0}>--</option>
                         <option value={7}>7</option>

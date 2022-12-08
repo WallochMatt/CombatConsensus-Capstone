@@ -1,14 +1,3 @@
-.matches-pics {
-    background-image: url("https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2021/12/13/1ad5303f-313f-4a49-b735-73fd88284ba6_7fb155ff.jpg"),
-    url("https://www.postwrestling.com/wp-content/uploads/2020/04/Amanda-Nunes.jpg");
-    background-repeat: no-repeat;
-    height: 80%, 80%;
-    background-attachment: fixed, fixed;
-    background-size: contain, contain;
-    background-position: top 6em left -32em, top 1em right -32em;
-}
-
-
 
 link{
     display: block;
@@ -26,4 +15,24 @@ link{
 .button:hover {
     background-color: blue;
     border-radius: 16px;
+}
+
+#sugar{
+    height: 880px;
+    width: 480px;
+    position: fixed;
+    z-index: -2;
+    margin-top: 6em;
+    object-fit: cover;
+    object-position: 45% 0%;
+}
+
+#lioness{
+    height: 880px;
+    width: 480px;
+    position: fixed;
+    z-index: -2;
+    margin-top: 6em;
+    object-fit: cover;
+    object-position: 45% 50%;
 }

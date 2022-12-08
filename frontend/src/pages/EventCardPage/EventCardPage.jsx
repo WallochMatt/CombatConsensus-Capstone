@@ -28,8 +28,10 @@ const EventCardPage = (props) => {
 
 
     return ( 
-        <div className="flex pics">
-            <div className="side"></div>
+        <div className="flex">
+            <div className="side">
+                <img id="paddy" src="https://cdn.vox-cdn.com/thumbor/rRlEmsLdcLoUgz4TBCxz8W70unQ=/454x568:2986x2555/1200x800/filters:focal(1233x556:1867x1190)/cdn.vox-cdn.com/uploads/chorus_image/image/70007491/1338319637.0.jpg" />
+            </div>
             
             <div className="centerize">
 
@@ -49,7 +51,9 @@ const EventCardPage = (props) => {
 
             </div>
 
-            <div className="side"></div>
+            <div className="side">
+                <img id="lewis" src="https://www.thesun.co.uk/wp-content/uploads/2018/11/NINTCHDBPICT000439867467-e1541169986528.jpg" />
+            </div>
         </div>
     );
 }

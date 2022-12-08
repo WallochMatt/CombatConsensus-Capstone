@@ -18,16 +18,6 @@
     padding: 1em;
 }
 
-.pics {
-    background-image: url("https://cdn.vox-cdn.com/thumbor/rRlEmsLdcLoUgz4TBCxz8W70unQ=/454x568:2986x2555/1200x800/filters:focal(1233x556:1867x1190)/cdn.vox-cdn.com/uploads/chorus_image/image/70007491/1338319637.0.jpg"),
-    url("https://www.thesun.co.uk/wp-content/uploads/2018/11/NINTCHDBPICT000439867467-e1541169986528.jpg");
-    background-repeat: no-repeat;
-    height: 100%, 100%;
-    background-attachment: fixed, fixed;
-    background-size: contain, contain;
-    background-position: top 6em left -17em, top 6em right -8em;
-
-}
 
 .flex {
     display: flex;
@@ -37,4 +27,28 @@
 .side {
     width: 25%;
     height: 100vh;
+}
+
+/* .test-pic{
+    ima
+} */
+
+#paddy{
+    height: 980px;
+    width: 480px;
+    position: fixed;
+    z-index: -2;
+    margin-top: 4em;
+    object-fit: cover;
+    object-position: 39% 0;
+}
+
+#lewis{
+    height: 880px;
+    width: 480px;
+    position: fixed;
+    z-index: -2;
+    margin-top: 6em;
+    object-fit: cover;
+    object-position: 20% 0%;
 }
