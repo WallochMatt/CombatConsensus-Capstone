@@ -46,6 +46,11 @@ option {
     display: flex;
 } */
 
+label,
+input{
+    color: black
+}
+
 .format {
     display: flex;
     flex-direction: column;

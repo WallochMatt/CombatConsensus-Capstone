@@ -3,10 +3,6 @@ import React, { useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
 
 
-
-
-
-
 const EventPost = (props) => {
     
     const [user, token] = useAuth();
@@ -46,13 +42,13 @@ const EventPost = (props) => {
     
     return (
         <form>
-            <label>New Event Title</label>
+            <label>New Event Title: &emsp;</label>
             <input value={newEventTitle} onChange={(event) => setNewEventTitle(event.target.value)}></input>
-            <label>New Event Date</label>
+            <label>&emsp; New Event Date: &emsp;</label>
             <input type="date" value={newEventDate} onChange={(event) => setNewEventDate(event.target.value)}></input>
-            <button onClick={enterData}>Add the event to database</button>
+            <label>&emsp;</label>
+            <button onClick={enterData}>Add Event</button>
         </form>
-
     );
 }
 

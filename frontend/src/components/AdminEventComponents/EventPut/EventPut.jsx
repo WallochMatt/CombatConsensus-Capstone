@@ -36,13 +36,14 @@ const EventPut = (props) => {
 
     return ( 
         <form>
-            <label>Select event id</label>
+            <label>Select event id: &emsp;</label>
             <input value={eventId} onChange={(event) => setEventId(event.target.value)}></input>
-            <label>Edit the Event Title</label>
+            <label>&emsp;Edit the Event Title: &emsp;</label>
             <input value={editedEventTitle} onChange={(event) => setEditedEventTitle(event.target.value)}></input>
-            <label>Change Event Date</label>
+            <label>&emsp;Change Event Date: &emsp;</label>
             <input type="date" value={editedEventDate} onChange={(event) => setEditedEventDate(event.target.value)}></input>
-            <button onClick={enterData}>Change the event</button>
+            <label>&emsp;</label>
+            <button onClick={enterData}>Change Event</button>
         </form>
 
     );

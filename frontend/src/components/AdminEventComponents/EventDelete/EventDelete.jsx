@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
+import './EventDelete.css';
 
 const EventDelete = (props) => {
     const [user, token] = useAuth();
@@ -22,7 +23,7 @@ const EventDelete = (props) => {
     };
 
     return ( 
-        <button onClick={deleteEvent}>Delete</button>
+        <button className="adm-ev-del" onClick={deleteEvent}>Delete</button>
     );
 }
 

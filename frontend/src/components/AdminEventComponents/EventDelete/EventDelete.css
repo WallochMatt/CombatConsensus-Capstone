@@ -1,0 +1,9 @@
+.adm-ev-del{
+    color: red;
+    border: 2px solid red;
+}
+
+
+.adm-ev-del:hover{
+    background-color: red;
+}
