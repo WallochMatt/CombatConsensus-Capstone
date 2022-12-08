@@ -35,11 +35,12 @@ const FighterPut = (props) => {
 
     return ( 
         <form>
-            <label>Select fighter id</label>
+            <label>Select fighter id:&emsp;</label>
             <input value={fighterId} onChange={(event) => setFighterId(event.target.value)} />
-            <label>Change the name</label>
+            <label>&emsp;Change the name:&emsp;</label>
             <input value={editName} onChange={(event) => setEditName(event.target.value)} />
-            <button onClick={enterData}>Change the name</button>
+            <label>&emsp;</label>
+            <button onClick={enterData}>Edit Fighter</button>
         </form>
     );
 }

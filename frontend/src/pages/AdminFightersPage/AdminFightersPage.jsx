@@ -1,26 +1,38 @@
 import FighterPut from "../../components/AdminFighterComponents/FighterPut/FighterPut";
 import FighterPost from "../../components/AdminFighterComponents/FighterPost/FighterPost";
 import FighterDelete from "../../components/AdminFighterComponents/FighterDelete/FighterDelete";
+import "./AdminFightersPage.css";
 
 const AdminFightersPage = (prosp) => {
     
     return ( 
-        <div>
-            <p>Post fighters</p>
+        <div className="pad-in">
+            <p className='dark'>Post</p>
             <FighterPost />
-            <p>Put fighter</p>
+            <hr className="line-spacer"></hr>
+            <p className='dark'>Put</p>
             <FighterPut />
-            <div>
-                <h1>Fighters(admins)</h1>
-                <p>Id Name</p>
-                {prosp.fighters.map((fighter, index) => (
-                    <div key={index}>
-                        <p>
-                        {fighter.id} {fighter.name}
-                        </p>
-                        <FighterDelete id={fighter.id}/>
-                    </div>
-                ))}
+            <div className="table-adjust">
+                <h1 className='dark'>Fighters</h1>
+                <br/>
+                <table style={{marginLeft: '20%'}}>
+                    <thead>
+                        <tr>
+                            <th className='dark'>ID</th>
+                            <th className='dark'>Name</th>
+                            <></>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {prosp.fighters.map((fighter, index) => (
+                            <tr key={index}>
+                                <td className='dark'>{fighter.id}</td>
+                                <td className='dark'>{fighter.name}</td>
+                                <FighterDelete id={fighter.id}/>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
             </div>
         </div>
     );

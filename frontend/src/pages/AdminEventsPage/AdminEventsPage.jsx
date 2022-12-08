@@ -17,7 +17,6 @@ const AdminEventsPage = (props) => {
             <div className='table-adjust'>
                 <h1 className='dark'>Events</h1>
                 <br/>
-
                 <table style={{marginLeft: '20%'}}>
                     <thead>
                         <tr>
@@ -38,7 +37,6 @@ const AdminEventsPage = (props) => {
                         ))}
                     </tbody>
                 </table>
-
             </div>
         </div>
     );

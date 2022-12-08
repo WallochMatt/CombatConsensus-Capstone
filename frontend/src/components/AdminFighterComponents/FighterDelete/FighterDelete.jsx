@@ -22,8 +22,7 @@ const FighterDelete = (props) => {
     }
     
     return ( 
-        <button onClick={deleteFighter}>Delete</button>
-
+        <button className="adm-ev-del" onClick={deleteFighter}>Delete</button>
     );
 }
 

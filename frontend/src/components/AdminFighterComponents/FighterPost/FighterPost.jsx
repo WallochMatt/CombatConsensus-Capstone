@@ -36,9 +36,10 @@ const FighterPost = (props) => {
     
     return ( 
         <form>
-            <label>The fighter's name</label>
+            <label>The fighter's name: &emsp;</label>
             <input value={newName} onChange={(event) => setNewName(event.target.value)} />
-            <button onClick={enterData}>Add the new fighter</button>
+            <label>&emsp;</label>
+            <button onClick={enterData}>Add Fighter</button>
         </form>
     );
 }
