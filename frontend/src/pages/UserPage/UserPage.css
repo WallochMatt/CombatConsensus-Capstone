@@ -47,3 +47,24 @@
     justify-content: space-between;
     margin: 2em 10%;
 }
+
+
+#weili{
+    height: 890px;
+    width: 480px;
+    position: fixed;
+    z-index: -2;
+    margin-top: 5em;
+    object-fit: cover;
+    object-position: 55% 50%;
+}
+
+#gaethje{
+    height: 880px;
+    width: 480px;
+    position: fixed;
+    z-index: -2;
+    margin-top: 5em;
+    object-fit: cover;
+    object-position: 56% 50%;
+}

@@ -43,8 +43,10 @@ const UserPage = () => {
 
 
   return (
-    <div className="flex userpage-pics">
-      <div className="side"></div>
+    <div className="flex">
+      <div className="side red">
+        <img id="weili" src="https://cdn.vox-cdn.com/thumbor/oLb01X0lJDBBrlSHfqirhA2CkOs=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/24197951/1441085929.jpg" />
+      </div>
 
       <div className="centerize">
 
@@ -72,7 +74,9 @@ const UserPage = () => {
 
       </div>
 
-      <div className="side"></div>
+      <div className="side blue">
+        <img id="gaethje" src="https://s.yimg.com/os/creatr-uploaded-images/2021-11/e17af310-3d97-11ec-973b-e8502e4ddcfb" />
+      </div>
     </div>
   );
 };

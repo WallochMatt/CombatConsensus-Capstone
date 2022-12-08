@@ -14,4 +14,9 @@
 
 .button-color{
     background-color: var(--bright-gold);
+    color: white;
+    height: 2.5em;
+    position: relative;
+    left: 48%;
+    margin: 1em 0em;
 }

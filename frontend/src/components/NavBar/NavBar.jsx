@@ -7,6 +7,7 @@ import "./NavBar.css";
 const Navbar = () => {
   const { logoutUser, user } = useContext(AuthContext);
   const navigate = useNavigate();
+  //HERE I could ternary(or if/else) the navbar to display diferrently for admins or base users. Returning the corresponding NavBar
   return (
     <div className="navBar">
       <ul>
