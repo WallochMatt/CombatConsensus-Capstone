@@ -1,0 +1,33 @@
+.reg-mid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--off-whtie);
+    height: 39em;
+    width:42em;
+    border-radius: 74px;
+}
+
+label{
+    color: black;
+}
+
+.back-img{
+    background-image: url("https://wallpaperset.com/w/full/2/1/6/156711.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: fixed;
+  
+    height: 100%;
+    width: 100%;
+  
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+    z-index: -100;
+  }
