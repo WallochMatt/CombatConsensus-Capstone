@@ -24,7 +24,7 @@ const MatchesDelete = (props) => {
     
 
     return (
-        <button onClick={deleteMatch}>Delete</button>
+        <button className="adm-ev-del" onClick={deleteMatch}>Delete</button>
     );
 }
 

@@ -30,3 +30,13 @@ td.dark{
     flex-direction: column;
     align-items: center;
 }
+
+
+.match-post{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
+}

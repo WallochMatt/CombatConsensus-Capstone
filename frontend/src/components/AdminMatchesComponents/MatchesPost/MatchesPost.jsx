@@ -48,33 +48,34 @@ const MatchesPost = (props) => {
     };
 
     return (
-        <form>
+        <form className='match-post'>
 
-            <label>bout name</label>
+            <label>Bout Name:&ensp;</label>
             <input value={boutName} onChange={(event) => setBoutName(event.target.value)} />
 
-            <label>Event ID</label>
+            <label>&emsp;Event ID:&ensp;</label>
             <input value={eventId} onChange={(event) => setEventId(event.target.value)} />
             
-            <label>Select Red Fighter</label>
+            <label>&emsp;Select Red Fighter:&ensp;</label>
             <input value={redCorner} onChange={(event) => setRedCorner(event.target.value)} />
 
-            <label>Select Blue fighter</label>
+            <label>&emsp;Select Blue Fighter:&ensp;</label>
             <input value={blueCorner} onChange={(event) => setBlueCorner(event.target.value)}></input>
             
-            <label>Judges scored red</label>
+            <label>&emsp;Judges Scored Red:&ensp;</label>
             <input value={judgeRed} onChange={(event) => setJudgeRed(event.target.value)}></input>
             
-            <label>Judges scored blue</label>
+            <label>&emsp;Judges Scored Blue:&ensp;</label>
             <input value={judgeBlue} onChange={(event) => setJudgeBlue(event.target.value)} />
             
-            <label>Results</label>
+            <label>&emsp;Results:&ensp;</label>
             <input value={results} onChange={(event) => setResults(event.target.value)} />
 
-            <label>Number of rounds</label>
+            <label>&emsp;Number of Rounds:&ensp;</label>
             <input value={numOfRounds} onChange={(event) => setNumOfRounds(event.target.value)} />
-        
-            <button onClick={enterData}>Add new match</button>
+
+            <label>&emsp;</label>
+            <button onClick={enterData}>Add Match</button>
     </form>
     );
 }

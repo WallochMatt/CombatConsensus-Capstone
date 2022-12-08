@@ -12,6 +12,7 @@ const AdminFightersPage = (prosp) => {
             <hr className="line-spacer"></hr>
             <p className='dark'>Put</p>
             <FighterPut />
+            <hr className='line-spacer'></hr>
             <div className="table-adjust">
                 <h1 className='dark'>Fighters</h1>
                 <br/>
@@ -28,7 +29,7 @@ const AdminFightersPage = (prosp) => {
                             <tr key={index}>
                                 <td className='dark'>{fighter.id}</td>
                                 <td className='dark'>{fighter.name}</td>
-                                <FighterDelete id={fighter.id}/>
+                                <td><FighterDelete id={fighter.id}/></td>
                             </tr>
                         ))}
                     </tbody>

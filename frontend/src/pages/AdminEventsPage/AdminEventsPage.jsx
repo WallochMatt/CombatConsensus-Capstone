@@ -14,6 +14,7 @@ const AdminEventsPage = (props) => {
             <hr className='line-spacer'></hr>
             <p className='dark'>PUT</p>
             <EventPut />
+            <hr className='line-spacer'></hr>
             <div className='table-adjust'>
                 <h1 className='dark'>Events</h1>
                 <br/>

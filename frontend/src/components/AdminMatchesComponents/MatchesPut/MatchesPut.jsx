@@ -47,35 +47,36 @@ const MatchesPut = (props) => {
     };
     
     return (
-        <form>
-            <label>Select matchID</label>
+        <form className="match-post">
+            <label>&emsp;Select Match's ID:&ensp;</label>
             <input value={matchId} onChange={(event) => setMatchId(event.target.value)} />
             
-            <label>bout name</label>
+            <label>&emsp;Bout Name:&ensp;</label>
             <input value={editBoutName} onChange={(event) => setEditBoutName(event.target.value)} />
 
-            <label>Event ID</label>
+            <label>&emsp;Event ID:&ensp;</label>
             <input value={editEventId} onChange={(event) => setEditEventId(event.target.value)} />
             
-            <label>Select Red Fighter</label>
+            <label>&emsp;Select Red Fighter:&ensp;</label>
             <input value={editRedCorner} onChange={(event) => setEditRedCorner(event.target.value)} />
     
-            <label>Select blue fighter</label>
+            <label>&emsp;Select Blue Fighter:&ensp;</label>
             <input value={editBlueCorner} onChange={(event) => setEditBlueCorner(event.target.value)}></input>
             
-            <label>Judges scored red</label>
+            <label>&emsp;Judges Scored Red:&ensp;</label>
             <input value={editJudgeRed} onChange={(event) => setEditJudgeRed(event.target.value)}></input>
             
-            <label>Judges scored blue</label>
+            <label>&emsp;Judges Scored Blue:&ensp;</label>
             <input value={editJudgeBlue} onChange={(event) => setEditJudgeBlue(event.target.value)} />
             
-            <label>Results were</label>
+            <label>&emsp;Results:&ensp;</label>
             <input value={editResults} onChange={(event) => setEditResults(event.target.value)} />
 
-            <label>Number of rounds</label>
+            <label>&emsp;Number of Rounds:&ensp;</label>
             <input value={editNumOfRounds} onChange={(event) => setEditNumOfRounds(event.target.value)} />
-        
-            <button onClick={enterData}>Change the Match</button>
+
+            <label>&emsp;</label>
+            <button onClick={enterData}>Change Match</button>
         </form>
     );
 }
