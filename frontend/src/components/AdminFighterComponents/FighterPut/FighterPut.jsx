@@ -7,6 +7,7 @@ const FighterPut = (props) => {
 
     const [fighterId, setFighterId] = useState(0);
     const [editName, setEditName] = useState('');
+    const [editImg, setEditImg] = useState('');
 
     async function editFighter(changedEvent){
         try{
@@ -28,6 +29,7 @@ const FighterPut = (props) => {
         event.preventDefault();
         let changedEvent = {
             name : `${editName}`,
+            image_link: `${editImg}`,
         };
         editFighter(changedEvent)
     }
@@ -39,6 +41,10 @@ const FighterPut = (props) => {
             <input value={fighterId} onChange={(event) => setFighterId(event.target.value)} />
             <label>&emsp;Change the name:&emsp;</label>
             <input value={editName} onChange={(event) => setEditName(event.target.value)} />
+            
+            <label>&emsp;Change the picture:&emsp;</label>
+            <input value={editImg} onChange={(event) => setEditImg(event.target.value)} />
+            
             <label>&emsp;</label>
             <button onClick={enterData}>Edit Fighter</button>
         </form>

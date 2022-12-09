@@ -90,6 +90,7 @@ def find_match_total(request):
                 fighter_totals = {
                 "fighter_id" : fighter.id,
                 "name": fighter.name,
+                "image": fighter.image_link,
                 "judge_total" :ttl_judged, 
                 "fan_total" : ttl_fan}
 

@@ -8,6 +8,7 @@ const FighterPost = (props) => {
     const [user, token] = useAuth();
 
     const [newName, setNewName] = useState('');
+    const [newImg, setNewImg] = useState('');
 
     async function addNewFighter(newFighter){
         try{
@@ -28,7 +29,8 @@ const FighterPost = (props) => {
     function enterData(event) {
         event.preventDefault();
         let newFighter = {
-            name : `${newName}`
+            name : `${newName}`,
+            image_link : `${newImg}`,
         };
         addNewFighter(newFighter)
     };
@@ -38,6 +40,8 @@ const FighterPost = (props) => {
         <form>
             <label>The fighter's name: &emsp;</label>
             <input value={newName} onChange={(event) => setNewName(event.target.value)} />
+            <label>&emsp;The fighter's image link: &emsp;</label>
+            <input value={newImg} onChange={(event) => setNewImg(event.target.value)} />
             <label>&emsp;</label>
             <button onClick={enterData}>Add Fighter</button>
         </form>

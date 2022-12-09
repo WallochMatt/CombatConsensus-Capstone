@@ -4,4 +4,4 @@ from .models import Fighter
 class FighterSerializer(serializers.ModelSerializer):
     class Meta:
         model = Fighter
-        fields = ['id', 'name']
+        fields = ['id', 'name', 'image_link']

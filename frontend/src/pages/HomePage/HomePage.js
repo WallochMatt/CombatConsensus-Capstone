@@ -27,6 +27,7 @@ const HomePage = (props) => {
                 console.log(error)
             }
         }
+        console.log("fav ", ofcFav)
         fetchFighterTotals();
     }, [])
 
@@ -38,8 +39,8 @@ const HomePage = (props) => {
 
             <div className="centerize">
                 <div className="together">
-                    <FanFav fanFav={fanFav}/>
-                    <OfcFav ofcFav={ofcFav}/>
+                    <FanFav fanFav={fanFav} fighters={props.fighters}/>
+                    <OfcFav ofcFav={ofcFav} fighters={props.fighters}/>
                 </div>
             </div>
 

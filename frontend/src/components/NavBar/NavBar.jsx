@@ -33,7 +33,7 @@ const Navbar = () => {
             </li>
 
             <li>
-              <Link to="/admin/fighters/" style={{ textDecoration: "none", color: "white" }}>
+              <Link to="/admin/fighters/" style={{ textDecoration: "none", color: "white", marginRight: '2em' }}>
                 <b>Fighters</b>
               </Link>
             </li>
