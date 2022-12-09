@@ -8,39 +8,88 @@ const Navbar = () => {
   const { logoutUser, user } = useContext(AuthContext);
   const navigate = useNavigate();
   //HERE I could ternary(or if/else) the navbar to display diferrently for admins or base users. Returning the corresponding NavBar
-  return (
-    <div className="navBar">
-      <ul>
-        
-        <li className="brand">
-          <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-            <b>Home</b>
-          </Link>
-        </li>
 
-        <li>
-          <Link to="/events" style={{ textDecoration: "none", color: "white" }}>
-            <b>Events</b>
-          </Link>
-        </li>
+  if(user && (user.is_staff)){
+    return (
+        <div style={{background: "var(--blue)"}} className="navBar">
+          <ul>
+            
+            <li className="brand">
+              <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+                <b>Admin</b>
+              </Link>
+            </li>
+    
+            <li>
+              <Link to="/admin/events/" style={{ textDecoration: "none", color: "white" }}>
+                <b>AEvents</b>
+              </Link>
+            </li>
+    
+            <li>
+              <Link to="/admin/matches/" style={{ textDecoration: "none", color: "white" }}>
+                <b>AMatches</b>
+              </Link>
+            </li>
 
-        <li>
-          <Link to="/matches" style={{ textDecoration: "none", color: "white" }}>
-            <b>Matches</b>
-          </Link>
-        </li>
-        
-        <li>
-          {user ? (
-            <button onClick={logoutUser}>Logout</button>
-          ) : (
-            <button onClick={() => navigate("/login")}>Login</button>
-          )}
-        </li>
+            <li>
+              <Link to="/admin/fighters/" style={{ textDecoration: "none", color: "white" }}>
+                <b>Fighters</b>
+              </Link>
+            </li>
+            
+            <li>
+              {user ? (
+                <button onClick={logoutUser}>Logout</button>
+              ) : (
+                <button onClick={() => navigate("/login")}>Login</button>
+              )}
+            </li>
 
-      </ul>
-    </div>
-  );
+          </ul>
+        </div>
+      );
+    }
+    else{
+      return (
+        <div style={{background: "var(--red)"}} className="navBar">
+          <ul>
+            
+            <li className="brand">
+              <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+                <b>Home</b>
+              </Link>
+            </li>
+    
+            <li>
+              <Link to="/events" style={{ textDecoration: "none", color: "white" }}>
+                <b>Events</b>
+              </Link>
+            </li>
+    
+            <li>
+              <Link to="/matches" style={{ textDecoration: "none", color: "white" }}>
+                <b>Matches</b>
+              </Link>
+            </li>
+            
+            <li>
+              {user ? (
+                <button onClick={logoutUser}>Logout</button>
+              ) : (
+                <button onClick={() => navigate("/login")}>Login</button>
+              )}
+            </li>
+    
+          </ul>
+        </div>
+      );
+    };
+
+
+
+
+
 };
 
 export default Navbar;
