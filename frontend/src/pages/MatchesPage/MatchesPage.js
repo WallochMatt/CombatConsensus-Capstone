@@ -6,7 +6,7 @@ const MatchesPage = (props) => {
     let navigate = useNavigate();
 
     function sendEvent(match){
-        navigate(`/event-card/${match.event_id}/`)
+        navigate(`/match/${match.id}/`) //change to match id
     }
 // link matches to the event theyre from?
     return ( 

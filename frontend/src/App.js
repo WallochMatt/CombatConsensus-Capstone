@@ -14,6 +14,7 @@ import EventCardPage from "./pages/EventCardPage/EventCardPage";
 import AdminMatchesPage from "./pages/AdminMatchesPage/AdminMatchesPage";
 import AdminFightersPage from "./pages/AdminFightersPage/AdminFightersPage";
 import AdminEventsPage from "./pages/AdminEventsPage/AdminEventsPage";
+import MatchPage from "./pages/MatchPage/MatchPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -99,6 +100,7 @@ function App() {
         <Route path="/matches" element={<MatchesPage matches={matches} />}/>
         <Route path="/user/:username" element={<UserPage />}/>
         <Route path="/event-card/:id" element={<EventCardPage events={events} matches={matches} />}/>
+        <Route path="/match/:id" element={<MatchPage matches={matches} />}/>
       </Routes>
       {/* <Footer /> */}
     </div>

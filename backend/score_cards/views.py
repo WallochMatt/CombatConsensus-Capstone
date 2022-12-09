@@ -26,7 +26,6 @@ def all_fan_cards(request, username):
     if request.method == "GET":
         fan = get_object_or_404(User, username=username)
         cards_for_fan = ScoreCard.objects.filter(fan=fan)
-        print("fan is:", fan)
         serializer = ScoreCardSerializer(cards_for_fan, many=True)
         return Response(serializer.data)
 
@@ -61,6 +60,16 @@ def accuracy(request, username):
 
         total_accuracy = (accuracy_1 + accuracy_2) / 2
         return Response(round(total_accuracy, 2))
+
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def find_match_score_cards(request, match):
+    if request.method == "GET":
+        fan_cards = ScoreCard.objects.filter(match=match)
+        serializer = ScoreCardSerializer(fan_cards, many=True)
+        return Response(serializer.data)
+
 
 
 
