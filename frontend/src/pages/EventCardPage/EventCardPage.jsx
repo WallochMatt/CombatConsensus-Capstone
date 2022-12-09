@@ -34,11 +34,9 @@ const EventCardPage = (props) => {
             </div>
             
             <div className="centerize">
-
                 <h2 className="true-center">
                     EVENT: {currentEvent}
                 </h2>
-
                 <div className="format-ecp" >
                     {eventMatches.map((match, index) => (
                         <div  key={index}>

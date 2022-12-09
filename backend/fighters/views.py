@@ -22,8 +22,8 @@ def all_fighters(request):
 @permission_classes([AllowAny])
 def one_fighter(request, pk):
     if request.method == 'GET':
-        fighters = Fighter.objects.filter(pk=pk)
-        serializer = FighterSerializer(fighters, many=True)
+        fighter = get_object_or_404(Fighter, pk=pk)
+        serializer = FighterSerializer(fighter)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 

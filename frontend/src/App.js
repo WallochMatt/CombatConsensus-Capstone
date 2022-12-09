@@ -68,7 +68,6 @@ function App() {
       fetchFighters();
     }, [])
 
-
 //use app main div to create backgrounds?
   return (
     <div className="app-main-div"> 
@@ -100,7 +99,7 @@ function App() {
         <Route path="/matches" element={<MatchesPage matches={matches} />}/>
         <Route path="/user/:username" element={<UserPage />}/>
         <Route path="/event-card/:id" element={<EventCardPage events={events} matches={matches} />}/>
-        <Route path="/match/:id" element={<MatchPage matches={matches} />}/>
+        <Route path="/match/:id" element={<MatchPage matches={matches} fighters={fighters}/>}/>
       </Routes>
       {/* <Footer /> */}
     </div>
