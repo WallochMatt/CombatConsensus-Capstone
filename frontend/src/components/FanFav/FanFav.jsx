@@ -6,8 +6,8 @@ const FanFav = (props) => {
     
     return ( 
         <div className="card-background format-profile">
-            <p> The fans fav:</p>
-            <>picture</>
+            <p> The Fans' Favorite:</p>
+            <img id="fanFavImg" src={`${props.fanFav.image}`} />
             <p>{props.fanFav.name}</p>
         </div>
     );

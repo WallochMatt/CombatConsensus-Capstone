@@ -22,13 +22,13 @@ const Navbar = () => {
     
             <li>
               <Link to="/admin/events/" style={{ textDecoration: "none", color: "white" }}>
-                <b>AEvents</b>
+                <b>Events</b>
               </Link>
             </li>
     
             <li>
               <Link to="/admin/matches/" style={{ textDecoration: "none", color: "white" }}>
-                <b>AMatches</b>
+                <b>Matches</b>
               </Link>
             </li>
 

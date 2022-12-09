@@ -10,3 +10,12 @@
     justify-content: space-between;
     align-items: center;
 }
+
+
+#ofcFavImg{
+    height: 70vh;
+    width: 35vh;
+    z-index: 0;
+    object-fit: cover;
+    object-position: 60% 50%;
+}
