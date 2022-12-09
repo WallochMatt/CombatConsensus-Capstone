@@ -27,7 +27,6 @@ def one_fighter(request, pk):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-
 #ADMINS
 @api_view(["POST"])
 @permission_classes([IsAdminUser])
@@ -54,7 +53,6 @@ def edit_fighter(request, pk):
 
 
 #PAGE DATA
-
 @api_view(['GET'])
 @permission_classes([AllowAny])
 def find_fan_fav(request):

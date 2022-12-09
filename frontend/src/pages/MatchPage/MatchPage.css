@@ -30,3 +30,8 @@
     object-fit: cover;
     object-position: 50% 0%;
 }
+
+
+.link-cover{
+    text-decoration: none;
+}

@@ -74,7 +74,6 @@ const MatchPage = (props) => {
                     <p>{currentMatch.results}</p>
                 </div>
                 <hr className="line"></hr>
-
                 <div className="format-ecp" >
                     {scoreCards.map((card, index) => (
                         <div className="card-space"  key={index}>
@@ -85,7 +84,6 @@ const MatchPage = (props) => {
                         </div>
                     ))}
                 </div>
-
             </div>
 
             <div className="side blue">

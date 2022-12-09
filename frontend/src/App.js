@@ -43,7 +43,6 @@ function App() {
       };
       fetchEvents();
 
-
       const fetchMatches = async () => {
         try {
             let response = await axios.get("http://127.0.0.1:8000/matches/");
@@ -55,7 +54,6 @@ function App() {
       };
       fetchMatches();
   
-
       const fetchFighters = async () => {
         try{
             let  response = await axios.get('http://127.0.0.1:8000/fighters/');
@@ -68,7 +66,8 @@ function App() {
       fetchFighters();
     }, [])
 
-//use app main div to create backgrounds?
+
+
   return (
     <div className="app-main-div"> 
       <Navbar />

@@ -24,8 +24,8 @@ def all_matches(request):
 @permission_classes([AllowAny])
 def one_match(request, pk):
     if request.method == 'GET':
-        match = Match.objects.filter(pk=pk)
-        serializer = MatchSerializer(match, many=True)
+        match = get_object_or_404(Match, pk=pk)
+        serializer = MatchSerializer(match)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
@@ -39,10 +39,6 @@ def event_matches(request, event):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-
-
-
-
 @api_view(["POST"])
 @permission_classes([IsAdminUser])
 def add_match(request):
@@ -50,6 +46,7 @@ def add_match(request):
     if serialzer.is_valid(raise_exception=True):
         serialzer.save()
         return Response(serialzer.data, status=status.HTTP_201_CREATED)
+
 
 @api_view(['PUT', 'DELETE'])
 @permission_classes([IsAdminUser])
@@ -64,7 +61,6 @@ def edit_match(request, pk):
     elif request.method == 'DELETE':
         match.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
-
 
 
 @api_view(["GET"])
@@ -98,4 +94,3 @@ def find_match_total(request):
 
     return Response(all_fighter_totals)
 
-        #iterate through fighters in the front end to see favorites

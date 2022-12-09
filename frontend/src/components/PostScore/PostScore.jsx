@@ -1,9 +1,8 @@
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
 import React, { useState } from 'react';
-import "./PostScoreModal.css";
+import "./PostScore.css";
 
-// {!fan_id ? etc for the button that spawns the moodal? or on the modal itself maybe
 const PostScoreModal = (props) => {
 
     const [user, token] = useAuth();
@@ -47,7 +46,6 @@ const PostScoreModal = (props) => {
         }
     };
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     function handleRoundRed(index, value){
         let roundScores = redTotal // reduce the array to one num

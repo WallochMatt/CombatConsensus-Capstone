@@ -5,6 +5,7 @@ import "./RegisterPage.css";
 
 const RegisterPage = () => {
   const { registerUser } = useContext(AuthContext);
+  
   const defaultValues = {
     username: "",
     email: "",
@@ -12,6 +13,7 @@ const RegisterPage = () => {
     firstName: "",
     lastName: "",
   };
+
   const [formData, handleInputChange, handleSubmit] = useCustomForm(
     defaultValues,
     registerUser

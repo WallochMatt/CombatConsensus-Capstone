@@ -16,12 +16,12 @@ const HomePage = (props) => {
                 let response = await axios.get("http://127.0.0.1:8000/matches/find-match-total/");
 
                 
-                    let jF = response.data.sort((a, b) => b.judge_total - a.judge_total)[0];    
-                    setOfcFav(jF)
+                let jF = response.data.sort((a, b) => b.judge_total - a.judge_total)[0];    
+                setOfcFav(jF)
 
 
-                    let fF = response.data.sort((a, b) => b.fan_total - a.fan_total)[0];    
-                    setFanFav(fF)
+                let fF = response.data.sort((a, b) => b.fan_total - a.fan_total)[0];    
+                setFanFav(fF)
             }
             catch(error){
                 console.log(error)

@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
-import PostScoreModal from "../../components/PostScoreModal/PostScoreModal";
+import PostScoreModal from "../../components/PostScore/PostScore";
 import MatchBox from "../../components/MatchBox/MatchBox";
 
 import "./EventCardPage.css";
@@ -46,7 +46,6 @@ const EventCardPage = (props) => {
                         </div>
                     ))}
                 </div>
-
             </div>
 
             <div className="side blue">
