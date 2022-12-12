@@ -13,15 +13,15 @@ const PostScore = (props) => {
 
     function handlSubmit(event) {
         event.preventDefault();
-        let fan_score_1 = redTotal.reduce((accumulator, currentValue) => accumulator + currentValue);
-        let fan_score_2 = blueTotal.reduce((accumulator, currentValue) => accumulator + currentValue);
+        let red_fan_score = redTotal.reduce((accumulator, currentValue) => accumulator + currentValue);
+        let blue_fan_score = blueTotal.reduce((accumulator, currentValue) => accumulator + currentValue);
 
         let userScores = {
-            fan_score_f1: fan_score_1,
-            fan_score_f2: fan_score_2,
+            red_fan_score: red_fan_score,
+            blue_fan_score: blue_fan_score,
             match_id: props.match.id,
         };
-        if(fan_score_1 && fan_score_2 > 21){
+        if(red_fan_score + blue_fan_score > 16){
             console.log(userScores) //do the post
         }
         else{

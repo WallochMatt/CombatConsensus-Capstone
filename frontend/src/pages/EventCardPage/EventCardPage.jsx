@@ -1,12 +1,12 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
-import PostScore from "../../components/PostScore/PostScore";
 import MatchBox from "../../components/MatchBox/MatchBox";
 
 import "./EventCardPage.css";
 
 
 const EventCardPage = (props) => {
+
     const {id} = useParams(); //refering to the event's id
 
     const [eventMatches, setEventMatches] = useState([]);
@@ -39,10 +39,10 @@ const EventCardPage = (props) => {
                 </h2>
                 <div className="format-ecp" >
                     {eventMatches.map((match, index) => (
-                        <div  key={index}>
-                            <MatchBox match={match}/>
-                            {/* use a ternary truthy for the post score modal maybe*/}
-                            <PostScore match={match}/>
+                        <div style={{margin: "2em 0em"}} key={index}>
+                            <Link className="link-cover" to={`/match/${match.id}`}>
+                                <MatchBox match={match}/>
+                            </Link>
                         </div>
                     ))}
                 </div>

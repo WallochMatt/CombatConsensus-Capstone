@@ -95,7 +95,7 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/events" element={<EventsPage events={events} />} />
-        <Route path="/matches" element={<MatchesPage matches={matches} />}/>
+        <Route path="/matches" element={<MatchesPage matches={matches}/>}/>
         <Route path="/user/:username" element={<UserPage />}/>
         <Route path="/event-card/:id" element={<EventCardPage events={events} matches={matches} />}/>
         <Route path="/match/:id" element={<MatchPage matches={matches} fighters={fighters}/>}/>

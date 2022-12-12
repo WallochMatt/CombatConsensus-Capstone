@@ -4,8 +4,12 @@ import axios from "axios";
 import UserCards from "../../components/UserCards/UserCards";
 import { Link } from "react-router-dom";
 import "./MatchPage.css";
+import PostScore from "../../components/PostScore/PostScore";
+import useAuth from "../../hooks/useAuth";
+
 
 const MatchPage = (props) => {
+    const [user, token] = useAuth();
 
     const {id} = useParams();
     
@@ -65,14 +69,28 @@ const MatchPage = (props) => {
             <div  className="side red">
                 <img id="corner-red" src={`${red.image_link}`} />
             </div>
-            
+        
             <div className="centerize">
+
                 <div className="match-details">
                     <h2 >
-                        {currentMatch.bout_name}
+                        <span style={{color: "red"}}>{red.name}</span> VS. <span style={{color: "blue"}}>{blue.name}</span>
                     </h2>
                     <p>{currentMatch.results}</p>
                 </div>
+                <hr className="line"></hr>
+
+                <div>
+                    {user ? (
+                    <div>
+                        <p>Post your Score</p>
+                        <PostScore match={currentMatch}/>
+                    </div>
+                    ) : (
+                        <Link to="/login">Log in to score bouts!</Link>
+                    )}
+                </div>
+                
                 <hr className="line"></hr>
                 <div className="format-ecp" >
                     {scoreCards.map((card, index) => (
@@ -84,6 +102,7 @@ const MatchPage = (props) => {
                         </div>
                     ))}
                 </div>
+
             </div>
 
             <div className="side blue">
