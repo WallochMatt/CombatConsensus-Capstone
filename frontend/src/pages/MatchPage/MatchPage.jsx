@@ -5,12 +5,13 @@ import UserCards from "../../components/UserCards/UserCards";
 import { Link } from "react-router-dom";
 import "./MatchPage.css";
 import PostScore from "../../components/PostScore/PostScore";
-import useAuth from "../../hooks/useAuth";
+
 import MatchBox from "../../components/MatchBox/MatchBox";
+import PostCondition from "../../components/PostCondition/PostCondition";
 
 
 const MatchPage = (props) => {
-    const [user, token] = useAuth();
+    
 
     const {id} = useParams();
     
@@ -65,6 +66,7 @@ const MatchPage = (props) => {
         fetchBlue();
     }, [props.matches, currentMatch]);
     
+
     return (
         <div className="flex">
             <div  className="side red">
@@ -81,17 +83,7 @@ const MatchPage = (props) => {
                 </div>
                 <hr className="line"></hr>
 
-                <div>
-                    <MatchBox match={currentMatch} />
-                    {user ? (
-                    <div>
-                        <p>Post your Score</p>
-                        <PostScore match={currentMatch}/>
-                    </div>
-                    ) : (
-                        <Link to="/login">Log in to score bouts!</Link>
-                    )}
-                </div>
+                <PostCondition currentMatch={currentMatch} scoreCards={scoreCards}/>
                 
                 <hr className="line"></hr>
                 <div className="format-ecp" >

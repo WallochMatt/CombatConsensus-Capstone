@@ -8,14 +8,12 @@ const UserCards = (props) => {
         <thead>
           <tr className='shadow'>
               <th>Bout</th>
-              <th>Judges Say</th>
               <th>My Score</th>
           </tr>
         </thead>
         <tbody>
           <tr className='bottom-blurb'>
               <td>{props.card.match.bout_name}</td>
-              <td><span style={{ color: "#A70E0E"}}>{props.card.match.red_judge_avg}</span> - <span style={{ color: "#1B1EAB"}}>{props.card.match.blue_judge_avg}</span></td>
               <td><span style={{ color: "#A70E0E"}}>{props.card.red_fan_score}</span> - <span style={{ color: "#1B1EAB"}}>{props.card.blue_fan_score}</span></td>
           </tr>
         </tbody>

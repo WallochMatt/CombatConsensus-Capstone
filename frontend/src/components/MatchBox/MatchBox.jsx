@@ -12,11 +12,10 @@ const MatchBox = (props) => {
                 setAverage(response.data);
             }
             catch(error){
-                console.log("fetchAverages error: ", error.response.data)
+                console.log("fetchAverages error: ")
             }
         };
         fetchAverages();
-        console.log(average)
     }, [props.match]); //end of useEffect
 
     return (

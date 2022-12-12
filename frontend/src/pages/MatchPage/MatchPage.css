@@ -35,3 +35,10 @@
 .link-cover{
     text-decoration: none;
 }
+
+
+.log-in-call{
+    display: flex;
+    margin: 1em 0em;
+    justify-content: center;
+}

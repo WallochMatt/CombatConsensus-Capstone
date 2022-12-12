@@ -21,7 +21,7 @@ const EventCardPage = (props) => {
                 }
             })
         setEventMatches(matchesForEvent, ...eventMatches);
-        setCurrentEvent(props.events[id - 1].event_title) //double check this with secind event
+        setCurrentEvent(props.events[id - 1].event_title);
     };
     
     }, [props.matches]); //end of useEffect
