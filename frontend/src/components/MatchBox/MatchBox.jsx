@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import axios from 'axios';
 import "./MatchBox.css";
 
 const MatchBox = (props) => {
-    const [average, setAverage] = useState([]);
+    const [average, setAverage] = useState({});
 
     useEffect(() => {
         const fetchAverages = async () => {
@@ -16,9 +16,10 @@ const MatchBox = (props) => {
             }
         };
         fetchAverages();
-    }, []); //end of useEffect
+        console.log(average)
+    }, [props.match]); //end of useEffect
 
-    return ( 
+    return (
         <div>
             <table>
                 <thead>
@@ -32,7 +33,7 @@ const MatchBox = (props) => {
                     <tr className='bottom-blurb'>
                         <td>{props.match.bout_name}</td>
                         <td><span style={{ color: "#A70E0E"}}>{props.match.red_judge_avg}</span> - <span style={{ color: "#1B1EAB"}}>{props.match.blue_judge_avg}</span></td>
-                        <td><span style={{ color: "#A70E0E"}}>{average[0]}</span> - <span style={{ color: "#1B1EAB"}}>{average[1]}</span></td>
+                        <td><span style={{ color: "#A70E0E"}}>{average.red_avg}</span> - <span style={{ color: "#1B1EAB"}}>{average.blue_avg}</span></td>
                     </tr>
                 </tbody>
             </table>

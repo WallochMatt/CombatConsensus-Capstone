@@ -1,11 +1,12 @@
 import { useParams } from "react-router-dom";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import axios from "axios";
 import UserCards from "../../components/UserCards/UserCards";
 import { Link } from "react-router-dom";
 import "./MatchPage.css";
 import PostScore from "../../components/PostScore/PostScore";
 import useAuth from "../../hooks/useAuth";
+import MatchBox from "../../components/MatchBox/MatchBox";
 
 
 const MatchPage = (props) => {
@@ -45,7 +46,7 @@ const MatchPage = (props) => {
                 setRed(response.data)
             }
             catch(error){
-                console.log(error)
+                console.log("No red fighter identidied ", error)
             }
         };
 
@@ -81,6 +82,7 @@ const MatchPage = (props) => {
                 <hr className="line"></hr>
 
                 <div>
+                    <MatchBox match={currentMatch} />
                     {user ? (
                     <div>
                         <p>Post your Score</p>

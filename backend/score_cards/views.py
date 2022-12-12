@@ -91,12 +91,15 @@ def find_average(request, match):
             f1_average = running_total_red/count_rt
             f2_average = running_total_blue/count_rt
 
-            final_result = [
-                [f1_average],
-                [f2_average]
-            ]
+            final_result = {
+                "red_avg": f1_average,
+                "blue_avg": f2_average
+            }
         except:
-            return Response([["TBD"], ["TBD"]])
+            return Response({
+                "red_avg": "TBD",
+                "blue_avg": "TBD"
+            })
 
         return Response(final_result)
 

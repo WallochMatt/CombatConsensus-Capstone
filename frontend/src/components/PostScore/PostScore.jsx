@@ -22,7 +22,8 @@ const PostScore = (props) => {
             match_id: props.match.id,
         };
         if(red_fan_score + blue_fan_score > 16){
-            console.log(userScores) //do the post
+            console.log(userScores); //do the post
+            postScore(userScores);
         }
         else{
             alert("You need to enter into all the fields")
