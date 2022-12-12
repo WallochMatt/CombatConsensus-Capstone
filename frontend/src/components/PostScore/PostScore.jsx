@@ -3,7 +3,7 @@ import useAuth from "../../hooks/useAuth";
 import React, { useState } from 'react';
 import "./PostScore.css";
 
-const PostScoreModal = (props) => {
+const PostScore = (props) => {
 
     const [user, token] = useAuth();
 
@@ -71,7 +71,7 @@ const PostScoreModal = (props) => {
 
     function sendForm(i){
         return(
-            <div className="between-rounds">
+            <div key={i} className="between-rounds">
                 <p>Round {i + 1}</p>
                 <div>
                     <label htmlFor="fan_score_f1" style={{color: "red"}}>Red:</label>
@@ -111,4 +111,4 @@ const PostScoreModal = (props) => {
     )
 };
 
-export default PostScoreModal;
+export default PostScore;

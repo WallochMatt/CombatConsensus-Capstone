@@ -38,6 +38,7 @@ const HomePage = (props) => {
             </div>
 
             <div className="centerize">
+                <h2 className="title">Welcome to Combat Consensus</h2>
                 <div className="together">
                     <FanFav fanFav={fanFav} fighters={props.fighters}/>
                     <OfcFav ofcFav={ofcFav} fighters={props.fighters}/>

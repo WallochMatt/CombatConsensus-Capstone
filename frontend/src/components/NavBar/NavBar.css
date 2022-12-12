@@ -10,10 +10,9 @@ li {
 }
 
 .navBar {
-  /* background: #A70E0E; */
   box-shadow: 1px 1px 4px rgb(52 40 40);
   color: white;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem .5rem;
   width: 100%;
   position: fixed;
   z-index: 100;

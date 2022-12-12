@@ -57,17 +57,17 @@ const Navbar = () => {
             
             <li className="brand">
               <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-                <b>Home</b>
+                <b>CC</b>
               </Link>
             </li>
     
-            <li>
+            <li style={{ postition: "fixed", left: "33.3%"}}>
               <Link to="/events" style={{ textDecoration: "none", color: "white" }}>
                 <b>Events</b>
               </Link>
             </li>
     
-            <li>
+            <li style={{ postition: "fixed", right: "33.3%"}}>
               <Link to="/matches" style={{ textDecoration: "none", color: "white" }}>
                 <b>Matches</b>
               </Link>

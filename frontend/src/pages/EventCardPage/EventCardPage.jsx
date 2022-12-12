@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
-import PostScoreModal from "../../components/PostScore/PostScore";
+import PostScore from "../../components/PostScore/PostScore";
 import MatchBox from "../../components/MatchBox/MatchBox";
 
 import "./EventCardPage.css";
@@ -42,7 +42,7 @@ const EventCardPage = (props) => {
                         <div  key={index}>
                             <MatchBox match={match}/>
                             {/* use a ternary truthy for the post score modal maybe*/}
-                            <PostScoreModal match={match}/>
+                            <PostScore match={match}/>
                         </div>
                     ))}
                 </div>

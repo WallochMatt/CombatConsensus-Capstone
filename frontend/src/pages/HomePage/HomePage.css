@@ -26,3 +26,10 @@
     object-fit: cover;
     object-position: 30% 50%;
 }
+
+
+.title{
+    display: flex;
+    justify-content: center;
+    margin-top: inherit;
+}

@@ -36,6 +36,7 @@ export const AuthProvider = ({ children }) => {
         email: registerData.email,
         first_name: registerData.firstName,
         last_name: registerData.lastName,
+        accuracy: null
       };
       let response = await axios.post(`${BASE_URL}/register/`, finalData);
       if (response.status === 201) {
@@ -61,7 +62,7 @@ export const AuthProvider = ({ children }) => {
         setIsServerError(false);
         navigate("/");
       } else {
-        navigate("/register");
+        navigate("/register"); //add if request methods, eror alerts
       }
     } catch (error) {
       console.log(error.response.data);
