@@ -21,6 +21,20 @@ const MatchPage = (props) => {
     const [blue, setBlue] = useState({});
 
     useEffect(() => {
+        const fetchCurrentMatch = async () => {
+            try{
+                let response = await axios.get(`http://127.0.0.1:8000/matches/${id}/`);
+                setCurrentMatch(response.data);
+                setRed(response.data.red_corner);
+                setBlue(response.data.blue_corner);
+            }
+            catch(error){
+                console.log(error.response);
+            }
+        }
+        fetchCurrentMatch();
+        console.log(currentMatch)
+
         const fetchScoreCards = async () => {
             try {
                 let response = await axios.get(`http://127.0.0.1:8000/user/${id}/findcards/`)
@@ -30,41 +44,9 @@ const MatchPage = (props) => {
                 console.log(error.response);
             }
         }
-        if(props.matches.length >= 1){
-            let matchesForEvent = props.matches;
-            matchesForEvent.filter(function(match){
-                if(match.event === id){
-                    return true;
-                }
-            })
-        setCurrentMatch(props.matches[id - 1]);
         fetchScoreCards();
-        };
 
-        const fetchRed = async () => {
-            try{
-                let response = await axios.get(`http://127.0.0.1:8000/fighters/${currentMatch.red_corner_id}/`);
-                setRed(response.data)
-            }
-            catch(error){
-                console.log("No red fighter identidied ", error)
-            }
-        };
-
-        fetchRed();
-        const fetchBlue = async () => {
-            try{
-                let response = await axios.get(`http://127.0.0.1:8000/fighters/${currentMatch.blue_corner_id}/`);
-                setBlue(response.data)
-            }
-            catch(error){
-                console.log(error)
-            }
-        }
-
-        fetchRed();
-        fetchBlue();
-    }, [props.matches, currentMatch]);
+    }, [props.matches]); //end of useEffect
     
 
     return (

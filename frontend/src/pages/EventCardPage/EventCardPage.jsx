@@ -36,7 +36,7 @@ const EventCardPage = (props) => {
         fetchEventMatches();
 
     }, [props.matches]); //end of useEffect
-
+    console.log(eventMatches)
 
     return ( 
         <div className="flex">
