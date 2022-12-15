@@ -37,7 +37,7 @@ const HomePage = (props) => {
                 <img id="john" src="https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTg0OTE3NTcyMDAzNTcwODA4/1-1-jan-blachowicz-ufc-267.jpg" />
             </div>
 
-            <div className="centerize">
+            <div className="centerize" >
                 <h2 className="title">Welcome to Combat Consensus</h2>
                 <div className="together">
                     <FanFav fanFav={fanFav} fighters={props.fighters}/>

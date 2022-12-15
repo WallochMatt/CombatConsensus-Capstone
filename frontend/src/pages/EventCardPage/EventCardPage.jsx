@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 import MatchBox from "../../components/MatchBox/MatchBox";
-
+import axios from "axios";
 import "./EventCardPage.css";
 
 
@@ -13,17 +13,28 @@ const EventCardPage = (props) => {
     const [currentEvent, setCurrentEvent] = useState();
 
     useEffect(() => {
-        if(props.matches.length >= 1){
-            let matchesForEvent = props.matches;
-            matchesForEvent.filter(function(match){
-                if(match.event === id){
-                    return true;
-                }
-            })
-        setEventMatches(matchesForEvent, ...eventMatches);
-        setCurrentEvent(props.events[id - 1].event_title);
-    };
-    
+        const fetchCurrentEvent = async () => {
+            try{
+                let response = await axios.get(`http://127.0.0.1:8000/events/${id}/`);
+                setCurrentEvent(response.data.event_title)
+            }
+            catch(error){
+                console.log(error)
+            }
+        };
+        fetchCurrentEvent();
+
+        const fetchEventMatches = async () => {
+            try{
+                let response = await axios.get(`http://127.0.0.1:8000/matches/${id}/sort-matches/`)
+                setEventMatches(response.data);
+            }
+            catch(error){
+                console.log(error.response.data);
+            }
+        };
+        fetchEventMatches();
+
     }, [props.matches]); //end of useEffect
 
 
@@ -33,9 +44,9 @@ const EventCardPage = (props) => {
                 <img id="paddy" src="https://cdn.vox-cdn.com/thumbor/rRlEmsLdcLoUgz4TBCxz8W70unQ=/454x568:2986x2555/1200x800/filters:focal(1233x556:1867x1190)/cdn.vox-cdn.com/uploads/chorus_image/image/70007491/1338319637.0.jpg" />
             </div>
             
-            <div className="centerize">
+            <div className="centerize" data-cy="cardPage-mid">
                 <h2 className="true-center">
-                    EVENT: {currentEvent}
+                    {currentEvent}
                 </h2>
                 <div className="format-ecp" >
                     {eventMatches.map((match, index) => (

@@ -53,7 +53,7 @@ const UserPage = () => {
         
         <div className="top-row">
           <div className="my">
-            <p style={{fontSize: '3.5em'}}>
+            <p style={{fontSize: '3.5em'}} data-cy="username">
               {username}
             </p>
           </div>

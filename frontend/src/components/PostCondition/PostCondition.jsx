@@ -1,9 +1,22 @@
 import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import PostScore from "../../components/PostScore/PostScore";
+import { useState } from "react";
+import "./PostCondition.css"
 
 const PostCondition = (props) => {
     const [user, token] = useAuth();
+
+
+
+
+    const [modal, setModal] = useState(false)
+    
+    function spawnModal(){
+        setModal(true)
+    }
+
+
 
     function findCondition(){
         
@@ -17,14 +30,18 @@ const PostCondition = (props) => {
                 if(user && user_entry.length === 0){
                     return(
                         <div>
-                            <p>Post your Score</p>
-                            <PostScore match={props.currentMatch}/>
+                            <Link to="#" className="post-call" onClick={spawnModal} style={{color: "#ffc386"}}>Click Here To Post Your Score!</Link>
+                            {modal && <PostScore match={props.currentMatch} setModal={setModal}/>}
                         </div>
                     )
                 }
 
                 else if(user && user_entry.length > 0){
-                    console.log("scroed already")
+                    return(
+                    <div>
+                        <p className="post-title">Thank you for your score card, {user.username}!</p>
+                    </div>
+                    )
                 }
             }
 

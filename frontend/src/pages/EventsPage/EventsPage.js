@@ -15,7 +15,7 @@ const EventsPage = (props) => {
                 <img id="masvidal" src="https://images.complex.com/complex/images/c_fill,dpr_auto,f_auto,q_auto,w_1400/fl_lossy,pg_1/fzq1iiyoxktijqzwe7g6/jorge-masvidal?fimg-ssr-default" />
             </div>
 
-            <div className="centerize">
+            <div className="centerize" data-cy="event-mid">
                 <h1 className="true-center">EVENTS PAGE</h1>
                 <div className="format">
                     {props.events &&

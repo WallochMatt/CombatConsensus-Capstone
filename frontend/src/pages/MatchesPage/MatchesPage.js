@@ -15,7 +15,7 @@ const MatchesPage = (props) => {
                 <img id="sugar" src="https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2021/12/13/1ad5303f-313f-4a49-b735-73fd88284ba6_7fb155ff.jpg" />
             </div>
 
-            <div className="centerize">
+            <div className="centerize" data-cy="matches-mid">
                 <h1 className="true-center">Matches</h1>
                 
                 <div className="format">

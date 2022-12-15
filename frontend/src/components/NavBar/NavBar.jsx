@@ -11,7 +11,7 @@ const Navbar = () => {
 
   if(user && (user.is_staff)){
     return (
-        <div style={{background: "var(--blue)"}} className="navBar">
+        <div style={{background: "var(--blue)"}} className="navBar" data-cy="Nav">
           <ul>
             
             <li className="brand">
@@ -52,7 +52,7 @@ const Navbar = () => {
     }
     else{
       return (
-        <div style={{background: "var(--red)"}} className="navBar">
+        <div style={{background: "var(--red)"}} className="navBar" data-cy="Nav">
           <ul>
             
             <li className="brand">

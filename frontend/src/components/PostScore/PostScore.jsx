@@ -10,7 +10,7 @@ const PostScore = (props) => {
     const [redTotal, setRedTotal] = useState([0, 0, 0, 0, 0])
     const [blueTotal, setBlueTotal] = useState([0, 0, 0, 0, 0])
 
-
+    
     function handlSubmit(event) {
         event.preventDefault();
         let red_fan_score = redTotal.reduce((accumulator, currentValue) => accumulator + currentValue);
@@ -24,11 +24,14 @@ const PostScore = (props) => {
         if(red_fan_score + blue_fan_score > 16){
             console.log(userScores); //do the post
             postScore(userScores);
+            toggleModal();
+            window.location.reload(false);
         }
         else{
             alert("You need to enter into all the fields")
         }
     }
+
 
     async function postScore(userScores){
         console.log("userscores at top of postScores", userScores)
@@ -54,6 +57,7 @@ const PostScore = (props) => {
         setRedTotal(roundScores)
     }
 
+
     function handleRoundBlue(index, value){
         let roundScores = blueTotal // reduce the array to one num
         roundScores[index] = parseInt(value)
@@ -69,14 +73,19 @@ const PostScore = (props) => {
         return rounds
     }
 
+    function toggleModal(){
+        props.setModal(false);
+    }
+
 
     function sendForm(i){
         return(
+
             <div key={i} className="between-rounds">
                 <p>Round {i + 1}</p>
                 <div>
                     <label htmlFor="fan_score_f1" style={{color: "red"}}>Red:</label>
-                    <select name="fan_score_f1" id="fan_score_f1" onChange={(event) => handleRoundRed(i, event.target.value)} required>
+                    <select name="fan_score_f1" id="fan_score_f1" onChange={(event) => handleRoundRed(i, event.target.value)} required data-cy={`RDrop${i + 1}`}>
                         <option value={0}>--</option>
                         <option value={7}>7</option>
                         <option value={8}>8</option>
@@ -86,7 +95,7 @@ const PostScore = (props) => {
                 </div>
                 <div>
                     <label htmlFor="fan_score_f2" style={{color: "blue"}}>Blue:</label>
-                    <select name="fan_score_f2" id="fan_score_f2" onChange={(event) => handleRoundBlue(i, event.target.value)} required>
+                    <select name="fan_score_f2" id="fan_score_f2" onChange={(event) => handleRoundBlue(i, event.target.value)} required data-cy={`BDrop${i + 1}`}> 
                         <option value={0}>--</option>
                         <option value={7}>7</option>
                         <option value={8}>8</option>
@@ -95,21 +104,35 @@ const PostScore = (props) => {
                     </select>
                 </div>
             </div>
+
         );
     };
 
 
 //return of component
     return (
-        <div>
-            <div className="in-line">
-                {getRounds()}
+        <div className="modal">
+            <div className="modal-content">
+                <div className="">
+                    <span className="modal-x" onClick={toggleModal}>&times;</span>
+                    <h2>Be the judge</h2>
+                    <hr className="modal-line"></hr>
+                </div>
+            
+                <div className="in-line">
+                    {getRounds()}
+                </div>
+
+                <div className="pad">
+                    <button className="modal-submit" onClick={handlSubmit}  data-cy="subbtn">Submit</button>
+                </div>
             </div>
-            <div className="pad">
-                <input className="button-color" type="button" onClick={handlSubmit} value="Submit card" style={{}}></input>
-            </div>
-        </div>
+    </div>
+
     )
 };
 
 export default PostScore;
+            {/* <div className="pad">
+                <input className="button-color" type="button" onClick={handlSubmit} value="Submit card" style={{}} data-cy="subbtn"></input>
+            </div> */}

@@ -73,7 +73,7 @@ const MatchPage = (props) => {
                 <img id="corner-red" src={`${red.image_link}`} />
             </div>
         
-            <div className="centerize">
+            <div className="centerize" data-cy="match-mid">
 
                 <div className="match-details">
                     <h2 >
