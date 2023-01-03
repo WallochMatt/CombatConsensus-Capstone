@@ -32,7 +32,8 @@ const MatchesPage = (props) => {
             </div>
 
             <div className="side blue">
-                <img id="lioness" src="https://www.postwrestling.com/wp-content/uploads/2020/04/Amanda-Nunes.jpg" />
+                <img id="showtime" src="https://sporttechie-prod.s3.amazonaws.com/pettis-athletes-voice-main-image.png" />
+                {/* <img id="lioness" src="https://www.postwrestling.com/wp-content/uploads/2020/04/Amanda-Nunes.jpg" /> */}
             </div>
         </div>
     );
