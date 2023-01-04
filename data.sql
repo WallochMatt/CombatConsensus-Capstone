@@ -4,7 +4,7 @@ INSERT INTO events_event (event_title, date) VALUES ('UFC FIGHT NIGHT: THOMPSON 
 
 --^ seed then proceed
 
-INSERT INTO fighters_fighter (name, image_link) VALUES ('Julio Arce', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_id3uhFN2wQkKn2z_Sp0qGMyISQzCG03bxw&usqp=CAU');
+INSERT INTO fighters_fighter (name, image_link) VALUES ('Julio Arce', 'https://media.gettyimages.com/id/965811220/photo/julio-arce-celebrates-after-submitting-daniel-teymur-of-sweden-in-their-featherweight-fight.jpg?s=612x612&w=gi&k=20&c=D5sY58QC_qA4_i9L2DBzhE28Qkv-i_Z7B4g_2sPU8Fk=');
 INSERT INTO fighters_fighter (name, image_link) VALUES ('Montel Jackson', "https://www.sherdog.com/image_crop/200/300/_images/fighter/20220929054859_Montel_Jackson_ff.JPG");
 
 

@@ -94,7 +94,7 @@ const PostScore = (props) => {
                     </select>
                 </div>
                 <div>
-                    <label htmlFor="fan_score_f2" style={{color: "blue"}}>Blue:</label>
+                    <label htmlFor="fan_score_f2" style={{color: "rgb(40 87 255)"}}>Blue:</label>
                     <select name="fan_score_f2" id="fan_score_f2" onChange={(event) => handleRoundBlue(i, event.target.value)} required data-cy={`BDrop${i + 1}`}> 
                         <option value={0}>--</option>
                         <option value={7}>7</option>
