@@ -1,0 +1,184 @@
+[
+    {
+      "model": "matches.match",
+      "pk": 1,
+      "fields": {
+        "bout_name": "ARCE VS. JACKSON",
+        "event": 1,
+        "number_of_rounds": 3,
+        "red_corner": 1,
+        "blue_corner": 2,
+        "red_judge_avg": "27.33",
+        "blue_judge_avg": "29.66",
+        "results": "JACKSON by Unanimous Decision"
+      }
+    },
+    {
+      "model": "matches.match",
+      "pk": 2,
+      "fields": {
+        "bout_name": "KOWALKIEWICZ VS. JUAREZ",
+        "event": 1,
+        "number_of_rounds": 3,
+        "red_corner": 3,
+        "blue_corner": 4,
+        "red_judge_avg": "29.00",
+        "blue_judge_avg": "28.00",
+        "results": "KOWALKIEWICZ by Unanimous Decision"
+      }
+    },
+    {
+      "model": "matches.match",
+      "pk": 3,
+      "fields": {
+        "bout_name": "PETROSKI VS. TURMAN",
+        "event": 1,
+        "number_of_rounds": 3,
+        "red_corner": 5,
+        "blue_corner": 6,
+        "red_judge_avg": "29.66",
+        "blue_judge_avg": "27.33",
+        "results": "PETROSKI by Unanimous Decision"
+      }
+    },
+    {
+      "model": "matches.match",
+      "pk": 4,
+      "fields": {
+        "bout_name": "HOOKER VS. PEULLES",
+        "event": 1,
+        "number_of_rounds": 1,
+        "red_corner": 7,
+        "blue_corner": 8,
+        "red_judge_avg": "10.00",
+        "blue_judge_avg": "9.00",
+        "results": "HOOKER by TKO"
+      }
+    },
+    {
+      "model": "matches.match",
+      "pk": 5,
+      "fields": {
+        "bout_name": "POIRIER VS. CHANDLER",
+        "event": 1,
+        "number_of_rounds": 2,
+        "red_corner": 9,
+        "blue_corner": 10,
+        "red_judge_avg": "19.00",
+        "blue_judge_avg": "19.00",
+        "results": "POIRIER by Submission(rear-naked choke)"
+      }
+    },
+    {
+      "model": "matches.match",
+      "pk": 6,
+      "fields": {
+        "bout_name": "ESPARZA VS. WEILI",
+        "event": 1,
+        "number_of_rounds": 1,
+        "red_corner": 11,
+        "blue_corner": 12,
+        "red_judge_avg": "9.00",
+        "blue_judge_avg": "10.00",
+        "results": "WEILI by Submission(rear-naked choke"
+      }
+    },
+    {
+      "model": "matches.match",
+      "pk": 7,
+      "fields": {
+        "bout_name": "ADESANYA VS. PEREIRA",
+        "event": 1,
+        "number_of_rounds": 4,
+        "red_corner": 13,
+        "blue_corner": 14,
+        "red_judge_avg": "39.00",
+        "blue_judge_avg": "37.00",
+        "results": "PEREIRA by TKO"
+      }
+    },
+    {
+      "model": "matches.match",
+      "pk": 9,
+      "fields": {
+        "bout_name": "PRICE VS. ROWE",
+        "event": 3,
+        "number_of_rounds": 2,
+        "red_corner": 17,
+        "blue_corner": 18,
+        "red_judge_avg": "18.00",
+        "blue_judge_avg": "20.00",
+        "results": "ROWE by TKO"
+      }
+    },
+    {
+      "model": "matches.match",
+      "pk": 10,
+      "fields": {
+        "bout_name": "ANDERS VS. DAUKAUS",
+        "event": 3,
+        "number_of_rounds": 1,
+        "red_corner": 19,
+        "blue_corner": 20,
+        "red_judge_avg": "10.00",
+        "blue_judge_avg": "9.00",
+        "results": "ANDERS by TKO"
+      }
+    },
+    {
+      "model": "matches.match",
+      "pk": 11,
+      "fields": {
+        "bout_name": "HERMANSSON VS. DOLIDZE",
+        "event": 3,
+        "number_of_rounds": 1,
+        "red_corner": 21,
+        "blue_corner": 22,
+        "red_judge_avg": "10.00",
+        "blue_judge_avg": "9.00",
+        "results": "DOLIDZE by TKO"
+      }
+    },
+    {
+      "model": "matches.match",
+      "pk": 12,
+      "fields": {
+        "bout_name": "NICOLAU VS. SCHNELL",
+        "event": 3,
+        "number_of_rounds": 1,
+        "red_corner": 25,
+        "blue_corner": 26,
+        "red_judge_avg": "10.00",
+        "blue_judge_avg": "9.00",
+        "results": "NICOLAU by TKO"
+      }
+    },
+    {
+      "model": "matches.match",
+      "pk": 13,
+      "fields": {
+        "bout_name": "BARBERENA VS DOS ANJOS",
+        "event": 3,
+        "number_of_rounds": 1,
+        "red_corner": 27,
+        "blue_corner": 28,
+        "red_judge_avg": "9.00",
+        "blue_judge_avg": "10.00",
+        "results": "DOS ANJOS by submission(rear-naked choke)"
+      }
+    },
+    {
+      "model": "matches.match",
+      "pk": 14,
+      "fields": {
+        "bout_name": "THOMPSON VS. HOLLAND",
+        "event": 3,
+        "number_of_rounds": 4,
+        "red_corner": 29,
+        "blue_corner": 30,
+        "red_judge_avg": "39.00",
+        "blue_judge_avg": "36.33",
+        "results": "THOMPSON by TKO(corner stoppage)"
+      }
+    }
+]

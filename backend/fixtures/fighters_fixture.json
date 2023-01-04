@@ -1,0 +1,226 @@
+[
+    {
+      "model": "fighters.fighter",
+      "pk": 1,
+      "fields": {
+        "name": "Julio Arce",
+        "image_link": "https://media.gettyimages.com/id/965811220/photo/julio-arce-celebrates-after-submitting-daniel-teymur-of-sweden-in-their-featherweight-fight.jpg?s=612x612&w=gi&k=20&c=D5sY58QC_qA4_i9L2DBzhE28Qkv-i_Z7B4g_2sPU8Fk="
+      }
+    },
+    {
+      "model": "fighters.fighter",
+      "pk": 2,
+      "fields": {
+        "name": "Montel Jackson",
+        "image_link": "https://www.sherdog.com/image_crop/200/300/_images/fighter/20220929054859_Montel_Jackson_ff.JPG"
+      }
+    },
+    {
+      "model": "fighters.fighter",
+      "pk": 3,
+      "fields": {
+        "name": "Karolina Kowalkiewicz",
+        "image_link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAvYGchYNnJK3DppE1Xg-rch7WnINjX8bDDQ&usqp=CAU"
+      }
+    },
+    {
+      "model": "fighters.fighter",
+      "pk": 4,
+      "fields": {
+        "name": "Silvana Gomez Juarez",
+        "image_link": "https://cdn.vox-cdn.com/thumbor/3UNfgPAYcycYW8zuZ1W7dy2wltU=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/23621837/1402377559.jpg"
+      }
+    },
+    {
+      "model": "fighters.fighter",
+      "pk": 5,
+      "fields": {
+        "name": "Andre Petroski",
+        "image_link": "https://mmajunkie.usatoday.com/wp-content/uploads/sites/91/2022/11/andre-petroski-wellington-turman-ufc-281-1.jpg?w=832"     
+      }
+    },
+    {
+      "model": "fighters.fighter",
+      "pk": 6,
+      "fields": {
+        "name": "Wellington Turman",
+        "image_link": "https://www.sherdog.com/image_crop/200/300/_images/fighter/20220929054737_Wellington_Turman_ff.JPG"
+      }
+    },
+    {
+      "model": "fighters.fighter",
+      "pk": 7,
+      "fields": {
+        "name": "Dan Hooker",
+        "image_link": "https://pbs.twimg.com/profile_images/1029466610145185792/TdsSA5Sx_400x400.jpg"
+      }
+    },
+    {
+      "model": "fighters.fighter",
+      "pk": 8,
+      "fields": {
+        "name": "Claudio Peulles",
+        "image_link": "https://www.sherdog.com/image_crop/200/300/_images/fighter/20220401084021_Claudio_Puelles_ff.JPG"
+      }
+    },
+    {
+      "model": "fighters.fighter",
+      "pk": 9,
+      "fields": {
+        "name": "Dustin Porier",
+        "image_link": "https://www.sherdog.com/image_crop/200/300/_images/fighter/1601262923Dustin_Poirier.jpg"
+      }
+    },
+    {
+      "model": "fighters.fighter",
+      "pk": 10,
+      "fields": {
+        "name": "Michael Chandler",
+        "image_link": "https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTg5Mjk0NDIyODUxMDY5Mjgy/usatsi_16093259.jpg"
+      }
+    },
+    {
+      "model": "fighters.fighter",
+      "pk": 11,
+      "fields": {
+        "name": "Carla Esparza",
+        "image_link": "https://cdn.theathletic.com/app/uploads/2021/05/23132325/GettyImages-1319536392-1024x683.jpg"
+      }
+    },
+    {
+      "model": "fighters.fighter",
+      "pk": 12,
+      "fields": {
+        "name": "Zhang Weili",
+        "image_link": "https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=425,format=auto/sites/default/files/styles/768x768/public/d8/images/canvas/2022/11/13/32f547db-15bc-42eb-8296-799cfe356614_4417f386.jpg?itok=Nhhn8b3D&v=1668317120"
+      }
+    },
+    {
+      "model": "fighters.fighter",
+      "pk": 13,
+      "fields": {
+        "name": "Israel Adesanya",
+        "image_link": "https://storage.googleapis.com/afs-prod/media/2579eb15f5ee405e891e7efae28f342d/2000.jpeg"
+      }
+    },
+    {
+      "model": "fighters.fighter",
+      "pk": 14,
+      "fields": {
+        "name": "Alex Pereira",
+        "image_link": "https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTkzNjY0MDQzOTI2NDMxMjE2/usatsi_18629092.jpg"
+      }
+    },
+    {
+      "model": "fighters.fighter",
+      "pk": 17,
+      "fields": {
+        "name": "Niko Price",
+        "image_link": "https://cdn.vox-cdn.com/thumbor/os2HmXVtq_bwF9nUID3OsNzUrrI=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/15950949/usa_today_12318727.jpg"
+      }
+    },
+    {
+      "model": "fighters.fighter",
+      "pk": 18,
+      "fields": {
+        "name": "Phil Rowe",
+        "image_link": "https://pinno.app/api/internal/cdb/contents/22820b14-e40b-4e56-b45d-fd4a5e42bc6b/0/206988"
+      }
+    },
+    {
+      "model": "fighters.fighter",
+      "pk": 19,
+      "fields": {
+        "name": "Eryk Anders",
+        "image_link": "https://www.sherdog.com/image_crop/200/300/_images/fighter/20220929065623_Eryk_Anders_ff.JPG"
+      }
+    },
+    {
+      "model": "fighters.fighter",
+      "pk": 20,
+      "fields": {
+        "name": "Kyle Daukaus",
+        "image_link": "https://www.sherdog.com/image_crop/200/300/_images/fighter/20220929065640_Kyle_Daukaus_ff.JPG"
+      }
+    },
+    {
+      "model": "fighters.fighter",
+      "pk": 21,
+      "fields": {
+        "name": "Jack Hermansson",
+        "image_link": "https://imageio.forbes.com/specials-images/imageserve/1133905837/UFC-Fight-Night--Branch-v-Hermansson/960x0.jpg?format=jpg&width=960"
+      }
+    },
+    {
+      "model": "fighters.fighter",
+      "pk": 22,
+      "fields": {
+        "name": "Roman Dolidze",
+        "image_link": "https://conandaily.files.wordpress.com/2020/07/roman-dolidze.jpg"
+      }
+    },
+    {
+      "model": "fighters.fighter",
+      "pk": 23,
+      "fields": {
+        "name": "Tai Tuivasa",
+        "image_link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRucBtE4mo-w0_Oe_h4-W4tprn1Rha6kbmpww&usqp=CAU"
+      }
+    },
+    {
+      "model": "fighters.fighter",
+      "pk": 24,
+      "fields": {
+        "name": "Sergei Pavlovich",
+        "image_link": "https://assets-cms.thescore.com/uploads/image/file/526177/w640xh480_GettyImages-1411916056.jpg?ts=1659237474"
+      }
+    },
+    {
+      "model": "fighters.fighter",
+      "pk": 25,
+      "fields": {
+        "name": "Matheus Nicolau",
+        "image_link": "https://www.sherdog.com/image_crop/200/300/_images/fighter/20160729013007_nicolau.JPG"
+      }
+    },
+    {
+      "model": "fighters.fighter",
+      "pk": 26,
+      "fields": {
+        "name": "Matt Schnell",
+        "image_link": "https://www.totalsportal.com/wp-content/uploads/2022/02/Matt-Schnell.png"
+      }
+    },
+    {
+      "model": "fighters.fighter",
+      "pk": 27,
+      "fields": {
+        "name": "Bryan Barberena",
+        "image_link": "https://images.tapology.com/letterbox_images/16876/default/Bryan_Barberena.jpg?1544822482"
+      }
+    },
+    {
+      "model": "fighters.fighter",
+      "pk": 28,
+      "fields": {
+        "name": "Rafael Dos Anjos",
+        "image_link": "https://pbs.twimg.com/media/FjLuSxFVsAACdh4?format=jpg&name=4096x4096"
+      }
+    },
+    {
+      "model": "fighters.fighter",
+      "pk": 29,
+      "fields": {
+        "name": "Stephen Thompson",
+        "image_link": "https://mmajunkie.usatoday.com/wp-content/uploads/sites/91/2021/07/gilbert-burns-stephen-thompson-ufc-264-12.jpg?w=1000&h=600&crop=1"
+      }
+    },
+    {
+      "model": "fighters.fighter",
+      "pk": 30,
+      "fields": {
+        "name": "Kevin Holland",
+        "image_link": "https://images.actionnetwork.com/blog/2022/12/GettyImages-1403744064.jpg"
+      }
+    }
+]

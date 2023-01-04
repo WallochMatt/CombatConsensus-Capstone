@@ -1,0 +1,34 @@
+version: '3.1'
+services:
+  combat-consensus-database:
+    build: ./database
+    image: wallochferm/combat-consensus-database:1.0
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    restart: always
+    volumes:
+      - db-data:/var/lib/mysql
+
+  combat-consensus-backend:
+    build: ./backend
+    image: wallochferm/combat-consensus-backend:1.0
+    ports:
+      - 8000:8000
+    depends-on: 
+      - "combat-consensus-database"
+    restart: always
+    command: >
+      sh -c "python manage.py makemigrations && python manage.py migrate && python manage.py loaddata users_fixture && python manage.py loaddata events_fixture && python manage.py loaddata fighters_fixture && python manage.py loaddata matches_fixture && python manage.py loaddata score_cards_fixture && python manage.py runserver 0.0.0.0:8000"
+
+  combat-consensus-frontend:
+    build: ./frontend
+    image: wallochferm/combat-consensus-frontend:1.0
+    ports: 
+      - 80:3000
+    depends_on:
+      - "combat-consensus-backend"
+      
+volumes:
+  db-data:

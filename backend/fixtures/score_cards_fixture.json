@@ -1,0 +1,262 @@
+[
+    {
+      "model": "score_cards.scorecard",
+      "pk": 3,
+      "fields": {
+        "red_fan_score": 7,
+        "blue_fan_score": 10,
+        "match": 4,
+        "fan": 4
+      }
+    },
+    {
+      "model": "score_cards.scorecard",
+      "pk": 6,
+      "fields": {
+        "red_fan_score": 29,
+        "blue_fan_score": 28,
+        "match": 1,
+        "fan": 4
+      }
+    },
+    {
+      "model": "score_cards.scorecard",
+      "pk": 7,
+      "fields": {
+        "red_fan_score": 9,
+        "blue_fan_score": 10,
+        "match": 6,
+        "fan": 4
+      }
+    },
+    {
+      "model": "score_cards.scorecard",
+      "pk": 8,
+      "fields": {
+        "red_fan_score": 37,
+        "blue_fan_score": 39,
+        "match": 7,
+        "fan": 4
+      }
+    },
+    {
+      "model": "score_cards.scorecard",
+      "pk": 9,
+      "fields": {
+        "red_fan_score": 29,
+        "blue_fan_score": 28,
+        "match": 2,
+        "fan": 4
+      }
+    },
+    {
+      "model": "score_cards.scorecard",
+      "pk": 10,
+      "fields": {
+        "red_fan_score": 28,
+        "blue_fan_score": 28,
+        "match": 3,
+        "fan": 4
+      }
+    },
+    {
+      "model": "score_cards.scorecard",
+      "pk": 11,
+      "fields": {
+        "red_fan_score": 26,
+        "blue_fan_score": 30,
+        "match": 1,
+        "fan": 8
+      }
+    },
+    {
+      "model": "score_cards.scorecard",
+      "pk": 12,
+      "fields": {
+        "red_fan_score": 29,
+        "blue_fan_score": 28,
+        "match": 2,
+        "fan": 8
+      }
+    },
+    {
+      "model": "score_cards.scorecard",
+      "pk": 13,
+      "fields": {
+        "red_fan_score": 29,
+        "blue_fan_score": 28,
+        "match": 3,
+        "fan": 8
+      }
+    },
+    {
+      "model": "score_cards.scorecard",
+      "pk": 14,
+      "fields": {
+        "red_fan_score": 10,
+        "blue_fan_score": 9,
+        "match": 4,
+        "fan": 8
+      }
+    },
+    {
+      "model": "score_cards.scorecard",
+      "pk": 15,
+      "fields": {
+        "red_fan_score": 9,
+        "blue_fan_score": 10,
+        "match": 6,
+        "fan": 8
+      }
+    },
+    {
+      "model": "score_cards.scorecard",
+      "pk": 16,
+      "fields": {
+        "red_fan_score": 29,
+        "blue_fan_score": 28,
+        "match": 1,
+        "fan": 5
+      }
+    },
+    {
+      "model": "score_cards.scorecard",
+      "pk": 17,
+      "fields": {
+        "red_fan_score": 30,
+        "blue_fan_score": 27,
+        "match": 2,
+        "fan": 5
+      }
+    },
+    {
+      "model": "score_cards.scorecard",
+      "pk": 18,
+      "fields": {
+        "red_fan_score": 29,
+        "blue_fan_score": 28,
+        "match": 3,
+        "fan": 5
+      }
+    },
+    {
+      "model": "score_cards.scorecard",
+      "pk": 19,
+      "fields": {
+        "red_fan_score": 10,
+        "blue_fan_score": 9,
+        "match": 4,
+        "fan": 5
+      }
+    },
+    {
+      "model": "score_cards.scorecard",
+      "pk": 20,
+      "fields": {
+        "red_fan_score": 20,
+        "blue_fan_score": 18,
+        "match": 5,
+        "fan": 5
+      }
+    },
+    {
+      "model": "score_cards.scorecard",
+      "pk": 21,
+      "fields": {
+        "red_fan_score": 9,
+        "blue_fan_score": 10,
+        "match": 6,
+        "fan": 5
+      }
+    },
+    {
+      "model": "score_cards.scorecard",
+      "pk": 22,
+      "fields": {
+        "red_fan_score": 27,
+        "blue_fan_score": 30,
+        "match": 1,
+        "fan": 6
+      }
+    },
+    {
+      "model": "score_cards.scorecard",
+      "pk": 23,
+      "fields": {
+        "red_fan_score": 29,
+        "blue_fan_score": 28,
+        "match": 3,
+        "fan": 6
+      }
+    },
+    {
+      "model": "score_cards.scorecard",
+      "pk": 24,
+      "fields": {
+        "red_fan_score": 10,
+        "blue_fan_score": 9,
+        "match": 4,
+        "fan": 6
+      }
+    },
+    {
+      "model": "score_cards.scorecard",
+      "pk": 25,
+      "fields": {
+        "red_fan_score": 19,
+        "blue_fan_score": 19,
+        "match": 5,
+        "fan": 6
+      }
+    },
+    {
+      "model": "score_cards.scorecard",
+      "pk": 26,
+      "fields": {
+        "red_fan_score": 30,
+        "blue_fan_score": 27,
+        "match": 3,
+        "fan": 7
+      }
+    },
+    {
+      "model": "score_cards.scorecard",
+      "pk": 27,
+      "fields": {
+        "red_fan_score": 10,
+        "blue_fan_score": 9,
+        "match": 4,
+        "fan": 7
+      }
+    },
+    {
+      "model": "score_cards.scorecard",
+      "pk": 28,
+      "fields": {
+        "red_fan_score": 9,
+        "blue_fan_score": 10,
+        "match": 6,
+        "fan": 7
+      }
+    },
+    {
+      "model": "score_cards.scorecard",
+      "pk": 29,
+      "fields": {
+        "red_fan_score": 30,
+        "blue_fan_score": 26,
+        "match": 2,
+        "fan": 7
+      }
+    },
+    {
+      "model": "score_cards.scorecard",
+      "pk": 30,
+      "fields": {
+        "red_fan_score": 27,
+        "blue_fan_score": 30,
+        "match": 1,
+        "fan": 9
+      }
+    }
+]

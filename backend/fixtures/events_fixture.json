@@ -1,0 +1,18 @@
+[
+    {
+      "model": "events.event",
+      "pk": 1,
+      "fields": {
+        "event_title": "UFC 281",
+        "date": "2022-11-12"
+      }
+    },
+    {
+      "model": "events.event",
+      "pk": 3,
+      "fields": {
+        "event_title": "UFC FIGHT NIGHT: THOMPSON VS. HOLLAND",
+        "date": "2022-12-03"
+      }
+    }
+]
