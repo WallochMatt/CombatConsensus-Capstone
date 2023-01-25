@@ -23,7 +23,7 @@ const MatchPage = (props) => {
     useEffect(() => {
         const fetchCurrentMatch = async () => {
             try{
-                let response = await axios.get(`http://127.0.0.1:8000/matches/${id}/`);
+                let response = await axios.get(`http://3.143.230.10:8000/matches/${id}/`);
                 setCurrentMatch(response.data);
                 setRed(response.data.red_corner);
                 setBlue(response.data.blue_corner);
@@ -37,7 +37,7 @@ const MatchPage = (props) => {
 
         const fetchScoreCards = async () => {
             try {
-                let response = await axios.get(`http://127.0.0.1:8000/user/${id}/findcards/`)
+                let response = await axios.get(`http://3.143.230.10:8000/user/${id}/findcards/`)
                 setScoreCards(response.data);
             }
             catch (error) {

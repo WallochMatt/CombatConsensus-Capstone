@@ -9,7 +9,6 @@ import UserCards from "../../components/UserCards/UserCards";
 const UserPage = () => {
   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
   // The "token" value is the JWT token that you will send in the header of any request requiring authentication
-  //TODO: Add an AddCars Page to add a car for a logged in user's garage
   // const [user, token] = useAuth();
 
   const {username} = useParams()
@@ -20,7 +19,7 @@ const UserPage = () => {
   useEffect(() => {
     const fetchCards = async () => {
       try {
-        let response = await axios.get(`http://127.0.0.1:8000/user/${username}/`)
+        let response = await axios.get(`http://3.143.230.10:8000/user/${username}/`)
         setCards(response.data);
       }
       catch (error) {
@@ -30,7 +29,7 @@ const UserPage = () => {
 
     const fetchAccuracy = async () => {
         try {
-          let response = await axios.get(`http://127.0.0.1:8000/user/${username}/accuracy/`)
+          let response = await axios.get(`http://3.143.230.10:8000/user/${username}/accuracy/`)
           setAccuracy(response.data)
         }
         catch (error) {

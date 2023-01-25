@@ -8,7 +8,7 @@ const MatchesDelete = (props) => {
 
     async function deleteMatch(){
         try{
-            let response = await axios.delete(`http://127.0.0.1:8000/matches/${props.id}/admin/edit/`, {
+            let response = await axios.delete(`http://3.143.230.10:8000/matches/${props.id}/admin/edit/`, {
                 headers: {
                     Authorization: "Bearer " + token,
                 }

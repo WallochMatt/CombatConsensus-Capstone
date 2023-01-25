@@ -8,8 +8,9 @@ const MatchBox = (props) => {
     useEffect(() => {
         const fetchAverages = async () => {
             try{
-                let response = await axios.get(`http://127.0.0.1:8000/user/${props.match.id}/findaverage/`);
+                let response = await axios.get(`http://3.143.230.10:8000/user/${props.match.id}/findaverage/`);
                 setAverage(response.data);
+                console.log(average);
             }
             catch(error){
                 console.log("fetchAverages error: ")

@@ -11,7 +11,7 @@ const FighterPut = (props) => {
 
     async function editFighter(changedEvent){
         try{
-            let response = await axios.put(`http://127.0.0.1:8000/fighters/${fighterId}/admin/edit/`, changedEvent, {
+            let response = await axios.put(`http://3.143.230.10:8000/fighters/${fighterId}/admin/edit/`, changedEvent, {
                 headers: {
                     Authorization: "Bearer " + token,
                 }

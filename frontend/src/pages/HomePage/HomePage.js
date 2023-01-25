@@ -13,7 +13,7 @@ const HomePage = (props) => {
     useEffect(()  => {
         const fetchFighterTotals = async () => {
             try{
-                let response = await axios.get("http://127.0.0.1:8000/matches/find-match-total/");
+                let response = await axios.get("http://3.143.230.10:8000/matches/find-match-total/");
 
                 
                 let jF = response.data.sort((a, b) => b.judge_total - a.judge_total)[0];    

@@ -36,7 +36,7 @@ const PostScore = (props) => {
     async function postScore(userScores){
         console.log("userscores at top of postScores", userScores)
         try{
-            let response = await axios.post("http://127.0.0.1:8000/user/post/", userScores, {
+            let response = await axios.post("http://3.143.230.10:8000/user/post/", userScores, {
                 headers: {
                     Authorization: 'Bearer ' + token,
                 }

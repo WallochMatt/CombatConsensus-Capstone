@@ -8,6 +8,7 @@ from django.shortcuts import get_object_or_404
 from authentication.models import User
 
 
+
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def fan_card(request):
@@ -92,7 +93,7 @@ def find_average(request, match):
             f2_average = running_total_blue/count_rt
 
             final_result = {
-                "red_avg": f1_average,
+                "red_avg": "test",
                 "blue_avg": f2_average
             }
         except:

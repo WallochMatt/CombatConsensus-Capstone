@@ -13,7 +13,7 @@ const EventPost = (props) => {
 
     async function addNewEvent(newEvent){
         try{
-            let response = await axios.post('http://127.0.0.1:8000/events/admin/add/', newEvent, {
+            let response = await axios.post('http://3.143.230.10:8000/events/admin/add/', newEvent, {
                 headers: {
                     Authorization: "Bearer " + token,
                 }

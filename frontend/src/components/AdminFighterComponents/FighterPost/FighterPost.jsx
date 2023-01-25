@@ -12,7 +12,7 @@ const FighterPost = (props) => {
 
     async function addNewFighter(newFighter){
         try{
-            let response = await axios.post('http://127.0.0.1:8000/fighters/admin/add/', newFighter, {
+            let response = await axios.post('http://3.143.230.10:8000/fighters/admin/add/', newFighter, {
                 headers: {
                     Authorization: "Bearer " + token,
                 }

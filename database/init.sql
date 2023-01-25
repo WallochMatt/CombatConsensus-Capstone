@@ -1,1 +1,1 @@
-CREATE DATABASE IF NOT EXISTS combat_consensus_database;
+CREATE DATABASE IF NOT EXISTS cc_db_two;

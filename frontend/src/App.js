@@ -34,7 +34,8 @@ function App() {
     useEffect(() => {
       async function fetchEvents(){
         try {
-            let response = await axios.get("http://127.0.0.1:8000/events/");
+            let response = await axios.get("http://3.143.230.10:8000/events/");
+            // let response = await axios.get("http://3.143.230.10:8000/events/");
             setEvents(response.data)
         }
         catch(error){
@@ -45,7 +46,7 @@ function App() {
 
       const fetchMatches = async () => {
         try {
-            let response = await axios.get("http://127.0.0.1:8000/matches/");
+            let response = await axios.get("http://3.143.230.10:8000/matches/");
             setMatches(response.data)
         }
         catch(error){
@@ -56,7 +57,7 @@ function App() {
   
       const fetchFighters = async () => {
         try{
-            let  response = await axios.get('http://127.0.0.1:8000/fighters/');
+            let  response = await axios.get('http://3.143.230.10:8000/fighters/');
             setFighters(response.data);
         }
         catch(error){

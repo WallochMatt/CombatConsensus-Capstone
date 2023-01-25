@@ -1,8 +1,8 @@
 version: '3.1'
 services:
   combat-consensus-database:
-    build: ./database
-    image: wallochferm/combat-consensus-database:1.0
+    # build: ./database
+    image: wallochferm/combat-consensus-database:1.1
     ports:
       - 3306:3306
     environment:
@@ -12,21 +12,21 @@ services:
       - db-data:/var/lib/mysql
 
   combat-consensus-backend:
-    build: ./backend
-    image: wallochferm/combat-consensus-backend:1.0
+    # build: ./backend
+    image: wallochferm/combat-consensus-backend:1.1
     ports:
       - 8000:8000
-    depends-on: 
+    depends_on: 
       - "combat-consensus-database"
     restart: always
     command: >
-      sh -c "python manage.py makemigrations && python manage.py migrate && python manage.py loaddata users_fixture && python manage.py loaddata events_fixture && python manage.py loaddata fighters_fixture && python manage.py loaddata matches_fixture && python manage.py loaddata score_cards_fixture && python manage.py runserver 0.0.0.0:8000"
+      sh -c "python manage.py makemigrations && python manage.py migrate && python manage.py loaddata users_fixture events_fixture fighters_fixture matches_fixture score_cards_fixture && python manage.py runserver 0.0.0.0:8000"
 
   combat-consensus-frontend:
-    build: ./frontend
-    image: wallochferm/combat-consensus-frontend:1.0
+    # build: ./frontend
+    image: wallochferm/combat-consensus-frontend:3.1
     ports: 
-      - 80:3000
+      - 80:80
     depends_on:
       - "combat-consensus-backend"
       
