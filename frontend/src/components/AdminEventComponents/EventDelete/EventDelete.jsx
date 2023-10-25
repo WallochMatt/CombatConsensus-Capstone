@@ -8,7 +8,7 @@ const EventDelete = (props) => {
 
     async function deleteEvent(){
         try{
-            let response = await axios.delete(`http://3.143.230.10:8000/events/${props.id}/admin/edit/`, {
+            let response = await axios.delete(`http://3.142.40.75:8000/events/${props.id}/admin/edit/`, {
                 headers: {
                     Authorization: "Bearer " + token,
                 }

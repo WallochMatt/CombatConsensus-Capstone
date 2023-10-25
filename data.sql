@@ -74,8 +74,7 @@ INSERT INTO fighters_fighter (name, image_link) VALUES ('Kevin Holland', 'https:
 
 
 --^ seed then proceed
-
-                                                                                                                                                 bout_name, event_id, number_of_rounds, fighter_one_id, fighter_two_id, judge_avg_one, judge_avg_two, results
+                                                                                                                                        --   bout_name, event_id, number_of_rounds, fighter_one_id, fighter_two_id, judge_avg_one, judge_avg_two, results
 INSERT INTO matches_match (bout_name, event_id, number_of_rounds, red_corner_id, blue_corner_id, red_judge_avg, blue_judge_avg, results) VALUES ('ARCE VS. JACKSON', '1', '3', '1', '2', '27.33', '29.66', 'JACKSON by Unanimous Decision');
 
 INSERT INTO matches_match (bout_name, event_id, number_of_rounds, red_corner_id, blue_corner_id, red_judge_avg, blue_judge_avg, results) VALUES ('KOWALKIEWICZ VS. JUAREZ', '1', '3', '3', '4', '29', '28', 'KOWALKIEWICZ by Unanimous Decision');

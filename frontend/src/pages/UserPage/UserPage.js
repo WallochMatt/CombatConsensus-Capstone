@@ -19,7 +19,7 @@ const UserPage = () => {
   useEffect(() => {
     const fetchCards = async () => {
       try {
-        let response = await axios.get(`http://3.143.230.10:8000/user/${username}/`)
+        let response = await axios.get(`http://3.142.40.75:8000/user/${username}/`)
         setCards(response.data);
       }
       catch (error) {
@@ -29,7 +29,7 @@ const UserPage = () => {
 
     const fetchAccuracy = async () => {
         try {
-          let response = await axios.get(`http://3.143.230.10:8000/user/${username}/accuracy/`)
+          let response = await axios.get(`http://3.142.40.75:8000/user/${username}/accuracy/`)
           setAccuracy(response.data)
         }
         catch (error) {

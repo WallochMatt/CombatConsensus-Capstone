@@ -7,7 +7,7 @@ const FighterDelete = (props) => {
 
     async function deleteFighter(){
         try{
-            let response = await axios.delete(`http://3.143.230.10:8000/fighters/${props.id}/admin/edit/`, {
+            let response = await axios.delete(`http://3.142.40.75:8000/fighters/${props.id}/admin/edit/`, {
                 headers: {
                     Authorization: "Bearer " + token,
                 }

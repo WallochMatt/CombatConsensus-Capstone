@@ -11,7 +11,7 @@ const EventPut = (props) => {
     
     async function editEvent(changedEvent){
         try{
-            let response = await axios.put(`http://3.143.230.10:8000/events/${eventId}/admin/edit/`, changedEvent, {
+            let response = await axios.put(`http://3.142.40.75:8000/events/${eventId}/admin/edit/`, changedEvent, {
                 headers: {
                     Authorization: "Bearer " + token,
                 }

@@ -17,7 +17,7 @@ const MatchesPost = (props) => {
 
     async function addNewMatch(newMatch){
         try{
-            let response = await axios.post(`http://3.143.230.10:8000/matches/admin/add/`, newMatch, {
+            let response = await axios.post(`http://3.142.40.75:8000/matches/admin/add/`, newMatch, {
                 headers: {
                     Authorization: "Bearer " + token,
                 }
