@@ -15,7 +15,7 @@ const EventCardPage = (props) => {
     useEffect(() => {
         const fetchCurrentEvent = async () => {
             try{
-                let response = await axios.get(`http://3.142.40.75:8000/events/${id}/`);
+                let response = await axios.get(`http://52.15.152.115:8000/events/${id}/`);
                 setCurrentEvent(response.data.event_title)
             }
             catch(error){
@@ -26,7 +26,7 @@ const EventCardPage = (props) => {
 
         const fetchEventMatches = async () => {
             try{
-                let response = await axios.get(`http://3.142.40.75:8000/matches/${id}/sort-matches/`)
+                let response = await axios.get(`http://52.15.152.115:8000/matches/${id}/sort-matches/`)
                 setEventMatches(response.data);
             }
             catch(error){

@@ -24,7 +24,7 @@ services:
 
   combat-consensus-frontend:
     # build: ./frontend
-    image: wallochferm/combat-consensus-frontend:3.2
+    image: wallochferm/combat-consensus-frontend:3.3
     ports: 
       - 80:80
     depends_on:

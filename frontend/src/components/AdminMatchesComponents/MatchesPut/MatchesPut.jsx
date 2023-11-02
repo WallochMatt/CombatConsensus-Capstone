@@ -17,7 +17,7 @@ const MatchesPut = (props) => {
 
     async function editMatch(changedEvent){
         try{
-            let response = await axios.put(`http://3.142.40.75:8000/matches/${matchId}/admin/edit/`, changedEvent, {
+            let response = await axios.put(`http://52.15.152.115:8000/matches/${matchId}/admin/edit/`, changedEvent, {
                 headers: {
                     Authorization: "Bearer " + token,
                 }

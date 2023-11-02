@@ -8,7 +8,7 @@ const MatchBox = (props) => {
     useEffect(() => {
         const fetchAverages = async () => {
             try{
-                let response = await axios.get(`http://3.142.40.75:8000/user/${props.match.id}/findaverage/`);
+                let response = await axios.get(`http://52.15.152.115:8000/user/${props.match.id}/findaverage/`);
                 setAverage(response.data);
                 console.log(average);
             }

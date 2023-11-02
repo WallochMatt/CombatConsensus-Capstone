@@ -36,7 +36,7 @@ import loginUI from "./Login.cy.js"
 //     cy.get('[data-cy="BDrop3"]')
 //     .select('10').should('have.value', '10')
     
-//     cy.intercept('http://3.142.40.75:8000/user/post/').as('checkPost')
+//     cy.intercept('http://52.15.152.115:8000/user/post/').as('checkPost')
 //     cy.get('[data-cy="subbtn"]').click()
 //     cy.wait('@checkPost').its('response.statusCode').should('eq', 201)
 //   })
